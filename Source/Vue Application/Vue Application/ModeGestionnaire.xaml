@@ -1,0 +1,30 @@
+﻿<Window x:Class="Vue_Application.ModeGestionnaire"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vue_Application"
+        mc:Ignorable="d"
+        Title="UltraNotes" Height="450" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Height="34">
+            <Label Content="Menu" Margin="35,0,350,0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="14"/>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Height="34">
+            <ListBox VerticalContentAlignment="Bottom"/>
+            <ListBox VerticalContentAlignment="Bottom"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" Grid.RowSpan="2"></ListBox>
+            <ListView Grid.Column="1" Grid.RowSpan="2"></ListView>
+        </Grid>
+    </DockPanel>
+</Window>
