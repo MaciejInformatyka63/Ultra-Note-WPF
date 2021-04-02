@@ -1,0 +1,33 @@
+﻿<Window x:Class="Vue_Application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vue_Application"
+        mc:Ignorable="d"
+        Title="UltraNotes" Height="450" Width="800">
+    <DockPanel LastChildFill="True" Margin="0">
+        <!-- Barre de titre et de menu de l'application -->
+        <Grid DockPanel.Dock="Top" Height="34">
+            <Label Content="Mon document à éditer" Margin="35,0,350,0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="14"/>
+        </Grid>
+
+        <!-- Barre d'outils de l'application -->
+        <Grid DockPanel.Dock="Bottom" Height="34">
+            <ListBox VerticalContentAlignment="Bottom"/>
+            <ListBox VerticalContentAlignment="Bottom"/>
+        </Grid>
+        
+        <!-- Espace de saisie de texte -->
+        <StackPanel>
+            <RichTextBox Margin="10,0,0,0" FontFamily="Gadugi" BorderThickness="0,0,0,1" Height="365">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Bienvenue dans UltraNotes !"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </StackPanel>
+        
+    </DockPanel>
+</Window>
