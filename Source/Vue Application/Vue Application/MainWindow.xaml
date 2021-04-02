@@ -7,27 +7,43 @@
         mc:Ignorable="d"
         Title="UltraNotes" Height="450" Width="800">
     <DockPanel LastChildFill="True" Margin="0">
-        <!-- Barre de titre et de menu de l'application -->
-        <Grid DockPanel.Dock="Top" Height="34">
+        <!-- Barre de titre et de menu de l'application 
+        Contient:
+         - Une flèche pour revenir au menu;
+         - Le titre du document;
+         - Un bouton 'partager', 'importer", 'aperçu', 'rechercher', et 'options';
+        -->
+        <Grid DockPanel.Dock="Top" Height="34" Margin="0,0,0,0">
             <Label Content="Mon document à éditer" Margin="35,0,350,0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="14"/>
         </Grid>
 
-        <!-- Barre d'outils de l'application -->
-        <Grid DockPanel.Dock="Bottom" Height="34">
-            <ListBox VerticalContentAlignment="Bottom"/>
-            <ListBox VerticalContentAlignment="Bottom"/>
-        </Grid>
-        
-        <!-- Espace de saisie de texte -->
-        <StackPanel>
-            <RichTextBox Margin="10,0,0,0" FontFamily="Gadugi" BorderThickness="0,0,0,1" Height="365">
+        <!-- Barre d'outils de l'application 
+        Contient:
+         - Un bouton 'ajouter image' et 'ajouter checkbox';
+         - Un menu déroulant pour choisir l'alignement du texte;
+         - Un menu pour choisir la couleur du texte;
+         - Un menu pour choisir la couleur d'arrière plan du texte;
+         - Un menu déroulant pour sélectionner la police d'écriture;
+         - Un menu déroulant pour sélectionner la police;
+         - Un menu déroulant encadré pour sélectionner un style de titre;
+         - Un menu déroulant encadré pour sélectionner un style de paragraphe;
+         - Un menu déroulant encadré pour sélectionner un autre style;
+        -->
+        <WrapPanel DockPanel.Dock="Bottom" Height="34">
+            <ListBox/>
+            <ListBox/>
+        </WrapPanel>
+
+        <!-- Espace de saisie de texte-->
+        <Grid>
+            <RichTextBox Margin="0,0,0,0" FontFamily="Gadugi" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text="Bienvenue dans UltraNotes !"/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-        </StackPanel>
+        </Grid>
         
     </DockPanel>
 </Window>
