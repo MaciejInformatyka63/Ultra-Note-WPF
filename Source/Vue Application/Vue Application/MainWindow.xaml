@@ -13,54 +13,59 @@
     <DockPanel LastChildFill="True">
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="250" Background="White">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <Image HorizontalAlignment="Left"  Width="255" Height="140" Source="Assets/mountains.jpg"/>
-                    <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
+                              Foreground="White"
+                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              Background="#FF64BED8"
+                              BorderBrush="{x:Null}" FontWeight="Normal">
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Créer une note.." FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Créer une note.." Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Document à éditer" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Document à éditer" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Le petit Asticot de Jean Blonblon en Antartique" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Le petit Asticot de Jean Blonb.." Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Idées de scénario" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Idées de scénario" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Dettes" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Dettes" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Notes cours de maths" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Notes cours de maths" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                 <Button Content="Fiche de révision" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Fiche de révision" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="L'Épopée temporelle" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="L'Épopée temporelle" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Button Content="Serious Game PPP" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                                <TextBlock Text="Serious Game PPP" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
                     </ListView>
