@@ -11,6 +11,185 @@
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
     <DockPanel LastChildFill="True">
+        <!-- Définition de la barre des menus -->
+        <Menu DockPanel.Dock="Top" Background="White">
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="_Nouveau">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/file1.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="_Document">
+                        <MenuItem.Icon>
+                            <Image Source="icons/application/file2.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Enregistrer">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/enregistrer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Enregistrer _sous..">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/enregistrer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Imprimer">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditor/imprimante.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Réduire la fenêtre">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditor/taille.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Quitter">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/return.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edition">
+                <MenuItem Header="_Annuler">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/annuler.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Rétablir">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/retablir.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Couper"/>
+                <MenuItem Header="C_opier">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/dupliquer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Coll_er">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/editer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Effacer la sélection">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/supprimer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Insérer">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/attacher.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="_Image">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditor/image.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_PDF">
+                        <MenuItem.Icon>
+                            <Image Source="icons/application/pdfred.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_URL">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/lienURL.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Checkbox">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/checkbox1.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="C_ode">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/code.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Forme">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditor/formes.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="C_itation">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/citation1.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Appliquer">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/surligner.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="_Gras" IsCheckable="True">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/gras.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Italique" IsCheckable="True">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/italique.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Souligné" IsCheckable="True">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditorcolor/souligne.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Taille">
+                        <MenuItem.Icon>
+                            <Image Source="icons/texteditor/tailletexte.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header=" 5 "/>
+                        <MenuItem Header=" 8 "/>
+                        <MenuItem Header=" 10 "/>
+                        <MenuItem Header=" 12 "/>
+                        <MenuItem Header=" 14 "/>
+                        <MenuItem Header=" 15 "/>
+                        <MenuItem Header=" 16 "/>
+                        <MenuItem Header=" 18 "/>
+                        <MenuItem Header=" 20 "/>
+                        <MenuItem Header=" 25 "/>
+                        <MenuItem Header=" 30 "/>
+                        <MenuItem Header=" 35 "/>
+                        <MenuItem Header=" 40 "/>
+                        <MenuItem Header=" 45 "/>
+                        <MenuItem Header=" 50 "/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Police">
+                    <MenuItem Header="_Calibri"/>
+                    <MenuItem Header="_Liberation Sérif"/>
+                    <MenuItem Header="_Gadugi"/>
+                </MenuItem>
+                <MenuItem Header="_Préférences">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/parametres.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Contact">
+                <MenuItem Header="Nous _contacter">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/hashtag.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Soumettre un avis">
+                    <MenuItem.Icon>
+                        <Image Source="icons/texteditorcolor/filtrer.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Rejoindre le projet"/>
+            </MenuItem>
+            <MenuItem Header="Aide">
+                <MenuItem Header="_Documentation">
+                    <MenuItem.Icon>
+                        <Image Source="icons/application/reader.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Site web"/>
+            </MenuItem>
+        </Menu>
 
         <!-- Définition du menu -->
         <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
@@ -18,91 +197,132 @@
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <Image HorizontalAlignment="Left"  Width="255" Height="140" Source="Assets/mountains.jpg"/>
                     <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
-                              Foreground="White"
+                              Foreground="White" Cursor="Hand"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               Background="#FF64BED8"
                               BorderBrush="{x:Null}" FontWeight="Normal">
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file1.png" Margin="5,5"/>
-                                <TextBlock Text="Créer une note.." Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
-                            </StackPanel>
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file1.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Document à éditer" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Document à éditer" Margin="10"/>
+                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Le petit Asticot de Jean.." Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Le petit Asticot de.." Margin="10"/>
+                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Idées de scénario" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Idées de scénario" Margin="10"/>
+                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Dettes" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Dettes" Margin="10"/>
+                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Notes cours de maths" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Notes cours de maths" Margin="10"/>
+                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Fiche de révision" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Fiche de révision" Margin="10"/>
+                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="L'Épopée temporelle" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="L'Épopée temporelle" Margin="10"/>
+                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
-                            <StackPanel Orientation="Horizontal" Margin="10 0">
-                                <Image Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock Text="Serious Game PPP" Margin="10"/>
-                                <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                            <Grid Margin="10 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
+                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Serious Game PPP" Margin="10"/>
+                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
                                     <Image Source="icons/application/supprimer.png" Margin="2,2"/>
                                 </Button>
-                            </StackPanel>
+                            </Grid>
                         </ListViewItem>
                     </ListView>
                 </StackPanel>
