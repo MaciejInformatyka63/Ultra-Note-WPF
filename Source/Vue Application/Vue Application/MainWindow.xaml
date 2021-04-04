@@ -4,20 +4,112 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vue_Application"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="UltraNotes" Height="450" Width="800">
-    <DockPanel LastChildFill="True" Margin="0">
-        <!-- Barre de titre et de menu de l'application 
+        WindowStartupLocation="CenterScreen"
+        Title="UltraNotes" Width="1250" Height="600">
+
+    <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
+    <DockPanel LastChildFill="True">
+
+        <!-- Définition du menu -->
+        <Grid DockPanel.Dock="Left" Width="250" Background="White">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <Image HorizontalAlignment="Left"  Width="255" Height="140" Source="Assets/mountains.jpg"/>
+                    <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Créer une note.." FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Document à éditer" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Le petit Asticot de Jean Blonblon en Antartique" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Idées de scénario" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Dettes" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Notes cours de maths" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                 <Button Content="Fiche de révision" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="L'Épopée temporelle" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="45" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 0">
+                                <Button Content="Serious Game PPP" FontFamily="Champagne &amp; Limousines" FontSize="15" Margin="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Normal"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+            <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
+                <!--image pour revenir en arrière-->
+            </Button>
+        </Grid>
+
+        <!-- Éditeur de notes intégré -->
+        <DockPanel LastChildFill="True">
+
+            <!-- Barre de titre et de menu de l'application 
         Contient:
          - Une flèche pour revenir au menu;
          - Le titre du document;
          - Un bouton 'partager', 'importer", 'aperçu', 'rechercher', et 'options';
         -->
-        <Grid DockPanel.Dock="Top" Height="34" Margin="0,0,0,0">
-            <Label Content="Mon document à éditer" Margin="35,0,350,0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="14"/>
-        </Grid>
+            <Grid DockPanel.Dock="Top" Height="38">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-        <!-- Barre d'outils de l'application 
+                <TextBox Text="Mon document à éditer" BorderBrush="{x:Null}" Grid.Column="0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16"/>
+                <Button x:Name="ButtonAttach" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0">
+                   <!-- Image attachement Foreground="#FF313131"/>-->
+                </Button>
+                <Button x:Name="ButtonSearch" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0">
+                    <!--Image Recherche Foreground="#FF313131"/>-->
+                </Button>
+                <Button x:Name="ButtonSave" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0">
+                  <!--  Image Save Foreground="#FF313131"/>-->
+                </Button>
+                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0">
+                   <!-- Image Options Foreground="#FF313131"/>-->
+                </Button>
+
+            </Grid>
+
+            <!-- Barre d'outils de l'application 
         Contient:
          - Un bouton 'ajouter image' et 'ajouter checkbox';
          - Un menu déroulant pour choisir l'alignement du texte;
@@ -29,21 +121,22 @@
          - Un menu déroulant encadré pour sélectionner un style de paragraphe;
          - Un menu déroulant encadré pour sélectionner un autre style;
         -->
-        <WrapPanel DockPanel.Dock="Bottom" Height="34">
-            <ListBox/>
-            <ListBox/>
-        </WrapPanel>
+            <WrapPanel DockPanel.Dock="Bottom" Height="34">
+                <ListBox/>
+                <ListBox/>
+            </WrapPanel>
 
-        <!-- Espace de saisie de texte-->
-        <Grid>
-            <RichTextBox Margin="0,0,0,0" FontFamily="Gadugi" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="Bienvenue dans UltraNotes !"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
-        </Grid>
-        
+            <!-- Espace de saisie de texte-->
+            <Grid>
+                <RichTextBox x:Name="RichTextArea" Margin="0,0,0,0" FontFamily="Gadugi" FontSize="15" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="Bienvenue dans UltraNotes !"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Grid>
+        </DockPanel>
+
     </DockPanel>
 </Window>
