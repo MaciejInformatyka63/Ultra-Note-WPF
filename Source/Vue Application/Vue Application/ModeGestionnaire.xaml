@@ -6,25 +6,127 @@
         xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         Title="UltraNotes" Height="450" Width="800">
-    <DockPanel>
-        <Grid DockPanel.Dock="Top" Height="34">
-            <Label Content="Menu" Margin="35,0,350,0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="14"/>
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Height="38">
+            <StackPanel Orientation="Horizontal">
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10" >Fichier</Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10" >Edition</Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10" >Aide</Button>
+            </StackPanel>
         </Grid>
-        <Grid DockPanel.Dock="Bottom" Height="34">
-            <ListBox VerticalContentAlignment="Bottom"/>
-            <ListBox VerticalContentAlignment="Bottom"/>
+
+        <Grid DockPanel.Dock="Left" Width="450" Background="#FF64BED8">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <Grid TextBlock.FontFamily="Champagne &amp; Limousines" TextBlock.FontSize="15"
+                              TextBlock.Foreground="White"
+                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              Background="#FF64BED8"
+                              TextBlock.FontWeight="Normal">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="0" Grid.Row="0">
+                            <Image Source="icons/application/file1.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Créer une note.." Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="1" Grid.Row="0">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Document à éditer" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="2" Grid.Row="0">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Le petit Asticot de Jean.." Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="0" Grid.Row="1">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Idées de scénario" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="1" Grid.Row="1">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Dettes" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="2" Grid.Row="1">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Notes cours de maths" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="0" Grid.Row="2">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Fiche de révision" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="1" Grid.Row="2">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="L'Épopée temporelle" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10 0" Grid.Column="2" Grid.Row="2">
+                            <Image Source="icons/application/file2.png" Margin="5,5" Width="60"/>
+                            <TextBlock Text="Serious Game PPP" Margin="10"/>
+                            <Button HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
+                                <Image Source="icons/application/supprimer.png" Margin="2,2" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+            <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
+                <!--image pour revenir en arrière-->
+            </Button>
         </Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" Grid.RowSpan="2"></ListBox>
-            <ListView Grid.Column="1" Grid.RowSpan="2"></ListView>
+
+        <Grid DockPanel.Dock="Right">
+            <ListView FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal">
+                <ListViewItem>
+                    <TextBox>Titre :</TextBox>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBox>Date de création :</TextBox>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBox>Dernière modification :</TextBox>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBox>Taille :</TextBox>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBox>Type :</TextBox>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBox>Aperçu :</TextBox>
+                </ListViewItem>
+            </ListView>
         </Grid>
+        
     </DockPanel>
 </Window>
