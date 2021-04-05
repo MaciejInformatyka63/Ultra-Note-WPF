@@ -402,6 +402,13 @@
                 <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
                     <Image Source="icons/texteditor/souligne.png" Margin="5,5"/>
                 </ToggleButton>
+                <WrapPanel Margin="5,5" >
+                    <Border BorderBrush="#FF64BED8" BorderThickness="1"/>
+                    <Image Source="icons/texteditor/tailletexte.png" Width="15" Margin="5,5"/>
+                    <ComboBox Margin="5,5" Width="50">
+                        <ComboBoxItem Content="5"/>
+                    </ComboBox>
+                </WrapPanel>
                 <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
                     <Image Source="icons/texteditorcolor/checkbox1.png"/>
                 </Button>
