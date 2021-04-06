@@ -362,9 +362,15 @@
                 <Button x:Name="ButtonSearch" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
                     <Image Source="icons/application/rechercher.png" Margin="5,5"/>
                 </Button>
-                <Button x:Name="ButtonSave" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/application/enregistrer.png" Margin="5,5"/>
-                </Button>
+                <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="3" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <Image Source="icons/application/enregistrer.png" Margin="0,5,0,5"/>
+                        </MenuItem.Header>
+                        <MenuItem Header="Enregistrer"/>
+                        <MenuItem Header="Enregistrer sous"/>
+                    </MenuItem>
+                </Menu>
                 <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
                     <Image Source="icons/application/parametres.png" Margin="5,5"/>
                 </Button>
@@ -402,18 +408,37 @@
                 <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
                     <Image Source="icons/texteditor/souligne.png" Margin="5,5"/>
                 </ToggleButton>
-                <WrapPanel Margin="5,5" >
-                    <Border BorderBrush="#FF64BED8" BorderThickness="1"/>
-                    <Image Source="icons/texteditor/tailletexte.png" Width="15" Margin="5,5"/>
-                    <ComboBox Margin="5,5" Width="50">
-                        <ComboBoxItem Content="5"/>
-                    </ComboBox>
-                </WrapPanel>
+                <Menu x:Name="taille_texte" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20" Padding="3">
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <Image Source="icons/texteditor/tailletexte.png"/>
+                        </MenuItem.Header>
+                        <MenuItem Header="5"/>
+                        <MenuItem Header="8"/>
+                        <MenuItem Header="10"/>
+                        <MenuItem Header="12"/>
+                        <MenuItem Header="14"/>
+                        <MenuItem Header="15"/>
+                        <MenuItem Header=" 16 "/>
+                        <MenuItem Header=" 18 "/>
+                        <MenuItem Header=" 20 "/>
+                        <MenuItem Header=" 25 "/>
+                        <MenuItem Header=" 30 "/>
+                        <MenuItem Header=" 35 "/>
+                        <MenuItem Header=" 40 "/>
+                        <MenuItem Header=" 45 "/>
+                        <MenuItem Header=" 50 "/>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="choix_police" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20">
+                    <MenuItem Header="Police">
+                        <MenuItem Header="Calibri"/>
+                        <MenuItem Header="Liberation Serif"/>
+                        <MenuItem Header="Gadugi"/>
+                    </MenuItem>
+                </Menu>
                 <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
                     <Image Source="icons/texteditorcolor/checkbox1.png"/>
-                </Button>
-                <Button x:Name="ButtonTextSize" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/texteditor/tailletexte.png" Margin="5,5"/>
                 </Button>
                 <Button x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
                     <Image Source="icons/texteditorcolor/couleurtexte.png" Margin="5,5"/>
