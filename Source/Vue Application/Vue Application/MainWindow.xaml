@@ -413,7 +413,7 @@
                     <Image Source="icons/texteditorcolor/checkbox1.png"/>
                 </Button>
                 <Button x:Name="ButtonTextSize" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/texteditor/taille.png" Margin="5,5"/>
+                    <Image Source="icons/texteditor/tailletexte.png" Margin="5,5"/>
                 </Button>
                 <Button x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
                     <Image Source="icons/texteditorcolor/couleurtexte.png" Margin="5,5"/>
