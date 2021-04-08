@@ -27,6 +27,9 @@
     <None Remove="icons\application\supprimer.png" />
     <None Remove="icons\application\trier.png" />
     <None Remove="icons\texteditorcolor\ajouter.png" />
+    <None Remove="icons\texteditorcolor\alignementcentre.png" />
+    <None Remove="icons\texteditorcolor\alignementdroite.png" />
+    <None Remove="icons\texteditorcolor\alignementgauche.png" />
     <None Remove="icons\texteditorcolor\annuler.png" />
     <None Remove="icons\texteditorcolor\attacher.png" />
     <None Remove="icons\texteditorcolor\checkbox1.png" />
@@ -39,8 +42,10 @@
     <None Remove="icons\texteditorcolor\editer.png" />
     <None Remove="icons\texteditorcolor\filtrer.png" />
     <None Remove="icons\texteditorcolor\gras.png" />
+    <None Remove="icons\texteditorcolor\gras2.png" />
     <None Remove="icons\texteditorcolor\hashtag.png" />
     <None Remove="icons\texteditorcolor\italique.png" />
+    <None Remove="icons\texteditorcolor\italique2.png" />
     <None Remove="icons\texteditorcolor\lienURL.png" />
     <None Remove="icons\texteditorcolor\pressepapier.png" />
     <None Remove="icons\texteditorcolor\puces.png" />
@@ -50,10 +55,16 @@
     <None Remove="icons\texteditorcolor\retablir.png" />
     <None Remove="icons\texteditorcolor\rogner.png" />
     <None Remove="icons\texteditorcolor\souligne.png" />
+    <None Remove="icons\texteditorcolor\souligne2.png" />
     <None Remove="icons\texteditorcolor\surligner.png" />
     <None Remove="icons\texteditorcolor\taille.png" />
+    <None Remove="icons\texteditor\alignementcentre.png" />
+    <None Remove="icons\texteditor\alignementdroite.png" />
+    <None Remove="icons\texteditor\alignementgauche.png" />
+    <None Remove="icons\texteditor\alignementjustifie.png" />
     <None Remove="icons\texteditor\attacher.png" />
     <None Remove="icons\texteditor\barre.png" />
+    <None Remove="icons\texteditor\checkbox1.png" />
     <None Remove="icons\texteditor\citation1.png" />
     <None Remove="icons\texteditor\citation2.png" />
     <None Remove="icons\texteditor\code.png" />
@@ -97,7 +108,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaterialDesignColors" Version="2.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
   </ItemGroup>
 
@@ -122,6 +132,9 @@
     <Resource Include="icons\application\supprimer.png" />
     <Resource Include="icons\application\trier.png" />
     <Resource Include="icons\texteditorcolor\ajouter.png" />
+    <Resource Include="icons\texteditorcolor\alignementcentre.png" />
+    <Resource Include="icons\texteditorcolor\alignementdroite.png" />
+    <Resource Include="icons\texteditorcolor\alignementgauche.png" />
     <Resource Include="icons\texteditorcolor\annuler.png" />
     <Resource Include="icons\texteditorcolor\attacher.png" />
     <Resource Include="icons\texteditorcolor\checkbox1.png" />
@@ -134,8 +147,10 @@
     <Resource Include="icons\texteditorcolor\editer.png" />
     <Resource Include="icons\texteditorcolor\filtrer.png" />
     <Resource Include="icons\texteditorcolor\gras.png" />
+    <Resource Include="icons\texteditorcolor\gras2.png" />
     <Resource Include="icons\texteditorcolor\hashtag.png" />
     <Resource Include="icons\texteditorcolor\italique.png" />
+    <Resource Include="icons\texteditorcolor\italique2.png" />
     <Resource Include="icons\texteditorcolor\lienURL.png" />
     <Resource Include="icons\texteditorcolor\pressepapier.png" />
     <Resource Include="icons\texteditorcolor\puces.png" />
@@ -145,10 +160,24 @@
     <Resource Include="icons\texteditorcolor\retablir.png" />
     <Resource Include="icons\texteditorcolor\rogner.png" />
     <Resource Include="icons\texteditorcolor\souligne.png" />
+    <Resource Include="icons\texteditorcolor\souligne2.png" />
     <Resource Include="icons\texteditorcolor\surligner.png" />
     <Resource Include="icons\texteditorcolor\taille.png" />
+    <Resource Include="icons\texteditor\alignementcentre.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\texteditor\alignementdroite.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\texteditor\alignementgauche.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\texteditor\alignementjustifie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\texteditor\attacher.png" />
     <Resource Include="icons\texteditor\barre.png" />
+    <Resource Include="icons\texteditor\checkbox1.png" />
     <Resource Include="icons\texteditor\citation1.png" />
     <Resource Include="icons\texteditor\citation2.png" />
     <Resource Include="icons\texteditor\code.png" />

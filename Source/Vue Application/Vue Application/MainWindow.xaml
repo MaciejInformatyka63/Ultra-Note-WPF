@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Vue_Application"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="UltraNotes" Width="1250" Height="610">
@@ -344,12 +344,12 @@
                         <MenuItem.Header>
                             <Image Source="icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
-                        <MenuItem Header="Enregistrer">
+                        <MenuItem Header="Enregistrer" Cursor="Hand">
                             <MenuItem.Icon>
                                 <Image Source="icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Enregistrer sous">
+                        <MenuItem Header="Enregistrer sous" Cursor="Hand">
                             <MenuItem.Icon>
                                 <Image Source="icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
@@ -379,31 +379,40 @@
                     <Image Source="icons/texteditorcolor/ajouter.png"/>
                 </Button>
                 <Button x:Name="ButtonBackward2" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/texteditorcolor/annuler.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/annuler.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonUndo" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/texteditorcolor/retablir.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/retablir.png" Margin="3,3"/>
                 </Button>
                 <ToggleButton x:Name="effet_gras" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
-                    <Image Source="icons/texteditor/gras.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/gras2.png" Margin="3,3"/>
                 </ToggleButton>
                 <ToggleButton x:Name="effet_italique" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
-                    <Image Source="icons/texteditor/italique.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/italique2.png" Margin="3,3"/>
                 </ToggleButton>
                 <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
-                    <Image Source="icons/texteditor/souligne.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/souligne2.png" Margin="3,3"/>
                 </ToggleButton>
-                <!-- Alignment here -->
+                <Button x:Name="ButtonLeftAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
+                    <Image Source="icons/texteditorcolor/alignementgauche.png" Margin="3,3"/>
+                </Button>
+                <Button x:Name="ButtonCenterAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
+                    <Image Source="icons/texteditorcolor/alignementcentre.png" Margin="3,3"/>
+                </Button>
+                <Button x:Name="ButtonRightAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
+                    <Image Source="icons/texteditorcolor/alignementdroite.png" Margin="3,3"/>
+                </Button>
                 <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
-                    <Image Source="icons/texteditorcolor/checkbox1.png"/>
+                    <Image Source="icons/texteditor/checkbox1.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
-                    <Image Source="icons/texteditorcolor/couleurtexte.png" Margin="5,5"/>
+                    <Image Source="icons/texteditorcolor/couleurtexte.png" Margin="3,3"/>
                 </Button>
                 <ComboBox x:Name="choix_police" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20">
-                    <ComboBoxItem Content="Calibri" IsSelected="True"/>
-                    <ComboBoxItem Content="Liberation Serif"/>
-                    <ComboBoxItem Content="Gadugi"/>
+                    <ComboBoxItem Content="Calibri" IsSelected="True" FontFamily="Calibri"/>
+                    <ComboBoxItem Content="Liberation Serif" FontFamily="Liberation Serif"/>
+                    <ComboBoxItem Content="Gadugi" FontFamily="Gadugi"/>
+                    <ComboBoxItem Content="Impact" FontFamily="Impact"/>
                 </ComboBox>
                 <ComboBox x:Name="taille_texte" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20" Padding="3">
                     <ComboBoxItem Content="5"/>
