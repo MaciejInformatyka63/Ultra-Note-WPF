@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Préférences"
+        Title="Parametres"
         Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
@@ -21,10 +21,10 @@
                           Background="#FF64BED8" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
                           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <ListViewItem Height="45" IsSelected="True">
+                    <ListViewItem Height="45" IsSelected="False">
                         <WrapPanel>
                             <Canvas Margin="5,5">
-                                <Rectangle Stroke="Black" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
+                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
                             </Canvas>
                             <TextBlock VerticalAlignment="Center" Text="Général" Margin="50,10"/>
                         </WrapPanel>
@@ -32,15 +32,15 @@
                     <ListViewItem Height="45">
                         <WrapPanel>
                             <Canvas Margin="5,5">
-                                <Rectangle Stroke="Black" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
+                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
                             </Canvas>
                             <TextBlock VerticalAlignment="Center" Text="Langue" Margin="50,10"/>
                         </WrapPanel>
                     </ListViewItem>
-                    <ListViewItem Height="45">
+                    <ListViewItem IsSelected="True" Height="45">
                         <WrapPanel>
                             <Canvas Margin="5,5">
-                                <Rectangle Stroke="Black" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
+                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
                             </Canvas>
                             <TextBlock VerticalAlignment="Center" Text="Affichage" Margin="50,10"/>
                         </WrapPanel>
@@ -48,7 +48,7 @@
                     <ListViewItem Height="45">
                         <WrapPanel>
                             <Canvas Margin="5,5">
-                                <Rectangle Stroke="Black" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
+                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
                             </Canvas>
                             <TextBlock VerticalAlignment="Center" Text="Options ergonomie" Margin="50,10"/>
                         </WrapPanel>
@@ -56,7 +56,7 @@
                     <ListViewItem Height="45">
                         <WrapPanel>
                             <Canvas Margin="5,5">
-                                <Rectangle Stroke="Black" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
+                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
                             </Canvas>
                             <TextBlock VerticalAlignment="Center" Text="Options avancées" Margin="50,10"/>
                         </WrapPanel>
@@ -65,19 +65,19 @@
             </StackPanel>
         </Grid>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="Général" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"
+            <StackPanel>
+                <TextBlock Text="Options d'affichage" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                       FontSize="12" FontWeight="Normal" FontFamily="Microsoft yahei"
+                       Background="LightGray" Margin="5,10"/>
+                <WrapPanel>
+                    <TextBlock Text="Couleur : " Margin="5,10" HorizontalAlignment="Left" FontSize="10"
                        FontFamily="Microsoft yahei"/>
-            <RadioButton Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Aqua" BorderThickness="2" >
-                <TextBlock Text="Un radio button"/>
-                <RadioButton.Background>
-                    <ImageBrush ImageSource="icons/application/parametres.png"/>
-                </RadioButton.Background>
-            </RadioButton>
+                    <ComboBox Width="55" Height="23" FontSize="10">
+                        <ComboBoxItem IsSelected="False" Content="Rouge" Background="DarkSalmon"/>
+                        <ComboBoxItem IsSelected="True" Content="Bleu" Background="#FF64BED8"/>
+                    </ComboBox>
+                </WrapPanel>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>

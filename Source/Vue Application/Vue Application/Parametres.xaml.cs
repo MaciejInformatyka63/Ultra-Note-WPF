@@ -21,10 +21,5 @@ namespace Vue_Application
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -212,7 +212,7 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
+                        <ListViewItem Height="45" Padding="0" Selected="ListViewItem_Selected">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -429,7 +429,7 @@
 
             <!-- Espace de saisie de texte-->
             <Grid>
-                <RichTextBox x:Name="RichTextArea" Margin="0,0,0,0" FontFamily="Gadugi" FontSize="15" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0">
+                <RichTextBox x:Name="RichTextArea" Margin="0,0,0,0" FontFamily="Gadugi" FontSize="15" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0" TextChanged="RichTextArea_TextChanged">
                     <FlowDocument>
                         <Paragraph>
                             <Run Text="Bienvenue dans UltraNotes !"/>

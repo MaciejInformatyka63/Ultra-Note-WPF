@@ -25,6 +25,11 @@ namespace Vue_Application
             InitializeComponent();
         }
 
+        private void RichTextArea_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
 

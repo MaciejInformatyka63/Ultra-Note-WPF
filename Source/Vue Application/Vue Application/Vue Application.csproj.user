@@ -12,15 +12,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Compile Update="Parametres.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Parametres.xaml">
-      <SubType>Designer</SubType>
-    </Content>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
