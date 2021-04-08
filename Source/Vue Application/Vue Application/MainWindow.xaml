@@ -192,15 +192,15 @@
         </Menu>
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="220" Background="#FF64BED8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <Image HorizontalAlignment="Left"  Width="255" Height="140" Source="Assets/mountains.jpg"/>
+                <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <Image HorizontalAlignment="Left"  Source="Assets/mountains.jpg"/>
                     <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
                               Foreground="White" Cursor="Hand"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                              Background="#FF64BED8"
+                              Background="{x:Null}"
                               BorderBrush="{x:Null}" FontWeight="Normal">
                         <ListViewItem Height="45" Padding="0">
                             <Grid Margin="10 0">
@@ -303,12 +303,6 @@
                     </ListView>
                 </StackPanel>
             </ScrollViewer>
-            <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="icons/application/return.png" Margin="5,5"/>
-                    <TextBlock Text="Quitter" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF43414F"/>
-                </StackPanel>
-            </Button>
         </Grid>
 
         <!-- Éditeur de notes intégré -->
