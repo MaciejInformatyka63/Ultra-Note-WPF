@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Source",
+    "\\Source\\Vue Application"
   ],
-  "SelectedNode": "\\Vue Application.sln",
+  "SelectedNode": "\\Source\\Vue Application\\Vue Application.sln",
   "PreviewInSolutionExplorer": false
 }
