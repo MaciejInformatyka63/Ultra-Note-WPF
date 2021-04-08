@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Préférences
-        " Height="450" Width="800">
+        Title="Préférences"
+        Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
             <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">

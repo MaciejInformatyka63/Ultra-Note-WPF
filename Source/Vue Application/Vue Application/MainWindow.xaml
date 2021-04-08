@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vue_Application"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="UltraNotes" Width="1250" Height="610">
@@ -219,9 +221,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Document à éditer" Margin="10"/>
-                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0" Selected="ListViewItem_Selected">
@@ -233,9 +232,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Le petit Asticot de.." Margin="10"/>
-                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -247,9 +243,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Idées de scénario" Margin="10"/>
-                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -261,9 +254,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Dettes" Margin="10"/>
-                                <Button Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -275,9 +265,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Notes cours de maths" Margin="10"/>
-                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -289,9 +276,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Fiche de révision" Margin="10"/>
-                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -303,9 +287,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="L'Épopée temporelle" Margin="10"/>
-                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                         <ListViewItem Height="45" Padding="0">
@@ -317,9 +298,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Serious Game PPP" Margin="10"/>
-                                <Button Grid.Column="2" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Margin="10,10">
-                                    <Image Source="icons/application/supprimer.png" Margin="2,2"/>
-                                </Button>
                             </Grid>
                         </ListViewItem>
                     </ListView>
@@ -366,8 +344,16 @@
                         <MenuItem.Header>
                             <Image Source="icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
-                        <MenuItem Header="Enregistrer"/>
-                        <MenuItem Header="Enregistrer sous"/>
+                        <MenuItem Header="Enregistrer">
+                            <MenuItem.Icon>
+                                <Image Source="icons/application/enregistrer.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Enregistrer sous">
+                            <MenuItem.Icon>
+                                <Image Source="icons/application/enregistrer.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
                 </Menu>
                 <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
@@ -407,6 +393,7 @@
                 <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27">
                     <Image Source="icons/texteditor/souligne.png" Margin="5,5"/>
                 </ToggleButton>
+                <!-- Alignment here -->
                 <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand">
                     <Image Source="icons/texteditorcolor/checkbox1.png"/>
                 </Button>

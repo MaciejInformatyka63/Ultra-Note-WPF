@@ -97,6 +97,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="icons\application\attacher.png" />
     <Resource Include="icons\application\cloud.png" />
     <Resource Include="icons\application\enregistrer.png" />
