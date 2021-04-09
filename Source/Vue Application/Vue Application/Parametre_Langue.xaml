@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Vue_Application.Parametre_Langue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:Vue_Application"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Options de langage" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    FontSize="12" FontWeight="Normal" FontFamily="Microsoft yahei"
+                    Background="LightGray" Margin="5,10"/>
+            <WrapPanel>
+                <TextBlock Text="Langues : " Margin="5,10" HorizontalAlignment="Left" FontSize="10"
+                    FontFamily="Microsoft yahei"/>
+                <ComboBox Width="70" Height="23" FontSize="10">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FF8FC1DE"/>
+                            <GradientStop Color="#FFC71D1D" Offset="1"/>
+                            <GradientStop Color="#FFA97483" Offset="0.513"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem IsSelected="True" Content="français">
+                        <ComboBoxItem.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#FF768CD6"/>
+                                <GradientStop Color="#FFF9F9F9" Offset="0.5"/>
+                                <GradientStop Color="#FFE46844" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+                    <ComboBoxItem IsSelected="False" Content="anglais">
+                        <ComboBoxItem.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF4251EE"/>
+                                <GradientStop Color="#FF2F4DB2" Offset="1"/>
+                                <GradientStop Color="#FFCB1807" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+                </ComboBox>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

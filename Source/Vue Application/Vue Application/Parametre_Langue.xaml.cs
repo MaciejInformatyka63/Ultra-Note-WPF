@@ -13,18 +13,13 @@ using System.Windows.Shapes;
 namespace Vue_Application
 {
     /// <summary>
-    /// Logique d'interaction pour Parametres.xaml
+    /// Logique d'interaction pour Parametre_Langue.xaml
     /// </summary>
-    public partial class Parametres : Window
+    public partial class Parametre_Langue : UserControl
     {
-        public Parametres()
+        public Parametre_Langue()
         {
             InitializeComponent();
-        }
-
-        private void Parametre_Langue_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

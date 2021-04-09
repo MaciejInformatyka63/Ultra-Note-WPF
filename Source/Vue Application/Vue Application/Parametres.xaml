@@ -64,8 +64,11 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <ContentControl DockPanel.Dock="Left">
+        <ContentControl DockPanel.Dock="Left" Visibility="Collapsed">
             <local:Parametre_General/>
+        </ContentControl>
+        <ContentControl DockPanel.Dock="Left" Visibility="Visible">
+            <local:Parametre_Langue Loaded="Parametre_Langue_Loaded"/>
         </ContentControl>
     </DockPanel>
 </Window>
