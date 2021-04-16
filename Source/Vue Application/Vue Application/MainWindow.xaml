@@ -32,7 +32,7 @@
                         <Image Source="icons/application/enregistrer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Imprimer">
+                <MenuItem Header="_Imprimer" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="icons/texteditor/imprimante.png"/>
                     </MenuItem.Icon>
@@ -70,7 +70,7 @@
                         <Image Source="icons/texteditorcolor/editer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Effacer la sélection">
+                <MenuItem Header="_Effacer la sélection" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="icons/application/supprimer.png"/>
                     </MenuItem.Icon>
@@ -84,12 +84,12 @@
                             <Image Source="icons/texteditor/image.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="_PDF">
+                    <MenuItem Header="_PDF" IsEnabled="False">
                         <MenuItem.Icon>
                             <Image Source="icons/application/pdfred.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="_URL">
+                    <MenuItem Header="_URL" IsEnabled="False">
                         <MenuItem.Icon>
                             <Image Source="icons/texteditorcolor/lienURL.png"/>
                         </MenuItem.Icon>
@@ -99,17 +99,17 @@
                             <Image Source="icons/texteditorcolor/checkbox1.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="C_ode">
+                    <MenuItem Header="C_ode" IsEnabled="False">
                         <MenuItem.Icon>
                             <Image Source="icons/texteditorcolor/code.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="_Forme">
+                    <MenuItem Header="_Forme" IsEnabled="False">
                         <MenuItem.Icon>
                             <Image Source="icons/texteditor/formes.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="C_itation">
+                    <MenuItem Header="C_itation" IsEnabled="False">
                         <MenuItem.Icon>
                             <Image Source="icons/texteditorcolor/citation1.png"/>
                         </MenuItem.Icon>
@@ -167,25 +167,25 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Contact">
-                <MenuItem Header="Nous _contacter">
+                <MenuItem Header="Nous _contacter" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="icons/texteditorcolor/hashtag.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Soumettre un avis">
+                <MenuItem Header="_Soumettre un avis" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="icons/texteditorcolor/filtrer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Rejoindre le projet"/>
+                <MenuItem Header="_Rejoindre le projet" IsEnabled="False"/>
             </MenuItem>
             <MenuItem Header="Aide">
-                <MenuItem Header="_Documentation">
+                <MenuItem Header="_Documentation" IsEnabled="False">
                     <MenuItem.Icon>
                         <Image Source="icons/application/reader.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Site web"/>
+                <MenuItem Header="_Site web" IsEnabled="False"/>
             </MenuItem>
         </Menu>
 
