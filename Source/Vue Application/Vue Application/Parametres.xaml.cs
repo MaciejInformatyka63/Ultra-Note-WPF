@@ -22,9 +22,14 @@ namespace Vue_Application
             InitializeComponent();
         }
 
-        private void Parametre_Langue_Loaded(object sender, RoutedEventArgs e)
+        private void ListViewItem_General(object sender, RoutedEventArgs e)
         {
+            contentControl_Parametres.Content = new Parametre_General();
+        }
 
+        private void ListViewItem_Affichage(object sender, RoutedEventArgs e)
+        {
+            contentControl_Parametres.Content = new Parametre_Affichage();
         }
     }
 }

@@ -21,7 +21,7 @@
                           Background="#FF64BED8" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
                           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <ListViewItem Height="45" IsSelected="False">
+                    <ListViewItem Height="45" IsSelected="False" Selected="ListViewItem_General">
                         <WrapPanel>
                             <Canvas Margin="5,5">
                                 <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
@@ -37,7 +37,7 @@
                             <TextBlock VerticalAlignment="Center" Text="Langue" Margin="50,10"/>
                         </WrapPanel>
                     </ListViewItem>
-                    <ListViewItem IsSelected="True" Height="45">
+                    <ListViewItem IsSelected="True" Height="45" Selected="ListViewItem_Affichage">
                         <WrapPanel>
                             <Canvas Margin="5,5">
                                 <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
@@ -45,30 +45,11 @@
                             <TextBlock VerticalAlignment="Center" Text="Affichage" Margin="50,10"/>
                         </WrapPanel>
                     </ListViewItem>
-                    <ListViewItem Height="45">
-                        <WrapPanel>
-                            <Canvas Margin="5,5">
-                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
-                            </Canvas>
-                            <TextBlock VerticalAlignment="Center" Text="Options ergonomie" Margin="50,10"/>
-                        </WrapPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="45">
-                        <WrapPanel>
-                            <Canvas Margin="5,5">
-                                <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
-                            </Canvas>
-                            <TextBlock VerticalAlignment="Center" Text="Options avancées" Margin="50,10"/>
-                        </WrapPanel>
-                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
-        <ContentControl DockPanel.Dock="Left" Visibility="Collapsed">
+        <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
             <local:Parametre_General/>
-        </ContentControl>
-        <ContentControl DockPanel.Dock="Left" Visibility="Visible">
-            <local:Parametre_Langue Loaded="Parametre_Langue_Loaded"/>
         </ContentControl>
     </DockPanel>
 </Window>

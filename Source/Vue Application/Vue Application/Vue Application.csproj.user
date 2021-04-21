@@ -13,6 +13,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Parametre_Affichage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Parametre_General.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Parametre_Affichage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Parametre_General.xaml">
