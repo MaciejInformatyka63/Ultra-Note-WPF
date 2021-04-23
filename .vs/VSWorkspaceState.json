@@ -2,10 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Source",
-    "\\Source\\Vue Application",
-    "\\Source\\Vue Application\\Vue Application",
-    "\\Source\\Vue Application\\Vue Application\\obj\\Debug",
-    "\\Source\\Vue Application\\Vue Application\\obj\\Debug\\netcoreapp3.0"
+    "\\Source\\Vue Application"
   ],
   "SelectedNode": "\\Source\\Vue Application\\Vue Application.sln",
   "PreviewInSolutionExplorer": false

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uclocal="clr-namespace:Vue_Application.UserControls"
         xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         Title="Parametres"
@@ -29,7 +30,7 @@
                             <TextBlock VerticalAlignment="Center" Text="Général" Margin="50,10"/>
                         </WrapPanel>
                     </ListViewItem>
-                    <ListViewItem Height="45">
+                    <ListViewItem Height="45" Selected="ListViewItem_Langue" >
                         <WrapPanel>
                             <Canvas Margin="5,5">
                                 <Rectangle Stroke="CornflowerBlue" StrokeThickness="2" Fill="Transparent" Height="30" Width="30"/>
@@ -49,7 +50,7 @@
             </StackPanel>
         </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
-            <local:Parametre_General/>
+            <uclocal:Parametre_General/>
         </ContentControl>
     </DockPanel>
 </Window>

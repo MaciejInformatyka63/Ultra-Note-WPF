@@ -8,9 +8,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vue_Application
+namespace Vue_Application.UserControls
 {
     /// <summary>
     /// Logique d'interaction pour Parametre_Langue.xaml

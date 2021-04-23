@@ -326,7 +326,11 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBox Text="Mon document à éditer" Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16"/>
+                <Label Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16">
+                    <Label.Content>
+                        Mon document à éditer
+                    </Label.Content>
+                </Label>
                 <Button x:Name="ButtonAttach" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
                     <Image Source="icons/application/attacher.png" Margin="5,5"/>
                 </Button>
