@@ -49,6 +49,17 @@
                 </ListView>
             </StackPanel>
         </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Annuler" Grid.Column="1" Margin="0,15"/>
+                <Button Content="Confirmer" Grid.Column="2" Margin="15,15,20,15"/>
+            </Grid>
+        </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
             <uclocal:Parametre_General/>
         </ContentControl>
