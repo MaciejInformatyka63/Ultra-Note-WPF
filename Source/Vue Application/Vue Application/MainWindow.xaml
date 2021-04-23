@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uclocal="clr-namespace:Vue_Application.UserControls"
+        xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="UltraNotes" Width="1250" Height="610">
@@ -210,7 +212,7 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0" Selected="ListViewItem_Selected">
+                        <ListViewItem Height="45" Padding="0">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -221,7 +223,7 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Document à éditer" Margin="10"/>
                             </Grid>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0" Selected="ListViewItem_Selected">
+                        <ListViewItem Height="45" Padding="0">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -348,7 +350,7 @@
                         </MenuItem>
                     </MenuItem>
                 </Menu>
-                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand">
+                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
                     <Image Source="icons/application/parametres.png" Margin="5,5"/>
                 </Button>
 
@@ -427,13 +429,12 @@
 
             <!-- Espace de saisie de texte-->
             <Grid>
-                <RichTextBox x:Name="RichTextArea" Margin="0,0,0,0" FontFamily="Gadugi" FontSize="15" BorderThickness="0,1,0,1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Padding="10,5,0,0" TextChanged="RichTextArea_TextChanged">
-                    <FlowDocument>
-                        <Paragraph>
-                            <Run Text="Bienvenue dans UltraNotes !"/>
-                        </Paragraph>
-                    </FlowDocument>
-                </RichTextBox>
+                <ContentControl x:Name="contentControl_MainWindow_Texte">
+                    <uclocal:MainWindow_Texte/>
+                </ContentControl>
+                <ContentControl x:Name="contentControl_MainWindow_Images">
+                    <uclocal:MainWindow_Texte/>
+                </ContentControl>
             </Grid>
         </DockPanel>
 

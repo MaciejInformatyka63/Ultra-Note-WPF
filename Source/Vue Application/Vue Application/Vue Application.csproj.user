@@ -13,13 +13,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Parametre_Affichage.xaml.cs">
+    <Compile Update="UserControls\MainWindow_Images.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Parametre_General.xaml.cs">
+    <Compile Update="UserControls\MainWindow_Texte.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Parametre_Langue.xaml.cs">
+    <Compile Update="UserControls\Parametre_Affichage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Parametre_General.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Parametre_Langue.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -27,13 +33,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Parametre_Affichage.xaml">
+    <Page Update="UserControls\MainWindow_Images.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Parametre_General.xaml">
+    <Page Update="UserControls\MainWindow_Texte.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Parametre_Langue.xaml">
+    <Page Update="UserControls\Parametre_Affichage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Parametre_General.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Parametre_Langue.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

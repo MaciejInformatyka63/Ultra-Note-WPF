@@ -9,7 +9,7 @@
     <Grid>
         <DockPanel>
             <Grid DockPanel.Dock="Top" Background="LightGray">
-                <TextBlock Text="Options d'affichage" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <TextBlock Text="Paramètres Généraux" HorizontalAlignment="Center" VerticalAlignment="Top"
                         FontSize="14" FontWeight="ExtraBold" FontFamily="Microsoft yahei"
                         Margin="5,10" Padding="5,0"/>
             </Grid>
@@ -25,12 +25,9 @@
                 </Grid>
             </Grid>
             <WrapPanel>
-                <TextBlock Text="Couleur : " Margin="5,10" HorizontalAlignment="Left" FontSize="10"
+                <TextBlock Text="Définir un dossier d'enregistrement par défaut: " Margin="5,10" HorizontalAlignment="Left" FontSize="14"
                     FontFamily="Microsoft yahei"/>
-                <ComboBox Width="55" Height="23" FontSize="10">
-                    <ComboBoxItem IsSelected="False" Content="Rouge" Background="DarkSalmon"/>
-                    <ComboBoxItem IsSelected="True" Content="Bleu" Background="#FF64BED8"/>
-                </ComboBox>
+                <Button Content="Choisir un dossier" Height="20"/>
             </WrapPanel>
         </DockPanel>
     </Grid>

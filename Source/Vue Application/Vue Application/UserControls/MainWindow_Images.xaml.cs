@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,22 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vue_Application
+namespace Vue_Application.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour MainWindow_Images.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow_Images : UserControl
     {
-        public MainWindow()
+        public MainWindow_Images()
         {
             InitializeComponent();
-        }
-
-        private void ButtonOptions_Click(object sender, RoutedEventArgs e)
-        {
-            Parametres parametre = new Parametres();
-            parametre.Show();
         }
     }
 }
