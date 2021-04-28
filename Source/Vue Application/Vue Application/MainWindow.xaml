@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uclocal="clr-namespace:Vue_Application.UserControls"
-        xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="UltraNotes" Width="1250" Height="610">
@@ -197,13 +196,10 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="Assets/mountains.jpg"/>
-                    <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
-                              Foreground="White" Cursor="Hand"
-                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                              Background="{x:Null}"
-                              BorderBrush="{x:Null}" FontWeight="Normal">
-                        <ListViewItem Height="45" Padding="0">
+                    <Button Height="45" Padding="0" HorizontalContentAlignment="Left"
+                            Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
+                            FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal"
+                            Foreground="White">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -212,7 +208,13 @@
                                 <Image Grid.Column="0" Source="icons/application/file1.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
-                        </ListViewItem>
+                    </Button>
+                    <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
+                              Foreground="White" Cursor="Hand"
+                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              Background="{x:Null}"
+                              BorderBrush="{x:Null}" FontWeight="Normal">
                         <ListViewItem Height="45" Padding="0">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
@@ -327,11 +329,10 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0" FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16">
-                    <Label.Content>
-                        Mon document à éditer
-                    </Label.Content>
-                </Label>
+                <TextBox Text="Mon document à éditer"
+                           Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}"
+                           Grid.Column="0"
+                           FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16"/>
                 <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="3" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
                     <MenuItem>
                         <MenuItem.Header>
@@ -437,9 +438,6 @@
             <!-- Espace de saisie de texte-->
             <Grid>
                 <ContentControl x:Name="contentControl_MainWindow_Texte">
-                    <uclocal:MainWindow_Texte/>
-                </ContentControl>
-                <ContentControl x:Name="contentControl_MainWindow_Images">
                     <uclocal:MainWindow_Texte/>
                 </ContentControl>
             </Grid>

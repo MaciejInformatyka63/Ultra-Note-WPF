@@ -34,9 +34,5 @@ namespace Vue_Application
         {
             contentControl_Parametres.Content = new UserControls.Parametre_Affichage();
         }
-        private void ListViewItem_Langue(object sender, RoutedEventArgs e)
-        {
-            contentControl_Parametres.Content = new UserControls.Parametre_Langue();
-        }
     }
 }
