@@ -25,9 +25,6 @@
     <Compile Update="UserControls\Parametre_General.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserControls\Parametre_Langue.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -43,9 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\Parametre_General.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\Parametre_Langue.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
