@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Modele
 {
-    public class Note
+    public class Note : Textable
     {
         List<Balise> listeDeBalise = new List<Balise>();
-        public string Texte { get; private set; }
+        List<Style> stylesUtilisateur = new List<Style>();
+        List<Commentaire> commentaires = new List<Commentaire>();
         public string Image { get; private set; }
 
-        public Note(string texte,string image)
+        public Note(string texte,string image): base(texte)
         {
-            Texte = texte;
             Image = image;
         }
     }

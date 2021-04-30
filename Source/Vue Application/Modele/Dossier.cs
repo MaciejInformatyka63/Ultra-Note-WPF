@@ -4,17 +4,18 @@ using System.Text;
 
 namespace Modele
 {
-    class Dossier
+    class Dossier : Gestionnaire
     {
+        List<string> listeChemin = new List<string>();
         List<Note> listeDeFichiers = new List<Note>();
         private string note;
         public string Chemin { get; private set; }
 
-        public void AjouterUnFichier(Note file)
+        public void AjouterUnFichier(string path)
         {
-            listeDeFichiers.Add(file);
+            listeChemin.Add(path);
         }
-        public void SupprimerUnFichier(Note file)
+        public void SupprimerUnFichier(string path)
         {
             // ...
         }
