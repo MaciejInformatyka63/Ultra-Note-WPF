@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,8 +23,12 @@ namespace Vue_Application.UserControls
         public MainWindow_Texte()
         {
             InitializeComponent();
+            // texteditor.Navigate(@"file:///C:/Users/thdevienne/Documents/index.html");
+            string curDir = Directory.GetCurrentDirectory();
+            // texteditor.Navigate(curDir + .. );
         }
 
+        /*
         private void RichTextArea(object sender, TextChangedEventArgs e)
         {
             Grid myGrid= new Grid();
@@ -34,6 +40,7 @@ namespace Vue_Application.UserControls
             myFlowDoc.Blocks.Add(new Paragraph(new Run("Bienvenue dans UltraNotes !")));
             myFlowDoc.Blocks.Add(new Paragraph(new Run("Ici vous pouvez taper du texte et le modifier.")));
             myFlowDoc.Blocks.Add(new Paragraph(new Run("Profitez bien :)")));
+            myFlowDoc.Blocks.Add(new Paragraph(new Run(curDir)));
             RichTextBox myRichTextBox = new RichTextBox
             {
 
@@ -44,5 +51,6 @@ namespace Vue_Application.UserControls
             myGrid.Children.Add(myRichTextBox);
             this.Content = myGrid;
         }
+        */
     }
 }

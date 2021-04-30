@@ -86,6 +86,7 @@
     <None Remove="icons\texteditor\puces.png" />
     <None Remove="icons\texteditor\pucesalpha.png" />
     <None Remove="icons\texteditor\pucesnum.png" />
+    <None Remove="icons\texteditor\refresh.png" />
     <None Remove="icons\texteditor\rogner.png" />
     <None Remove="icons\texteditor\souligne.png" />
     <None Remove="icons\texteditor\tableau.png" />
@@ -199,6 +200,7 @@
     <Resource Include="icons\texteditor\puces.png" />
     <Resource Include="icons\texteditor\pucesalpha.png" />
     <Resource Include="icons\texteditor\pucesnum.png" />
+    <Resource Include="icons\texteditor\refresh.png" />
     <Resource Include="icons\texteditor\rogner.png" />
     <Resource Include="icons\texteditor\souligne.png" />
     <Resource Include="icons\texteditor\tableau.png" />
