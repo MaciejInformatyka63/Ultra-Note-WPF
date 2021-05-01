@@ -32,6 +32,7 @@
     <None Remove="icons\texteditorcolor\alignementgauche.png" />
     <None Remove="icons\texteditorcolor\annuler.png" />
     <None Remove="icons\texteditorcolor\attacher.png" />
+    <None Remove="icons\texteditorcolor\charger.png" />
     <None Remove="icons\texteditorcolor\checkbox1.png" />
     <None Remove="icons\texteditorcolor\checkbox2.png" />
     <None Remove="icons\texteditorcolor\citation1.png" />
@@ -138,6 +139,7 @@
     <Resource Include="icons\texteditorcolor\alignementgauche.png" />
     <Resource Include="icons\texteditorcolor\annuler.png" />
     <Resource Include="icons\texteditorcolor\attacher.png" />
+    <Resource Include="icons\texteditorcolor\charger.png" />
     <Resource Include="icons\texteditorcolor\checkbox1.png" />
     <Resource Include="icons\texteditorcolor\checkbox2.png" />
     <Resource Include="icons\texteditorcolor\citation1.png" />

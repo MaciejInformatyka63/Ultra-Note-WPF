@@ -13,12 +13,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UserControls\MainWindow_Images.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\MainWindow_Texte.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="UserControls\Parametre_Affichage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,12 +22,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\MainWindow_Images.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\MainWindow_Texte.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\Parametre_Affichage.xaml">
