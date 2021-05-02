@@ -18,12 +18,12 @@ namespace Modele
     public class Style
     {
         public int TailleDePolice { get; private set; }
-        public string PoliceEcriture { get; private set; }
-        public string Alignement { get; private set; }
+        public Police PoliceEcriture { get; private set; }
+        public Alignement Alignement { get; private set; }
         public Boolean IsGras { get; private set; }
         public Boolean IsItalique { get; private set; }
         public Boolean IsSouligne { get; private set; }
-        public Style(int tailleDePolice, string policeEcriture, string alignement, bool isGras, bool isItalique, bool isSouligne)
+        public Style(int tailleDePolice, Police policeEcriture, Alignement alignement, bool isGras, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
             PoliceEcriture = policeEcriture;

@@ -14,5 +14,10 @@ namespace Modele
         {
             Image = image;
         }
+        public Note(string texte) : this(texte,null) { }
+        public override string ToString()
+        {
+            return $"{Texte}";
+        }
     }
 }
