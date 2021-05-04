@@ -4,17 +4,6 @@ using System.Text;
 
 namespace Modele
 {
-    public enum Police
-    {
-        Arial,
-        TimesNewRoman
-    }
-    public enum Alignement
-    {
-        droite,
-        gauche,
-        centre
-    }
     public class Style
     {
         public int TailleDePolice { get; private set; }

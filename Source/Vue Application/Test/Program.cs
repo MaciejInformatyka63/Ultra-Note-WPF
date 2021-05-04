@@ -1,7 +1,7 @@
 ﻿using System;
 using Modele;
 
-namespace Test
+namespace Test_Note
 {
     class Program
     {
