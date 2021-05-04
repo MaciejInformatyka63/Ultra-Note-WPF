@@ -9,6 +9,21 @@ namespace Modele
         List<string> listeChemin = new List<string>();
         List<Note> listeDeFichiers = new List<Note>();
         private string note;
+        /// <summary>
+        /// constructeur
+        /// </summary>
+        /// <param name="listeChemin">??</param>
+        /// <param name="listeDeFichiers">liste de notes contenu dans le dossier</param>
+        /// <param name="note">??</param>
+        /// <param name="chemin">chemin du dossier</param>
+        public Dossier(List<string> listeChemin, List<Note> listeDeFichiers, string note, string chemin)
+        {
+            this.listeChemin = listeChemin;
+            this.listeDeFichiers = listeDeFichiers;
+            this.note = note;
+            Chemin = chemin;
+        }
+
         public string Chemin { get; private set; }
 
         public void AjouterUnFichier(string path)
