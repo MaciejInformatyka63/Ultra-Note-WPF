@@ -25,6 +25,16 @@ namespace Modele
         public string LienDuFichier { get; private set; }
 
         /// <summary>
+        /// Propriété qui défini le type de la note (équivalent aux hashtag sur les réseaux sociaux)
+        /// </summary>
+        public Type Type { get; private set; }
+
+        /// <summary>
+        /// Propriété calculée qui permet d'obtenir la taille du fichier courant
+        /// </summary>
+        public float CalculerTailleFichier { get; private set; }
+
+        /// <summary>
         /// Constructeurs de note qui prend tous les paramètres
         /// </summary>
         /// <param name="texte">texte qui apparaitra dans la note</param>

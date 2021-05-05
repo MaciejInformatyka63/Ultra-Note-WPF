@@ -8,10 +8,11 @@ namespace Modele
     {
         public int TailleDePolice { get; private set; }
         public Police PoliceEcriture { get; private set; }
-        public Alignement Alignement { get; private set; }
+        public Alignement AlignementTexte { get; private set; }
         public Boolean IsGras { get; private set; }
         public Boolean IsItalique { get; private set; }
         public Boolean IsSouligne { get; private set; }
+
         /// <summary>
         /// constructeur de style
         /// </summary>
@@ -24,7 +25,7 @@ namespace Modele
         public Style(int tailleDePolice, Police policeEcriture, Alignement alignement, bool isGras, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
-            PoliceEcriture = policeEcriture;
+            Police = policeEcriture;
             Alignement = alignement;
             IsGras = isGras;
             IsItalique = isItalique;
