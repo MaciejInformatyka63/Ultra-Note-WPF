@@ -18,50 +18,40 @@ using Vue_Application.UserControls;
 namespace Vue_Application
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique intéractive de MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Construteur de la classe MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-
-
-            /* // Pour utiliser HTML avec l'éditeur de texte
-            texteditor.Navigate(@"file:///C:/Users/thdevienne/Documents/index.html");
-            string curDir = Directory.GetCurrentDirectory();
-            texteditor.Navigate(curDir + .. );
-            */
         }
 
+        /// <summary>
+        /// Méthode appelée quand la valeur du layout RichTextBox change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RichTextArea(object sender, TextChangedEventArgs e)
         {
-            /*Grid myGrid= new Grid();
-
-            // Create a FlowDocument to contain content for the RichTextBox.
-            FlowDocument myFlowDoc = new FlowDocument();
-
-            // Add paragraphs to the FlowDocument.
-            myFlowDoc.Blocks.Add(new Paragraph(new Run("Bienvenue dans UltraNotes !")));
-            myFlowDoc.Blocks.Add(new Paragraph(new Run("Ici vous pouvez taper du texte et le modifier.")));
-            myFlowDoc.Blocks.Add(new Paragraph(new Run("Profitez bien :)")));
-            RichTextBox myRichTextBox = new RichTextBox
-            {
-
-                // Add initial content to the RichTextBox.
-                Document = myFlowDoc
-            };
-
-            myGrid.Children.Add(myRichTextBox);
-            this.Content = myGrid;*/
+            // some content;
         }
 
+        /// <summary>
+        /// Méthode qui ouvre la fenêtre des paramètres quand le bouton associé à été cliqué
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonOptions_Click(object sender, RoutedEventArgs e)
         {
             Parametres parametre = new Parametres();
             parametre.Show();
         }
 
+        /* VOICI UNE MANIERE DE SERIALISER AVEC FILESTREAM
         private void SaveRTBContent(object sender, RoutedEventArgs e)
         {
             // Send an arbitrary URL and file name string specifying
@@ -100,5 +90,31 @@ namespace Vue_Application
                 fStream.Close();
             }
         }
+        */
+
+        /* VOICI UNE MANIERE DE SERIALISER AVEC MEMORYSTREAM (cependant privilégier FileStream pour les RichTextBox)
+        private MemoryStream src = null;
+
+        private void btnSave_Click(Object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (src != null)
+            {
+                src.Close();
+            }
+            src = new MemoryStream();
+            new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd).Save(
+             src, System.Windows.DataFormats.Rtf);
+        }
+
+        private void btnLoad_Click(Object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (src != null)
+            {
+                src.Seek(0, SeekOrigin.Begin);
+                new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd).Load(
+                src, System.Windows.DataFormats.Rtf);
+            }
+        }
+        */
     }
 }

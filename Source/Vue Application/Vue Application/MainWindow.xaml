@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UltraNotes" Width="830" Height="610">
+        Title="UltraNotes" Width="1200" Height="610">
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
     <DockPanel LastChildFill="True">
@@ -333,7 +333,7 @@
                            FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
                     
                 </TextBox>
-                <Button x:Name="ChargerFichier" Click="LoadRTBContent" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Image Source="icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
                 </Button> 
                 <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="2" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
@@ -341,7 +341,7 @@
                         <MenuItem.Header>
                             <Image Source="icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
-                        <MenuItem Header="Enregistrer" Click="SaveRTBContent" Cursor="Hand">
+                        <MenuItem Header="Enregistrer" Cursor="Hand">
                             <MenuItem.Icon>
                                 <Image Source="icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
@@ -360,17 +360,17 @@
             </Grid>
 
             <!-- Barre d'outils de l'application 
-        Contient:
-         - Un bouton 'ajouter image' et 'ajouter checkbox';
-         - Un menu déroulant pour choisir l'alignement du texte;
-         - Un menu pour choisir la couleur du texte;
-         - Un menu pour choisir la couleur d'arrière plan du texte;
-         - Un menu déroulant pour sélectionner la police d'écriture;
-         - Un menu déroulant pour sélectionner la police;
-         - Un menu déroulant encadré pour sélectionner un style de titre;
-         - Un menu déroulant encadré pour sélectionner un style de paragraphe;
-         - Un menu déroulant encadré pour sélectionner un autre style;
-        -->
+            Contient:
+             - Un bouton 'ajouter image' et 'ajouter checkbox';
+             - Un menu déroulant pour choisir l'alignement du texte;
+             - Un menu pour choisir la couleur du texte;
+             - Un menu pour choisir la couleur d'arrière plan du texte;
+             - Un menu déroulant pour sélectionner la police d'écriture;
+             - Un menu déroulant pour sélectionner la police;
+             - Un menu déroulant encadré pour sélectionner un style de titre;
+             - Un menu déroulant encadré pour sélectionner un style de paragraphe;
+             - Un menu déroulant encadré pour sélectionner un autre style;
+            -->
             <WrapPanel x:Name="BarreOutils" DockPanel.Dock="Bottom">
                 <Button x:Name="ButtonAdd" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Ajouter un document">
                     <Image Source="icons/texteditorcolor/ajouter.png"/>
@@ -448,12 +448,12 @@
                 <RichTextBox x:Name="RichTextBox" TextChanged="RichTextArea"
                      Margin="0,0,0,0" Padding="10,5,0,0" BorderThickness="0,1,0,1"
                      FontFamily="Corbel" FontSize="15" SpellCheck.IsEnabled="True"
-                     HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+                     HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
+                     AllowDrop="True">
                     <FlowDocument>
                         <Paragraph>
                             <!--<Run Text="Bonjour et bienvenue dans UltraNotes !"/>-->
-                            Bonjour et bienvenue dans
-                            <Bold>UltraNotes</Bold> !
+                            Bonjour et bienvenue dans <Bold>UltraNotes</Bold> !
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
