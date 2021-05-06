@@ -8,7 +8,8 @@ namespace Modele
     {
         // Liste des attributs de la classe;
         List<string> listeCheminVersFichier = new List<string>();
-        Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
+        // Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
+        Dictionary<string, string> notesUtilisateur = new Dictionary<string, string>();
         private string dossierEPF;
         // string formatChemin = @"{0}\{1}{2}.rtf";
 
@@ -22,7 +23,14 @@ namespace Modele
         {
             this.listeCheminVersFichier = listeChemin;
         }
+
+
+        /// <summary>
+        /// Constructeur vide
+        /// </summary>
         public Manager() { }
+
+
         /// <summary>
         /// Propriété qui représente le chemin vers le dossier d'enregistrement par défaut des notes
         /// </summary>
@@ -37,13 +45,15 @@ namespace Modele
             // on construit le nom du nouveau fichier;
             // string nouveauFichier = dossierEPF + @"\Nouveau Document #" + listeCheminVersFichier.Count + ".rtf";
             // string nouveauFichier = string.Format(formatChemin, DossierEPF, "Nouveau Document #", listeCheminVersFichier.Count);
-            string nouveauFichier = $"{dossierEPF}\\Nouveau Document #{listeCheminVersFichier.Count}.rtf";
+            // string nouveauFichier = $"{dossierEPF}\\Nouveau Document #{listeCheminVersFichier.Count}.rtf";
+
             // puis on génère les métadonnées;
             DateTime creationDocument = DateTime.Now;
             TimeSpan tempsPasseSurLeDocument = TimeSpan.FromMinutes(0);
 
             // on ajoute le chemin du nouveau fichier dans la liste des notes;
-            listeCheminVersFichier.Add(nouveauFichier);
+            // listeCheminVersFichier.Add(nouveauFichier);
+            notesUtilisateur[$"Nouveau Document #{notesUtilisateur.Count}"] = dossierEPF;
 
             // enfin on enregistre le document dans nouveauFichier..
             // ...
@@ -81,12 +91,19 @@ namespace Modele
             }
             foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
             {
-
                 if (kvp.Value.Nom == nomDuFichier)
                 {
                     kvp.Value.Nom = nouveauNom;
                 }
             }
+
+            // On renomme le fichier si son nom (la key dans le dictionnaire) est identique à un autre fichier pour le même chemin (la value)
+            // Cela donnera par exemple pour trois fichiers aux noms identiques dans le même dossier:
+            //   - C:\\Users\me\Documents\Mon document.rtf
+            //   - C:\\Users\me\Documents\Mon document #1.rtf
+            //   - C:\\Users\me\Documents\Mon document #2.rtf
+            // Attention : utiliser un dictionnaire ne résout pas le problème ci-dessus, il faut trouver autre chose..
+            // if (notesUtilisateur.ContainsKey(nouveauNom)) nomDuFichier = $"{nomDuFichier} #{notesUtilisateur.Count}";
         }
 
 
@@ -96,7 +113,7 @@ namespace Modele
         /// <param name="utilisateur"></param>
         public void AfficherNotesTriees(Utilisateur utilisateur)
         {
-            //...
+            // utiliser LINQ ici;
         }
 
         /// <summary>
