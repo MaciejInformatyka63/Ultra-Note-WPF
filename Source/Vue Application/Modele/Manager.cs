@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modele
 {
-    class Manager
+    public class Manager
     {
         // Liste des attributs de la classe;
         List<string> listeCheminVersFichier = new List<string>();
@@ -18,13 +18,11 @@ namespace Modele
         /// <param name="listeChemin">??</param>
         /// <param name="listeDeFichiers">liste de notes contenu dans le dossier</param>
         /// <param name="note">??</param>
-        /// <param name="dossierEPF">chemin du dossier</param>
         public Manager(List<string> listeChemin, List<Note> listeDeFichiers, string note)
         {
             this.listeCheminVersFichier = listeChemin;
         }
-
-
+        public Manager() { }
         /// <summary>
         /// Propriété qui représente le chemin vers le dossier d'enregistrement par défaut des notes
         /// </summary>
@@ -63,14 +61,32 @@ namespace Modele
         {
             // ...
         }
-
-
+        /// <summary>
+        /// on vérifie que le nouveau nom de fichier n'est pas déjà pris, sinon on
+        /// ajoute un nombre sous la forme #x après le nom du document, avec x le
+        /// nombre de fichiers portant le même nom actuellement;
+        /// </summary>
+        /// <param name="nomDuFichier">nom actuel</param>
+        /// <param name="nouveauNom">nouveau nom</param>
         public void RenommerUnFichier(string nomDuFichier, string nouveauNom)
         {
-            // on vérifie que le nouveau nom de fichier n'est pas déjà pris, sinon on
-            // ajoute un nombre sous la forme #x après le nom du document, avec x le
-            // nombre de fichiers portant le même nom actuellement;
+            int count = 2;
+            foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
+            {
+                if (kvp.Value.Nom == nouveauNom || kvp.Value.Nom == nouveauNom + $"#{(count==2 ? 2 : count--)}")
+                {
+                    nouveauNom = nouveauNom + $"#{count}";
+                    count++;
+                }
+            }
+            foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
+            {
 
+                if (kvp.Value.Nom == nomDuFichier)
+                {
+                    kvp.Value.Nom = nouveauNom;
+                }
+            }
         }
 
 

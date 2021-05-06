@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modele
 {
-    enum Type
+    public enum Type
     {
         Personnel,
         Profesionnel,

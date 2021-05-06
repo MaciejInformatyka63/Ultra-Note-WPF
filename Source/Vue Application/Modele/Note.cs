@@ -8,7 +8,10 @@ namespace Modele
         // Déclaration des attributs de la classe;
         List<Style> stylesUtilisateur = new List<Style>();
         List<Commentaire> commentaires = new List<Commentaire>();
-
+        /// <summary>
+        /// Propriété Nom qui représente le nom de la Note
+        /// </summary>
+        public string Nom { get; set; }
         /// <summary>
         /// Propriété Image qui représente une image
         /// </summary>
@@ -40,8 +43,10 @@ namespace Modele
         /// <param name="texte">texte qui apparaitra dans la note</param>
         /// <param name="image">chemin de l'image qui apparaitra dans la note</param>
         /// <param name="chemin">chemin de la note contenue dans un dossier</param>
-        public Note(string texte,string image, string chemin): base(texte)
+        /// <param name="nom">nom du fichier</param>
+        public Note(string nom,string texte,string image, string chemin): base(texte)
         {
+            Nom = nom;
             Image = image;
             Chemin = chemin;
         }
@@ -49,7 +54,7 @@ namespace Modele
         /// Constructeurs de note qui prend seulement le paramètre "texte"
         /// </summary>
         /// <param name="texte"></param>
-        public Note(string texte) : this(texte,null,null) { }
+        public Note(string nom,string texte) : this(nom,texte,null,null) { }
 
         /// <summary>
         /// Redéfinition de la méthode ToString qui permet d'afficher une note
