@@ -10,7 +10,8 @@ namespace Modele
         List<string> listeCheminVersFichier = new List<string>();
         Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
         private string dossierEPF;
-        private string note;
+        // string formatChemin = @"{0}\{1}{2}.rtf";
+
         /// <summary>
         /// Constructeur
         /// </summary>
@@ -21,18 +22,38 @@ namespace Modele
         public Manager(List<string> listeChemin, List<Note> listeDeFichiers, string note)
         {
             this.listeCheminVersFichier = listeChemin;
-            // this.listeDeFichiers = listeDeFichiers;
-            this.note = note;
         }
+
+
+        /// <summary>
+        /// Propriété qui représente le chemin vers le dossier d'enregistrement par défaut des notes
+        /// </summary>
+        public string DossierEPF { get; private set; }
+
 
         /// <summary>
         /// Méthode qui ajoute un fichier dans la liste des notes éditables par l'utilisateur
         /// </summary>
-        /// <param name="path"></param>
-        public void AjouterUnFichier(string path)
+        public void AjouterUnFichier()
         {
-            listeCheminVersFichier.Add(path);
+            // on construit le nom du nouveau fichier;
+            // string nouveauFichier = dossierEPF + @"\Nouveau Document #" + listeCheminVersFichier.Count + ".rtf";
+            // string nouveauFichier = string.Format(formatChemin, DossierEPF, "Nouveau Document #", listeCheminVersFichier.Count);
+            string nouveauFichier = $"{dossierEPF}\\Nouveau Document #{listeCheminVersFichier.Count}.rtf";
+            // puis on génère les métadonnées;
+            DateTime creationDocument = DateTime.Now;
+            TimeSpan tempsPasseSurLeDocument = TimeSpan.FromMinutes(0);
+
+            // on ajoute le chemin du nouveau fichier dans la liste des notes;
+            listeCheminVersFichier.Add(nouveauFichier);
+
+            // enfin on enregistre le document dans nouveauFichier..
+            // ...
+            // et ces métadonnées dans dossierEPF\.meta\Nouveau Document #x.txt;
+            // ...
+
         }
+
 
         /// <summary>
         /// Méthode qui supprime un fichier dans la liste des notes éditables par l'utilisateur
@@ -42,6 +63,16 @@ namespace Modele
         {
             // ...
         }
+
+
+        public void RenommerUnFichier(string nomDuFichier, string nouveauNom)
+        {
+            // on vérifie que le nouveau nom de fichier n'est pas déjà pris, sinon on
+            // ajoute un nombre sous la forme #x après le nom du document, avec x le
+            // nombre de fichiers portant le même nom actuellement;
+
+        }
+
 
         /// <summary>
         /// Méthodes qui permet d'afficher les notes d'un utlisateur particulier
