@@ -1,6 +1,9 @@
-﻿namespace Modele
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Modele
 {
-    public class Utilisateur
+    public class Utilisateur : IEquatable<Utilisateur>
     {
         /// <summary>
         /// Propriété qui représente le nom de l'utilisateur
@@ -21,5 +24,22 @@
         /// Propriété qui représente la description de l'utilisateur
         /// </summary>
         public string Description { get; private set; }
+
+        public bool Equals([AllowNull] Utilisateur other)
+        {
+            return Nom.Equals(other.Nom) && Profession.Equals(other.Profession) && Email.Equals(other.Email);
+        }
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(obj, null)) return false;
+            if (ReferenceEquals(obj, this)) return true;
+            if (GetType() != obj.GetType()) return false;
+            if (GetType() != obj.GetType()) return false;
+            return Equals(obj as Utilisateur);
+        }
+        public override int GetHashCode()
+        {
+            return Nom.GetHashCode();
+        }
     }
 }

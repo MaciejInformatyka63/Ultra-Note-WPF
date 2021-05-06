@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modele
 {
-    enum Alignement
+    public enum Alignement
     {
         Gauche,
         Centre,

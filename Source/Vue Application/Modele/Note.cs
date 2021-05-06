@@ -38,7 +38,7 @@ namespace Modele
         /// Constructeurs de note qui prend tous les paramètres
         /// </summary>
         /// <param name="texte">texte qui apparaitra dans la note</param>
-        /// <param name="image">??</param>
+        /// <param name="image">chemin de l'image qui apparaitra dans la note</param>
         /// <param name="chemin">chemin de la note contenue dans un dossier</param>
         public Note(string texte,string image, string chemin): base(texte)
         {

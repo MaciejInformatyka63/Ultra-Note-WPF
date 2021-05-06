@@ -18,15 +18,15 @@ namespace Modele
         /// </summary>
         /// <param name="tailleDePolice"></param>
         /// <param name="policeEcriture">de type enum Police (à compléter...)</param>
-        /// <param name="alignement">de type enum Alignement</param>
+        /// <param name="alignementTexte">de type enum Alignement</param>
         /// <param name="isGras"></param>
         /// <param name="isItalique"></param>
         /// <param name="isSouligne"></param>
-        public Style(int tailleDePolice, Police policeEcriture, Alignement alignement, bool isGras, bool isItalique, bool isSouligne)
+        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
-            Police = policeEcriture;
-            Alignement = alignement;
+            PoliceEcriture = policeEcriture;
+            AlignementTexte = alignementTexte;
             IsGras = isGras;
             IsItalique = isItalique;
             IsSouligne = isSouligne;

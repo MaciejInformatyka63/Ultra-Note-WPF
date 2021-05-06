@@ -9,16 +9,15 @@ namespace Modele
         // Liste des attributs de la classe;
         List<string> listeCheminVersFichier = new List<string>();
         Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
-        string dossierEPF;
-
+        private string dossierEPF;
+        private string note;
         /// <summary>
         /// Constructeur
         /// </summary>
         /// <param name="listeChemin">??</param>
         /// <param name="listeDeFichiers">liste de notes contenu dans le dossier</param>
         /// <param name="note">??</param>
-        /// <param name="chemin">chemin du dossier</param>
-        private string note;
+        /// <param name="dossierEPF">chemin du dossier</param>
         public Manager(List<string> listeChemin, List<Note> listeDeFichiers, string note)
         {
             this.listeCheminVersFichier = listeChemin;
@@ -42,6 +41,15 @@ namespace Modele
         public void SupprimerUnFichier(string path)
         {
             // ...
+        }
+
+        /// <summary>
+        /// Méthodes qui permet d'afficher les notes d'un utlisateur particulier
+        /// </summary>
+        /// <param name="utilisateur"></param>
+        public void AfficherNotesTriees(Utilisateur utilisateur)
+        {
+            //...
         }
 
         /// <summary>

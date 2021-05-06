@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modele
 {
-    enum Police
+    public enum Police
     {
         Calibri,
         Impact,
