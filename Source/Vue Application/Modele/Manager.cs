@@ -67,41 +67,6 @@ namespace Modele
         {
             // ...
         }
-        /// <summary>
-        /// on vérifie que le nouveau nom de fichier n'est pas déjà pris, sinon on
-        /// ajoute un nombre sous la forme #x après le nom du document, avec x le
-        /// nombre de fichiers portant le même nom actuellement;
-        /// </summary>
-        /// <param name="nomDuFichier">nom actuel</param>
-        /// <param name="nouveauNom">nouveau nom</param>
-        public void RenommerUnFichier(string nomDuFichier, string nouveauNom)
-        {
-            // On renomme le fichier si son nom est identique à un autre fichier pour le même utilisateur.
-            // Cela donnera par exemple pour trois fichiers aux noms identiques pour le même utilisateur:
-            //   - C:\\Users\me\Documents\Mon document #0.rtf
-            //   - C:\\Users\me\Documents\Mon document #1.rtf
-            //   - C:\\Users\me\Documents\Mon document #2.rtf
-            // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
-            // à l'utilisateur s'il souhaite écraser l'ancien document.
-            foreach (KeyValuePair<Note, Utilisateur> note in dictionnaireDeNotes)
-            {
-                if (note.Key.Nom.Equals(nouveauNom))
-                {
-                    nomDuFichier = $"{nouveauNom} #{dictionnaireDeNotes.Count}";
-                    return;
-                }
-            }
-
-            // sinon on renomme tout simplement le fichier;
-            foreach (KeyValuePair<Note, Utilisateur> note in dictionnaireDeNotes)
-            {
-                if (note.Key.Nom.Equals(nomDuFichier))
-                {
-                    nomDuFichier = $"{nouveauNom}";
-                    return;
-                }
-            }
-        }
 
 
         private void appliquerLesModifications()
@@ -120,7 +85,7 @@ namespace Modele
             Note objAsFichier = obj as Note;
             if (objAsFichier == null) return false;
             else return this.Equals(objAsFichier);
-            //else return this.Chemin.Equals(objAsFichier.Chemin);
+            // else return this.Chemin.Equals(objAsFichier.Chemin);
         }
     }
 }

@@ -6,8 +6,13 @@ namespace Modele
 {
     public class Style
     {
-        public int TailleDePolice { get; private set; }
-        public Police PoliceEcriture { get; private set; }
+        Dictionary<Police, string> mappingPolice = new Dictionary<Police, string> {
+            [Police.Arial] = "Arial",
+            [Police.TimesNewRoman] = "Times New Roman"
+        };
+
+        public int TailleDePolice { get;  private set; }
+        public string PoliceEcriture { get; private set; }
         public Alignement AlignementTexte { get; private set; }
         public Boolean IsGras { get; private set; }
         public Boolean IsItalique { get; private set; }
@@ -25,12 +30,18 @@ namespace Modele
         public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
-            PoliceEcriture = policeEcriture;
+            mappingPolice[policeEcriture] = PoliceEcriture;
             AlignementTexte = alignementTexte;
             IsGras = isGras;
             IsItalique = isItalique;
             IsSouligne = isSouligne;
         }
+
+
+        /// <summary>
+        /// Redéfinition de la méthode d'affichage par défaut
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";

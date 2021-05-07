@@ -6,7 +6,7 @@ namespace Modele
     public class Note : Textable
     {
         // Déclaration des attributs de la classe;
-        List<Style> stylesUtilisateur = new List<Style>();
+        List<Style> listeStylesUtilisateur = new List<Style>();
         List<Commentaire> commentaires = new List<Commentaire>();
 
         /// <summary>
@@ -71,6 +71,26 @@ namespace Modele
         /// </summary>
         /// <param name="texte"></param>
         public Note(string nom,string texte) : this(nom,texte,null,null) { }
+        /// <summary>
+        /// Méthode qui permet de renommer un fichier
+        /// </summary>
+        /// <param name="nomDuFichier">nom actuel</param>
+        /// <param name="nouveauNom">nouveau nom</param>
+        public void RenommerUnFichier(string nouveauNom)
+        {
+            // Etape 1 : on vérifie que le nom du nouveau fichier n'est pas déjà pris.
+            // On renomme le fichier si son nom est identique à un autre fichier pour le même dossier.
+            // Cela donnera par exemple pour trois fichiers aux noms identiques pour le même dossier:
+            //   - C:\\Users\me\Documents\Mon document.rtf
+            //   - C:\\Users\me\Documents\Mon document #1.rtf   --> ici le #1 est ajouté au nom du fichier car le nom existe déjà
+            //   - C:\\Users\me\Documents\Mon document #2.rtf   --> pareil ici, on a le nombre 2 (dans #2) car il y a deux fichiers qui ont le même nom
+            // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
+            // à l'utilisateur s'il souhaite écraser l'ancien document.
+            
+
+            // Etape 2 : enregistrer le nouveau fichier et ces métadonnées dans le nouveau fichier.
+            // Etape 3 : supprimer l'ancien fichier.
+        }
 
 
         /// <summary>
