@@ -10,16 +10,13 @@ namespace Modele
         List<string> listeCheminVersFichier = new List<string>();
         // Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
         Dictionary<string, string> notesUtilisateur = new Dictionary<string, string>();
-        private string dossierEPF;
         // string formatChemin = @"{0}\{1}{2}.rtf";
-
+        private string dossierEPF;
         /// <summary>
         /// Constructeur
         /// </summary>
-        /// <param name="listeChemin">??</param>
-        /// <param name="listeDeFichiers">liste de notes contenu dans le dossier</param>
-        /// <param name="note">??</param>
-        public Manager(List<string> listeChemin, List<Note> listeDeFichiers, string note)
+        /// <param name="listeChemin">liste des chemins des fichiers gérés par ce manager</param>
+        public Manager(List<string> listeChemin)
         {
             this.listeCheminVersFichier = listeChemin;
         }
@@ -80,7 +77,7 @@ namespace Modele
         /// <param name="nouveauNom">nouveau nom</param>
         public void RenommerUnFichier(string nomDuFichier, string nouveauNom)
         {
-            int count = 2;
+            /*int count = 2;
             foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
             {
                 if (kvp.Value.Nom == nouveauNom || kvp.Value.Nom == nouveauNom + $"#{(count==2 ? 2 : count--)}")
@@ -95,7 +92,7 @@ namespace Modele
                 {
                     kvp.Value.Nom = nouveauNom;
                 }
-            }
+            }*/
 
             // On renomme le fichier si son nom (la key dans le dictionnaire) est identique à un autre fichier pour le même chemin (la value)
             // Cela donnera par exemple pour trois fichiers aux noms identiques dans le même dossier:

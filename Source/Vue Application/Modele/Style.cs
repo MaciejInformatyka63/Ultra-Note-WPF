@@ -31,5 +31,9 @@ namespace Modele
             IsItalique = isItalique;
             IsSouligne = isSouligne;
         }
+        public override string ToString()
+        {
+            return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
+        }
     }
 }

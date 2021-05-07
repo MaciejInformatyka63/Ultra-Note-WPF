@@ -5,11 +5,11 @@ namespace Modele
 {
     public class Utilisateur : IEquatable<Utilisateur>
     {
-        public Utilisateur(string nom, string profession, string email, string description, int nombreDeNotes)
+        public Utilisateur(string nom, string profession, string contenuEmail, string description, int nombreDeNotes)
         {
             Nom = nom;
             Profession = profession;
-            Email = email;
+            Email = contenuEmail + "@gmail.com";
             Description = description;
             NombreDeNotes = nombreDeNotes;
         }
@@ -53,6 +53,10 @@ namespace Modele
         public override int GetHashCode()
         {
             return Nom.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return $"Utilisateur {Nom}, {Profession}";
         }
     }
 }

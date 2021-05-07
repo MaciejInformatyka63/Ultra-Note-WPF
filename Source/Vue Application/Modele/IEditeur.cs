@@ -12,7 +12,7 @@ namespace Modele
         /// <param name="notes"></param>
         public void AfficherNotesTriees()
         {
-            // something here;
+            // ...
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Modele
         /// <param name="notes"></param>
         public void AfficherNotesTriees(Note notes)
         {
-            // something here;
+            // ...
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Modele
         /// <param name="utilisateur"></param>
         public void AfficherNotesTriees(Utilisateur utilisateur)
         {
-            // something here;
+            // ...
         }
     }
 }

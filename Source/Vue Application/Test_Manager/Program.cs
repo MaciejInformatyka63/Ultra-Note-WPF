@@ -10,7 +10,7 @@ namespace Test_Manager
         {
             foreach (KeyValuePair<Utilisateur,Note> kvp in dico)
             {
-                Console.WriteLine($"{kvp.Key.Nom} => {kvp.Value.Nom}");
+                Console.WriteLine($"{kvp.Key} => {kvp.Value}");
             }
             Console.WriteLine("----- ----- -----");
         }

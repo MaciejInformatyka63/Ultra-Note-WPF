@@ -62,7 +62,7 @@ namespace Modele
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Texte}";
+            return $"{Nom} : {Texte}";
         }
     }
 }
