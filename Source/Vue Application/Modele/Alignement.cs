@@ -6,9 +6,9 @@ namespace Modele
 {
     public enum Alignement
     {
-        Gauche,
-        Centre,
-        Droite,
-        Justifie
+        droite,
+        gauche,
+        centre,
+        justify
     }
 }

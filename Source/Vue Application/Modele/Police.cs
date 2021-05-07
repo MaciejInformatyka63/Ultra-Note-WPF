@@ -6,8 +6,7 @@ namespace Modele
 {
     public enum Police
     {
-        Calibri,
-        Impact,
-        Gadugi
+        Arial,
+        TimesNewRoman
     }
 }

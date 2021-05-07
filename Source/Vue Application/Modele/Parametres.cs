@@ -14,6 +14,7 @@ namespace Modele
 
         public Boolean ModeContraste { get; private set; }
         public string ThemeApplication { get; private set; }
+        public static string DossierEPF { get; private set; }
         public override string ToString()
         {
             return $"mode contraste {ModeContraste} ; thème : {ThemeApplication}";

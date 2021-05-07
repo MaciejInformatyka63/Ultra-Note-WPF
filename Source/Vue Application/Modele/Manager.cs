@@ -8,10 +8,9 @@ namespace Modele
     {
         // Liste des attributs de la classe;
         List<string> listeCheminVersFichier = new List<string>();
-        // Dictionary<Utilisateur, Note> listeDeFichiers = new Dictionary<Utilisateur, Note>();
+        Dictionary<Note, Utilisateur> dictionnaireDeNotes = new Dictionary<Note, Utilisateur>();
         Dictionary<string, string> notesUtilisateur = new Dictionary<string, string>();
         // string formatChemin = @"{0}\{1}{2}.rtf";
-        private string dossierEPF;
         /// <summary>
         /// Constructeur
         /// </summary>
@@ -50,7 +49,7 @@ namespace Modele
 
             // on ajoute le chemin du nouveau fichier dans la liste des notes;
             // listeCheminVersFichier.Add(nouveauFichier);
-            notesUtilisateur[$"Nouveau Document #{notesUtilisateur.Count}"] = dossierEPF;
+            notesUtilisateur[$"Nouveau Document #{notesUtilisateur.Count}"] = Parametres.DossierEPF;
 
             // enfin on enregistre le document dans nouveauFichier..
             // ...
@@ -77,40 +76,37 @@ namespace Modele
         /// <param name="nouveauNom">nouveau nom</param>
         public void RenommerUnFichier(string nomDuFichier, string nouveauNom)
         {
-            /*int count = 2;
-            foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
-            {
-                if (kvp.Value.Nom == nouveauNom || kvp.Value.Nom == nouveauNom + $"#{(count==2 ? 2 : count--)}")
-                {
-                    nouveauNom = nouveauNom + $"#{count}";
-                    count++;
-                }
-            }
-            foreach (KeyValuePair<Utilisateur,Note> kvp in listeDeFichiers)
-            {
-                if (kvp.Value.Nom == nomDuFichier)
-                {
-                    kvp.Value.Nom = nouveauNom;
-                }
-            }*/
-
-            // On renomme le fichier si son nom (la key dans le dictionnaire) est identique à un autre fichier pour le même chemin (la value)
-            // Cela donnera par exemple pour trois fichiers aux noms identiques dans le même dossier:
+            // On renomme le fichier si son nom est identique à un autre fichier pour le même utilisateur.
+            // Cela donnera par exemple pour trois fichiers aux noms identiques pour le même utilisateur:
             //   - C:\\Users\me\Documents\Mon document.rtf
             //   - C:\\Users\me\Documents\Mon document #1.rtf
             //   - C:\\Users\me\Documents\Mon document #2.rtf
-            // Attention : utiliser un dictionnaire ne résout pas le problème ci-dessus, il faut trouver autre chose..
-            // if (notesUtilisateur.ContainsKey(nouveauNom)) nomDuFichier = $"{nomDuFichier} #{notesUtilisateur.Count}";
+            // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
+            // à l'utilisateur s'il souhaite écraser l'ancien document.
+            foreach (KeyValuePair<Note, Utilisateur> note in dictionnaireDeNotes)
+            {
+                if (note.Key.Nom.Equals(nouveauNom))
+                {
+                    nomDuFichier = $"{nouveauNom} #{dictionnaireDeNotes.Count}";
+                    return;
+                }
+            }
+
+            // sinon on renomme tout simplement le fichier;
+            foreach (KeyValuePair<Note, Utilisateur> note in dictionnaireDeNotes)
+            {
+                if (note.Key.Nom.Equals(nomDuFichier))
+                {
+                    nomDuFichier = $"{nouveauNom}";
+                    return;
+                }
+            }
         }
 
 
-        /// <summary>
-        /// Méthodes qui permet d'afficher les notes d'un utlisateur particulier
-        /// </summary>
-        /// <param name="utilisateur"></param>
-        public void AfficherNotesTriees(Utilisateur utilisateur)
+        private void appliquerLesModifications()
         {
-            // utiliser LINQ ici;
+            // persistance;
         }
 
         /// <summary>

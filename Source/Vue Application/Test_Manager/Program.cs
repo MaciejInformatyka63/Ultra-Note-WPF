@@ -6,9 +6,9 @@ namespace Test_Manager
 {
     class Program
     {
-        static void Display(Dictionary<Utilisateur,Note> dico)
+        static void Display(Dictionary<Note,Utilisateur> dico)
         {
-            foreach (KeyValuePair<Utilisateur,Note> kvp in dico)
+            foreach (KeyValuePair<Note,Utilisateur> kvp in dico)
             {
                 Console.WriteLine($"{kvp.Key} => {kvp.Value}");
             }
@@ -26,17 +26,18 @@ namespace Test_Manager
             Utilisateur Euler = new Utilisateur("Euler");
             Utilisateur Pascal = new Utilisateur("Pascal");
 
-            Dictionary<Utilisateur, Note> dico = new Dictionary<Utilisateur, Note>
+            Dictionary<Note, Utilisateur> dico = new Dictionary<Note, Utilisateur>
             {
-                [Euclide] = carré,
-                [Euler] = rectangle,
-                [Pascal] = cercle,
+                [carré] = Euclide,
+                [rectangle] = Euler,
+                [cercle] = Pascal,
             };
 
             Display(dico);
 
-            manager.RenommerUnFichier("carré", "cercle");
+            manager.RenommerUnFichier("carré", "bouah");
 
+            Console.WriteLine("On renomme carré en bouah");
             Display(dico);
         }
     }

@@ -4,11 +4,14 @@ using System.Text;
 
 namespace Modele
 {
-    public enum Type
+    [Flags]
+    public enum Type : byte
     {
-        Personnel,
-        Profesionnel,
-        Important,
-        // Pour plus tard
+        Personnel = 1,
+        Profesionnel = 2,
+        Important = 4,
+        Pour_plus_tard = 8
     }
+
+    // Ici il faut faire un mapping de l'enumération vers un string pour retirer les espaces;
 }
