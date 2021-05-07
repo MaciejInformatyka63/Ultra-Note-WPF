@@ -78,7 +78,7 @@ namespace Modele
         {
             // On renomme le fichier si son nom est identique à un autre fichier pour le même utilisateur.
             // Cela donnera par exemple pour trois fichiers aux noms identiques pour le même utilisateur:
-            //   - C:\\Users\me\Documents\Mon document.rtf
+            //   - C:\\Users\me\Documents\Mon document #0.rtf
             //   - C:\\Users\me\Documents\Mon document #1.rtf
             //   - C:\\Users\me\Documents\Mon document #2.rtf
             // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
