@@ -5,7 +5,7 @@ using System.Text;
 namespace Modele
 {
     [Flags]
-    public enum Type : byte
+    public enum TypeDocument : byte
     {
         Personnel = 1,
         Profesionnel = 2,

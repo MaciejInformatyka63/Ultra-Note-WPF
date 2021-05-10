@@ -42,7 +42,7 @@ namespace Modele
         /// <summary>
         /// Propriété qui défini le type de la note (équivalent aux hashtag sur les réseaux sociaux)
         /// </summary>
-        public Type Type { get; private set; }
+        public TypeDocument Type { get; private set; }
 
 
         /// <summary>
