@@ -10,7 +10,11 @@ namespace Tests_Unitaires
         public void CréationNote()
         {
             Note carré = new Note("carré", "Un carré est un rectangle particulier");
-            Console.WriteLine(carré);
+        }
+        [Fact]
+        public void EditionCommentaire()
+        {
+            Commentaire com = new Commentaire("ceci est un commentaire");
         }
     }
 }

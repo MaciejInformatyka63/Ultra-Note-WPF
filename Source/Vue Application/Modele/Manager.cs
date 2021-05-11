@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Modele
@@ -8,16 +9,18 @@ namespace Modele
     {
         // Liste des attributs de la classe;
         List<string> listeCheminVersFichier = new List<string>();
+        public ReadOnlyDictionary<Note,Utilisateur> Notes { get; private set; }
         Dictionary<Note, Utilisateur> dictionnaireDeNotes = new Dictionary<Note, Utilisateur>();
         Dictionary<string, string> notesUtilisateur = new Dictionary<string, string>();
         // string formatChemin = @"{0}\{1}{2}.rtf";
         /// <summary>
-        /// Constructeur
+        /// Constructeur de Manager + encapsulation du dictionnaireDeNotes dans Notes (dictionnaire en "read only") 
         /// </summary>
         /// <param name="listeChemin">liste des chemins des fichiers gérés par ce manager</param>
         public Manager(List<string> listeChemin)
         {
             this.listeCheminVersFichier = listeChemin;
+            Notes = new ReadOnlyDictionary<Note, Utilisateur>(dictionnaireDeNotes);
         }
 
 

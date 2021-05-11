@@ -11,6 +11,8 @@ namespace Tests_Unitaires
         {
             Manager manager = new Manager();
             manager.AjouterUnFichier();
+            //on regarde si la collection Notes contient bien un élément ajouté par la méthode AjouterUnFichier
+            Assert.Equal(1, manager.Notes);
         }
     }
 }

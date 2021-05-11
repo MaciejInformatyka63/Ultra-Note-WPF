@@ -4,10 +4,14 @@ using System.Text;
 
 namespace Modele
 {
-    class Commentaire : Textable
+    public class Commentaire : Textable
     {
         public Commentaire(string texte) : base(texte)
         {
+        }
+        public override string ToString()
+        {
+            return $"{Texte}";
         }
     }
 }

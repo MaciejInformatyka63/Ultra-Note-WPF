@@ -10,7 +10,6 @@ namespace Tests_Unitaires
         public void CréationUtilisateur()
         {
             Utilisateur utilisateur = new Utilisateur("Dupont","artisan","dupont63","",0);
-            Console.WriteLine(utilisateur);
         }
     }
 }
