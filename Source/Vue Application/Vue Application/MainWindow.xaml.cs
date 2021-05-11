@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Vue_Application.UserControls;
+using Modele;
 
 namespace Vue_Application
 {
@@ -22,6 +23,7 @@ namespace Vue_Application
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Manager Mgr => (App.Current as App).LeManager;
         /// <summary>
         /// Construteur de la classe MainWindow
         /// </summary>

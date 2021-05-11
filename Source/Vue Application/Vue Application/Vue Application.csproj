@@ -114,6 +114,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modele\Modele.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="icons\application\attacher.png" />
     <Resource Include="icons\application\cloud.png" />
     <Resource Include="icons\application\enregistrer.png" />
