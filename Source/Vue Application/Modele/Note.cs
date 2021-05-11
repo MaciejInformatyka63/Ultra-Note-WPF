@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Modele
 {
     public class Note : Textable
     {
         // Déclaration des attributs de la classe;
+        public ReadOnlyCollection<Style> listeStyle { get; private set; }
         List<Style> listeStylesUtilisateur = new List<Style>();
         List<Commentaire> commentaires = new List<Commentaire>();
 
@@ -63,6 +65,8 @@ namespace Modele
             Nom = nom;
             Image = image;
             Chemin = chemin;
+
+            listeStyle = new ReadOnlyCollection<Style>(listeStylesUtilisateur);
         }
 
 
@@ -87,12 +91,22 @@ namespace Modele
             // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
             // à l'utilisateur s'il souhaite écraser l'ancien document.
             
+            if (Nom==nouveauNom)
+            {
+                Nom = Chemin;
+            }
+            Nom = nouveauNom;
 
             // Etape 2 : enregistrer le nouveau fichier et ces métadonnées dans le nouveau fichier.
             // Etape 3 : supprimer l'ancien fichier.
         }
-
-
+        public void DefinirStyle(Style style)
+        {
+            if (!listeStylesUtilisateur.Contains(style))
+            {
+                listeStylesUtilisateur.Add(style);
+            }
+        }
         /// <summary>
         /// Redéfinition de la méthode ToString qui permet d'afficher une note
         /// </summary>

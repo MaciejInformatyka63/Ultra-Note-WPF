@@ -7,12 +7,16 @@ namespace Test_Note
     {
         static void Main(string[] args)
         {
-            Note note = new Note("note","hello");
+            Note note = new Note("note", "hello");
 
-            Style style = new Style(12,Police.Arial,Alignement.gauche,false,false,false);
-            
+            Style style = new Style(12, Police.Arial, Alignement.gauche, false, false, false);
+
+            note.DefinirStyle(style);
+
             Console.WriteLine(note);
-            Console.WriteLine(style);
+            note.RenommerUnFichier("NouvelleNote");
+            Console.WriteLine(note);
+            Console.WriteLine(note.listeStyle[0]);
         }
     }
 }
