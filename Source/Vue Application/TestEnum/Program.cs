@@ -1,32 +1,13 @@
-﻿using Data;
-using Modele;
+﻿using Modele;
 using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace TestsFonctionnels
+namespace TestEnum
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            // on déclare un chargeur puis un bouquin comme ça on peut juste remplacer Stub() par le chageur qu'on veut tester (quand on aura notre persistance)
-            IChargeur chargeur = new Stub();
-            Bouquin bouquin = chargeur.ChargeurBouquin("");
-            AfficherBouquin(bouquin);
-        }
-
-        private static void AfficherBouquin(Bouquin bouquin)
-        {
-            Console.WriteLine("Liste des notes dans le bouquin :");
-            foreach (Note note in bouquin.BouquinDeNotes)
-            {
-                Console.WriteLine(note);
-            }
-        }
-
-        /*
-        public static void TestEnumeration()
         {
             // on fais un mapping des données de l'enumération;
             // ça permet de pouvoir ajouter des espaces à Pour_plus_tard en l'associant à une chaine de caractère
@@ -47,6 +28,5 @@ namespace TestsFonctionnels
             Console.WriteLine("\nLe type mapping");
             Console.WriteLine(mapping[TypeDocument.Pour_plus_tard]); // affiche l'énumération avec des espaces;
         }
-        */
     }
 }
