@@ -25,7 +25,7 @@ namespace Modele
         /// </summary>
         IList<Style> StylesUtilisateur { get; } = new List<Style>();
         /// <summary>
-        /// Propriété Nom qui représente le nom de la Note
+        /// Propriété Nom qui représente le nom de la Note (son titre)
         /// </summary>
         public string Nom { get; set; }
         /// <summary>
@@ -126,15 +126,13 @@ namespace Modele
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        /*
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             if (obj == null) return false;
-            Note objAsNote = obj as Note;
+            Note objAsNote = (Note)obj;
             if (objAsNote == null) return false;
             //if (this.Chemin.Equals(objAsFichier.Chemin)) return false;
             else return Equals(objAsNote);
-        }
-        */
+        }*/
     }
 }

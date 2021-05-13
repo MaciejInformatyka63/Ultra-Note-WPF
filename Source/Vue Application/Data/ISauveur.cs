@@ -9,6 +9,6 @@ namespace Data
         /*
          * Méthodes à implémenter dans les classes qui réalisent cette interface
         */
-        void SauverBouquin();
+        void SauveurBouquin();
     }
 }
