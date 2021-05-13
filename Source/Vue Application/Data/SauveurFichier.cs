@@ -6,7 +6,7 @@ namespace Data
 {
     public class SauveurFichier : ISauveur
     {
-        public void SauverBouquin()
+        public void SauveurBouquin()
         {
             throw new NotImplementedException();
         }

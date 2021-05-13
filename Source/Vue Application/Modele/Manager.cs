@@ -18,6 +18,16 @@ namespace Modele
         }
 
         /*
+         * Méthodes
+        */
+        public bool AjouterUnFichier(string chemin)
+        {
+            // on fais appel au BouquinDeNotes de la classe Bouquin;
+            // on est censés avoir un main(string args) dans l'application ?
+            return false;   
+        }
+
+        /*
          * Méthodes redéfinies
         */
         /// <summary>
