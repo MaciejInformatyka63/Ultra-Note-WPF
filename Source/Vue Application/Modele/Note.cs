@@ -6,53 +6,52 @@ namespace Modele
 {
     public class Note : Textable
     {
-        // Déclaration des attributs de la classe;
-        public ReadOnlyCollection<Style> listeStyle { get; private set; }
-        List<Style> listeStylesUtilisateur = new List<Style>();
-        List<Commentaire> commentaires = new List<Commentaire>();
-
-        /// <summary>
-        /// Attribut qui renseigne l'utilisateur
-        /// </summary>
+        /*
+         * Champs
+        */
+        // Déclaration des champs de la classe;
+        // ici on choisis IList car le style statique (à gauche du égal) doit toujours être le plus haut;
+        IList<Commentaire> commentaires = new List<Commentaire>();
         public Utilisateur utilisateur;
 
+        // on sais pas si on garde ou non :
+        // public ReadOnlyCollection<Style> ListeStyles { get; }
 
+        /*
+         * Propriétés
+        */
+        /// <summary>
+        /// Liste des styles utilisateurs
+        /// </summary>
+        IList<Style> StylesUtilisateur { get; } = new List<Style>();
         /// <summary>
         /// Propriété Nom qui représente le nom de la Note
         /// </summary>
         public string Nom { get; set; }
-
-
         /// <summary>
         /// Propriété Image qui représente une image
         /// </summary>
         public string Image { get; private set; }
-
-
         /// <summary>
         /// Propriété Chemin qui représente un chemin vers un fichier
         /// </summary>
         public string Chemin { get; private set; }
-
-
         /// <summary>
         /// Propriété LienDuFicchier qui représente le chemin vers le fichier courant
         /// </summary>
         public string LienDuFichier { get; private set; }
-
-
         /// <summary>
         /// Propriété qui défini le type de la note (équivalent aux hashtag sur les réseaux sociaux)
         /// </summary>
         public TypeDocument Type { get; private set; }
-
-
         /// <summary>
         /// Propriété calculée qui permet d'obtenir la taille du fichier courant
         /// </summary>
-        public float CalculerTailleFichier { get; private set; }
+        public float CalculerTailleFichier { get; }
 
-
+        /*
+         * Constructeurs
+        */
         /// <summary>
         /// Constructeurs de note qui prend tous les paramètres
         /// </summary>
@@ -66,15 +65,17 @@ namespace Modele
             Image = image;
             Chemin = chemin;
 
-            listeStyle = new ReadOnlyCollection<Style>(listeStylesUtilisateur);
+            // ListeStyles = new ReadOnlyCollection<Style>(StylesUtilisateur);
         }
-
-
         /// <summary>
         /// Constructeurs de note qui prend seulement le paramètre "texte"
         /// </summary>
         /// <param name="texte"></param>
         public Note(string nom,string texte) : this(nom,texte,null,null) { }
+
+        /*
+         * Méthodes
+        */
         /// <summary>
         /// Méthode qui permet de renommer un fichier
         /// </summary>
@@ -96,17 +97,22 @@ namespace Modele
                 Nom = Chemin;
             }
             Nom = nouveauNom;
-
-            // Etape 2 : enregistrer le nouveau fichier et ces métadonnées dans le nouveau fichier.
-            // Etape 3 : supprimer l'ancien fichier.
         }
+        /// <summary>
+        /// Ajout d'un style utilisateur dans ListeStyles
+        /// </summary>
+        /// <param name="style"></param>
         public void DefinirStyle(Style style)
         {
-            if (!listeStylesUtilisateur.Contains(style))
+            if (!StylesUtilisateur.Contains(style))
             {
-                listeStylesUtilisateur.Add(style);
+                StylesUtilisateur.Add(style);
             }
         }
+
+        /*
+         * Méthodes redéfinies
+        */
         /// <summary>
         /// Redéfinition de la méthode ToString qui permet d'afficher une note
         /// </summary>
@@ -115,5 +121,20 @@ namespace Modele
         {
             return $"{Nom} : {Texte}";
         }
+        /// <summary>
+        /// Définie le protole d'égalité entre une Note et un objet
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        /*
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            Note objAsNote = obj as Note;
+            if (objAsNote == null) return false;
+            //if (this.Chemin.Equals(objAsFichier.Chemin)) return false;
+            else return Equals(objAsNote);
+        }
+        */
     }
 }

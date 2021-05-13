@@ -6,18 +6,28 @@ namespace Modele
 {
     public class Style
     {
+        /*
+         * Champs
+        */
+        // on fais un mapping de l'énumération pour pouvoir avoir des espaces sur les noms de police composés;
         Dictionary<Police, string> mappingPolice = new Dictionary<Police, string> {
             [Police.Arial] = "Arial",
             [Police.TimesNewRoman] = "Times New Roman"
         };
 
-        public int TailleDePolice { get;  private set; }
-        public string PoliceEcriture { get; private set; }
-        public Alignement AlignementTexte { get; private set; }
-        public Boolean IsGras { get; private set; }
-        public Boolean IsItalique { get; private set; }
-        public Boolean IsSouligne { get; private set; }
+        /*
+         * Propriétés
+        */
+        public int TailleDePolice { get; set; }
+        public Police PoliceEcriture { get; set; }
+        public Alignement AlignementTexte { get; set; }
+        public Boolean IsGras { get; set; }
+        public Boolean IsItalique { get; set; }
+        public Boolean IsSouligne { get; set; }
 
+        /*
+         * Constructeurs
+        */
         /// <summary>
         /// constructeur de style
         /// </summary>
@@ -30,21 +40,23 @@ namespace Modele
         public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
-            mappingPolice[policeEcriture] = PoliceEcriture;
+            PoliceEcriture = policeEcriture;
             AlignementTexte = alignementTexte;
             IsGras = isGras;
             IsItalique = isItalique;
             IsSouligne = isSouligne;
         }
 
-
+        /*
+         * Méthodes redéfinies
+        */
         /// <summary>
         /// Redéfinition de la méthode d'affichage par défaut
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
+            return $"Style de police {mappingPolice[PoliceEcriture]} de taille {TailleDePolice} aligné à {AlignementTexte}";
         }
     }
 }

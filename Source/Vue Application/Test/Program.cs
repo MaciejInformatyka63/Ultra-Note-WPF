@@ -16,7 +16,7 @@ namespace Test_Note
             Console.WriteLine(note);
             note.RenommerUnFichier("NouvelleNote");
             Console.WriteLine(note);
-            Console.WriteLine(note.listeStyle[0]);
+            // Console.WriteLine(note.listeStyle[0]);
         }
     }
 }

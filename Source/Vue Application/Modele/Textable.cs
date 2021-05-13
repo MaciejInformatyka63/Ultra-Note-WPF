@@ -6,7 +6,14 @@ namespace Modele
 {
     public abstract class Textable
     {
+        /*
+         * Propriétés
+        */
         public string Texte { get; private set; }
+
+        /*
+         * Constructeurs
+        */
         public Textable(string texte)
         {
             Texte = texte;

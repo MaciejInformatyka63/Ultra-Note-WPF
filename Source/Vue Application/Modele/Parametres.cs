@@ -6,15 +6,25 @@ namespace Modele
 {
     class Parametres
     {
-        public Parametres(bool modeContraste, string themeApplication)
-        {
-            ModeContraste = modeContraste;
-            ThemeApplication = themeApplication;
-        }
-
+        /*
+         * Propriétés
+        */
         public Boolean ModeContraste { get; private set; }
         public string ThemeApplication { get; private set; }
         public static string DossierEPF { get; private set; }
+
+        /*
+         * Constructeurs
+        */
+        /* public Parametres(bool modeContraste, string themeApplication)
+        {
+            ModeContraste = modeContraste;
+            ThemeApplication = themeApplication;
+        }*/
+
+        /*
+         * Méthodes redéfinies
+        */
         public override string ToString()
         {
             return $"mode contraste {ModeContraste} ; thème : {ThemeApplication}";

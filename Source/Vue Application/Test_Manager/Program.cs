@@ -35,8 +35,6 @@ namespace Test_Manager
 
             Display(dico);
 
-            // manager.RenommerUnFichier("carré", "bouah");
-
             Console.WriteLine("On renomme carré en bouah");
             Display(dico);
         }

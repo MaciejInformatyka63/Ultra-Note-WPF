@@ -9,10 +9,10 @@ namespace Tests_Unitaires
         [Fact]
         public void AjoutDeFichier()
         {
-            Manager manager = new Manager();
-            manager.AjouterUnFichier();
+            Bouquin bouquin = new Bouquin();
+            bouquin.AjouterUnFichier(new Note("Nouveau document", "Bienvenue dans UltraNotes"));
             //on regarde si la collection Notes contient bien un élément ajouté par la méthode AjouterUnFichier
-            Assert.Equal(1, manager.Notes);
+            Assert.Equal(1, bouquin.NombreDeNotes);
         }
     }
 }
