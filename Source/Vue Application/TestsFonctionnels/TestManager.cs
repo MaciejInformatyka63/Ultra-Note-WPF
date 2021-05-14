@@ -12,7 +12,7 @@ namespace TestsFonctionnels
         {
             string chemin = "Chemin invalide";
             Manager manager = new Manager();
-            string reponse = manager.AjouterUnFichier(chemin);
+            bool reponse = manager.AjouterUnFichier(chemin);
             Console.WriteLine($"Erreur lors de l'éxécution: {reponse}");
         }
     }

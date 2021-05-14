@@ -10,7 +10,7 @@ namespace TestsFonctionnels
     {
         public static void TestManipBouquin()
         {
-            // on déclare un chargeur puis un bouquin comme ça on peut juste remplacer Stub() par le chageur qu'on veut tester (quand on aura notre persistance)
+            // on déclare un chargeur puis un bouquin comme ça on peut juste remplacer Stub() par le chargeur qu'on veut tester (quand on aura notre persistance)
             IChargeur chargeur = new Stub();
             Bouquin bouquin = chargeur.ChargeurBouquin("");
             AfficherBouquin(bouquin);

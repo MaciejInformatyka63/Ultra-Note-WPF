@@ -14,16 +14,13 @@ namespace Modele
         IList<Commentaire> commentaires = new List<Commentaire>();
         public Utilisateur utilisateur;
 
-        // on sais pas si on garde ou non :
-        // public ReadOnlyCollection<Style> ListeStyles { get; }
-
         /*
          * Propriétés
         */
         /// <summary>
         /// Liste des styles utilisateurs
         /// </summary>
-        IList<Style> StylesUtilisateur { get; } = new List<Style>();
+        public IList<Style> StylesUtilisateur { get; } = new List<Style>();
         /// <summary>
         /// Propriété Nom qui représente le nom de la Note (son titre)
         /// </summary>
@@ -64,8 +61,6 @@ namespace Modele
             Nom = nom;
             Image = image;
             Chemin = chemin;
-
-            // ListeStyles = new ReadOnlyCollection<Style>(StylesUtilisateur);
         }
         /// <summary>
         /// Constructeurs de note qui prend seulement le paramètre "texte"

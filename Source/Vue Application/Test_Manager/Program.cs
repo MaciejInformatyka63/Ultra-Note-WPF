@@ -12,7 +12,7 @@ namespace Test_Manager
             {
                 Console.WriteLine($"{kvp.Key} => {kvp.Value}");
             }
-            Console.WriteLine("----- ----- -----");
+            Console.WriteLine();
         }
         static void Main(string[] args)
         {
@@ -32,10 +32,6 @@ namespace Test_Manager
                 [rectangle] = Euler,
                 [cercle] = Pascal,
             };
-
-            Display(dico);
-
-            Console.WriteLine("On renomme carré en bouah");
             Display(dico);
         }
     }
