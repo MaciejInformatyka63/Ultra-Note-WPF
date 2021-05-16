@@ -32,7 +32,7 @@ namespace Modele
         /// <summary>
         /// Propriété Chemin qui représente un chemin vers un fichier
         /// </summary>
-        public string Chemin { get; private set; }
+        public string Chemin { get; set; }
         /// <summary>
         /// Propriété LienDuFicchier qui représente le chemin vers le fichier courant
         /// </summary>
@@ -50,7 +50,7 @@ namespace Modele
          * Constructeurs
         */
         /// <summary>
-        /// Constructeurs de note qui prend tous les paramètres
+        /// Constructeur de note qui prend tous les paramètres
         /// </summary>
         /// <param name="texte">texte qui apparaitra dans la note</param>
         /// <param name="image">chemin de l'image qui apparaitra dans la note</param>
@@ -63,10 +63,10 @@ namespace Modele
             Chemin = chemin;
         }
         /// <summary>
-        /// Constructeurs de note qui prend seulement le paramètre "texte"
+        /// Constructeur de note qui prend seulement le paramètre "texte"
         /// </summary>
         /// <param name="texte"></param>
-        public Note(string nom,string texte) : this(nom,texte,null,null) { }
+        public Note(string nom,string texte) : this(nom,texte,null,Bouquin.DossierEPF) { }
 
         /*
          * Méthodes
@@ -114,7 +114,7 @@ namespace Modele
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Nom} : {Texte}";
+            return $"{Nom} : {Texte} à l'adresse {Chemin}";
         }
         /// <summary>
         /// Définie le protole d'égalité entre une Note et un objet

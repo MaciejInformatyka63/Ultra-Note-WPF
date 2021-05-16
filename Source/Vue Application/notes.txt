@@ -1,0 +1,6 @@
+//Pour instancier un objet de type Manager, il faut lui passer en paramètre un Bouquin.
+//Ce Bouquin sera manipulé par le Manager (qui appellera les méthode de la classe Bouquin)
+
+//Un Manager se déclare donc comme ceci:
+IChargeur chargeur = new ChargeurDeFichier();
+Manager manager = new Manager(chargeur.ChargeurBouquin("chemin"));

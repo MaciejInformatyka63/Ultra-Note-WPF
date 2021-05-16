@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Vue_Application.UserControls;
 using Modele;
+using Data;
 
 namespace Vue_Application
 {
@@ -30,6 +31,9 @@ namespace Vue_Application
         public MainWindow()
         {
             InitializeComponent();
+            // On déclare un manager de cette manière;
+            //IChargeur chargeur = new Stub();
+            //Manager manager = new Manager(chargeur.ChargeurBouquin(""));
         }
 
         /// <summary>
