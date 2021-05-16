@@ -16,7 +16,7 @@ namespace TestsFonctionnels
             // Test du Manager;
             Console.WriteLine("-----     -----     -----     TestManager     -----     -----     -----");
             Console.WriteLine();
-            TestManager.TestAjoutFichier();
+            TestManager.TestManipManager();
             // Test sur Note;
             Console.WriteLine("-----     -----     -----     TestNote     -----     -----     -----");
             Console.WriteLine();

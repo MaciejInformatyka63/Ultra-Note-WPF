@@ -47,38 +47,37 @@ namespace Modele
         /// <summary>
         /// Méthode qui supprime un fichier dans la liste des notes éditables par l'utilisateur en passant en paramètre la note concernée
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="note">Une note non nulle</param>
+        /// <returns>retourne true si tout s'est bien passé, false sinon</returns>
         public bool SupprimerUneNote(Note note)
         {
-            BouquinDeNotes?.Remove(note);
-            return false;
+            return (bool)(BouquinDeNotes?.Remove(note));
         }
         /// <summary>
         /// Méthode qui ajoute un fichier dans la liste des notes éditables par l'utilisateur
         /// </summary>
         /// <param name="note"></param>
-        /// <returns>false si aucune erreur, true sinon</returns>
+        /// <returns>true si aucune erreur, false sinon</returns>
         public bool AjouterUneNote(Note note)
         {
             // si la note n'existe pas déjà, nous l'ajoutons;
-            if (!BouquinDeNotes.Contains(note))
+            if (note != null && !BouquinDeNotes.Contains(note))
             {
                 // on vérifie que le chemin n'est pas null;
                 note.Chemin = note.Chemin ?? DossierEPF;
                 // puis on l'ajoute à la collection;
                 BouquinDeNotes.Add(note);
                 // puis on indique qu'il n'y a pas eu d'erreurs;
-                return false;
+                return true;
             }
-            // sinon on retourne true car l'opération ne s'est pas bien passé;
-            return true;
+            // sinon on retourne false car l'opération ne s'est pas bien passé;
+            return false;
         }
-
         /// <summary>
         /// Méthode qui ajoute à la collection BouquinDeNotes une liste de notes
         /// </summary>
         /// <param name="notes">Liste de notes</param>
-        /// <returns>0 si tout s'est bien passé, 1 si erreur critique (tout les fichiers ignorés) et 2 si erreur mineure (certains fichiers ignorés</returns>
+        /// <returns>0 si tout s'est bien passé, 1 si erreur critique (tout les fichiers ignorés) et 2 si erreur mineure (certains fichiers ignorés)</returns>
         public int AjouterUneListeDeNotes(Note[] notes)
         {
             int code_err = 0; // 0 = pas d'erreur;
@@ -99,10 +98,17 @@ namespace Modele
             // et 2 si erreur mineure (certains fichiers ignorés));
             return code_err;
         }
-
+        /// <summary>
+        /// Méthode qui rentoune chaque élements de BouquinDeNotes pour l'itération
+        /// </summary>
+        /// <returns>Retourne un énumérable</returns>
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            // pour chaque note dans BouquinDeNotes, on la retourne;
+            foreach (Note note in BouquinDeNotes)
+            {
+                yield return note;
+            }
         }
 
         /*

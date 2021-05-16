@@ -6,19 +6,14 @@ using System.Text;
 namespace Modele
 {
     public class Manager
-    {
-        /*
-         * Champs
-        */
-        Bouquin bouquin;
-
-        /*
+    {/*
          * Propriétés
         */
+        public Bouquin Bouquin { get; private set; }
         /// <summary>
         /// Propriété calculée qui permet de connaitre le nombre de notes de l'utilisateur
         /// </summary>
-        public int NombreDeNotes => bouquin.NombreDeNotes;
+        public int NombreDeNotes => Bouquin.NombreDeNotes;
 
         /*
          * Constructeurs
@@ -28,7 +23,7 @@ namespace Modele
         /// </summary>
         public Manager(Bouquin bouquin)
         {
-            this.bouquin = bouquin;
+            this.Bouquin = bouquin;
         }
 
         /*
@@ -42,7 +37,7 @@ namespace Modele
         public bool AjouterUnFichier(Note note)
         {
             // on fais appel au BouquinDeNotes de la classe Bouquin;
-            return bouquin.AjouterUneNote(note);
+            return Bouquin.AjouterUneNote(note);
         }
         /// <summary>
         /// Méthode qui supprime une note
@@ -52,7 +47,7 @@ namespace Modele
         public bool SupprimerUneNote(Note note)
         {
             // on fais appel au BouquinDeNotes de la classe Bouquin;
-            return bouquin.SupprimerUneNote(note);
+            return Bouquin.SupprimerUneNote(note);
         }
         /// <summary>
         /// Méthode qui ajoute une liste de notes dans les notes actuelles
@@ -63,7 +58,7 @@ namespace Modele
         {
             // le résultat de l'opération est 0 si tout s'est bien passé, 1 si erreur critique (tout les fichiers ignorés)
             // et 2 si erreur mineure (certains fichiers ignorés);
-            return bouquin.AjouterUneListeDeNotes(notes);
+            return Bouquin.AjouterUneListeDeNotes(notes);
         }
     }
 }
