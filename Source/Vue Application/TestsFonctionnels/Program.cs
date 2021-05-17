@@ -17,11 +17,16 @@ namespace TestsFonctionnels
             Console.WriteLine("-----     -----     -----     TestManager     -----     -----     -----");
             Console.WriteLine();
             TestManager.TestManipManager();
+            TestManager.TestManipNoteViaManager();
             // Test sur Note;
             Console.WriteLine("-----     -----     -----     TestNote     -----     -----     -----");
             Console.WriteLine();
             TestNote.TestRenomNote();
             TestNote.TestDefStyleNote();
+            Console.WriteLine("-----     -----     -----     TestEnum     -----     -----     -----");
+            Console.WriteLine();
+            TestEnum.TestEnumTypeDocument();
+
         }
     }
 }

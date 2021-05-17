@@ -124,7 +124,10 @@ namespace Modele
             get
             {
                 // cet indexeur n'est pas obligatoire mais il permet une meilleur lisibilité du code
-                return BouquinDeNotes[index];
+                if (index < BouquinDeNotes.Count) return BouquinDeNotes[index];
+                // si l'index est supérieur au nombre d'éléments de Bouquin, on ne retourne rien;
+                else return null;
+                
             }
         }
         /// <summary>

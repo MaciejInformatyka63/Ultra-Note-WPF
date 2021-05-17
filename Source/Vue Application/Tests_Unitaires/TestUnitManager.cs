@@ -44,5 +44,23 @@ namespace Tests_Unitaires
             bool reponse = manager.SupprimerUneNote(manager.Bouquin["Document a supprimer"]);
             Assert.True(reponse);
         }
+
+        [Fact]
+        public void IndexeurIntViaManager()
+        {
+            Note note = new Note("un", "le nombre un");
+            Manager manager = new Manager(new Bouquin());
+            manager.AjouterUnFichier(note);
+            Assert.Equal(note, manager.Bouquin[0]);
+        }
+
+        [Fact]
+        public void IndexeurStringTitreViaManager()
+        {
+            Note note = new Note("un", "le nombre un");
+            Manager manager = new Manager(new Bouquin());
+            manager.AjouterUnFichier(note);
+            Assert.Equal(note, manager.Bouquin["un"]);
+        }
     }
 }

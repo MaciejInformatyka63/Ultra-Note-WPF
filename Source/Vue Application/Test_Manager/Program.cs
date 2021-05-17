@@ -16,7 +16,7 @@ namespace Test_Manager
         }
         static void Main(string[] args)
         {
-            Manager manager = new Manager();
+            Manager manager = new Manager(new Bouquin);
 
             Note carré = new Note("carré","Un carré est un rectangle particulier");
             Note rectangle = new Note("rectangle","Un rectangle est un polygone à 4 côtés");

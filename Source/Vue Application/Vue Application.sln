@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_Unitaires", "Tests_Un
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{822701EB-CA2E-4C9B-BD02-E0E48962542F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Enum", "TestEnum\Test_Enum.csproj", "{52D7DF7D-3460-4B2A-ABFC-21D3207B71D3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsFonctionnels", "TestsFonctionnels\TestsFonctionnels.csproj", "{DF2EC7C6-E10E-4811-8DAC-F2F679E187A1}"
 EndProject
 Global
@@ -48,10 +46,6 @@ Global
 		{822701EB-CA2E-4C9B-BD02-E0E48962542F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822701EB-CA2E-4C9B-BD02-E0E48962542F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822701EB-CA2E-4C9B-BD02-E0E48962542F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52D7DF7D-3460-4B2A-ABFC-21D3207B71D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52D7DF7D-3460-4B2A-ABFC-21D3207B71D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52D7DF7D-3460-4B2A-ABFC-21D3207B71D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52D7DF7D-3460-4B2A-ABFC-21D3207B71D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF2EC7C6-E10E-4811-8DAC-F2F679E187A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF2EC7C6-E10E-4811-8DAC-F2F679E187A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF2EC7C6-E10E-4811-8DAC-F2F679E187A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
