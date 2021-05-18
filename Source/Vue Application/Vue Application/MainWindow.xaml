@@ -191,7 +191,7 @@
         </Menu>
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="220" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="Assets/mountains.jpg"/>
@@ -208,100 +208,27 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                     </Button>
-                    <ListView FontFamily="Champagne &amp; Limousines" FontSize="15"
+                    <ListView x:Name="listViewNotes"
+                              FontFamily="Champagne &amp; Limousines" FontSize="15"
                               Foreground="White" Cursor="Hand"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               Background="{x:Null}"
-                              BorderBrush="{x:Null}" FontWeight="Normal">
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Document à éditer" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Le petit Asticot de.." Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Idées de scénario" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Dettes" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Notes cours de maths" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Fiche de révision" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="L'Épopée temporelle" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
-                            <Grid Margin="10 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file2.png" Margin="5,5"/>
-                                <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Serious Game PPP" Margin="10"/>
-                            </Grid>
-                        </ListViewItem>
+                              BorderBrush="{x:Null}" FontWeight="Normal"
+                              ItemsSource="{Binding Bouquin.BouquinDeNotes}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="icons/application/file2.png" Height="35" Margin="5,5"/>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
             </ScrollViewer>
@@ -449,11 +376,12 @@
                      Margin="0,0,0,0" Padding="10,5,0,0" BorderThickness="0,1,0,1"
                      FontFamily="Corbel" FontSize="15" SpellCheck.IsEnabled="True"
                      HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
+                     DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
                      AllowDrop="True">
                     <FlowDocument>
                         <Paragraph>
-                            <!--<Run Text="Bonjour et bienvenue dans UltraNotes !"/>-->
-                            Bonjour et bienvenue dans <Bold>UltraNotes</Bold> !
+                            <Run Text="{Binding Texte}"/>
+                            <!-- Bonjour et bienvenue dans <Bold>UltraNotes</Bold> !-->
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>

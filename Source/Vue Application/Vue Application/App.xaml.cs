@@ -13,8 +13,8 @@ namespace Vue_Application
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    /*public partial class App : Application
     {
         public Manager LeManager { get; private set; } = new Manager();
-    }
+    }*/
 }

@@ -24,16 +24,20 @@ namespace Vue_Application
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Manager Mgr => (App.Current as App).LeManager;
+        // public Manager Mgr => (App.Current as App).LeManager;
+
+        // On déclare un manager de cette manière;
+        static IChargeur chargeur = new Stub();
+        Manager manager = new Manager(chargeur.ChargeurBouquin(""));
+
         /// <summary>
         /// Construteur de la classe MainWindow
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            // On déclare un manager de cette manière;
-            //IChargeur chargeur = new Stub();
-            //Manager manager = new Manager(chargeur.ChargeurBouquin(""));
+
+            listViewNotes.DataContext = manager;
         }
 
         /// <summary>

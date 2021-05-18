@@ -9,7 +9,7 @@ namespace Modele
         /*
          * Propriétés
         */
-        public string Texte { get; private set; }
+        public string Texte { get; set; }
 
         /*
          * Constructeurs
