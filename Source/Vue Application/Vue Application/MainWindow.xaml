@@ -225,7 +225,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="icons/application/file2.png" Height="35" Margin="5,5"/>
-                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10"/>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -254,7 +254,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBox Text="Mon document à éditer"
+                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
                            Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}"
                            Grid.Column="0"
                            FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
@@ -377,15 +377,10 @@
                      FontFamily="Corbel" FontSize="15" SpellCheck.IsEnabled="True"
                      HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
                      DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
-                     AllowDrop="True">
-                    <FlowDocument>
-                        <Paragraph>
-                            <Run Text="{Binding Texte}"/>
-                            <!-- Bonjour et bienvenue dans <Bold>UltraNotes</Bold> !-->
-                        </Paragraph>
-                    </FlowDocument>
+                     AllowDrop="True" Document="{Binding Texte}" >
+
                 </RichTextBox>
-                
+
                 <!-- Si on souhaite utiliser un ContentControl
                 <ContentControl x:Name="contentControl_MainWindow_Texte">
                     <uclocal:MainWindow_Texte/>
