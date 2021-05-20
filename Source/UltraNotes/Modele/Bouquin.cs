@@ -7,9 +7,8 @@ namespace Modele
 {
     public class Bouquin : IEnumerable
     {
-        /*
-         * Propriétés
-        */
+        # region Propriétés
+
         /// <summary>
         /// Propriété sur une collection de notes en lecture seule
         /// </summary>
@@ -31,9 +30,10 @@ namespace Modele
         /// </summary>
         public static string DossierEPF { get; private set; } = "Documents";
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         /// <summary>
         /// Constructeur de la classe
         /// </summary>
@@ -41,9 +41,10 @@ namespace Modele
         {
         }
 
-        /*
-         * Méthodes
-        */
+        #endregion
+
+        # region Méthodes
+
         /// <summary>
         /// Méthode qui supprime un fichier dans la liste des notes éditables par l'utilisateur en passant en paramètre la note concernée
         /// </summary>
@@ -111,9 +112,9 @@ namespace Modele
             }
         }
 
-        /*
-         * Indexeurs
-        */
+        #endregion
+
+        # region Indexeurs
         /// <summary>
         /// Indexeur sur la collection de notes bouquinDeNotes
         /// </summary>
@@ -151,5 +152,7 @@ namespace Modele
                 return null;
             }
         }
+
+        #endregion
     }
 }

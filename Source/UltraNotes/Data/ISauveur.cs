@@ -6,9 +6,10 @@ namespace Data
 {
     public interface ISauveur
     {
-        /*
-         * Méthodes à implémenter dans les classes qui réalisent cette interface
-        */
+        #region Méthodes à implémenter dans les classes qui réalisent cette interface
+
         void SauveurBouquin();
+
+        #endregion
     }
 }

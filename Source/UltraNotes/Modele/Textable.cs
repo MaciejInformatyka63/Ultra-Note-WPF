@@ -6,17 +6,19 @@ namespace Modele
 {
     public abstract class Textable
     {
-        /*
-         * Propriétés
-        */
+        # region Propriétés
+
         public string Texte { get; set; }
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         public Textable(string texte)
         {
             Texte = texte;
         }
+
+        #endregion
     }
 }

@@ -5,9 +5,8 @@ namespace Modele
 {
     public class Utilisateur : IEquatable<Utilisateur>
     {
-        /*
-         * Propriétés
-        */
+        # region Propriétés
+
         /// <summary>
         /// Propriété qui représente le nom de l'utilisateur
         /// </summary>
@@ -29,9 +28,10 @@ namespace Modele
         /// </summary>
         public int NombreDeNotes { get; private set; }
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         /// <summary>
         /// Constructeur de la classe
         /// </summary>
@@ -54,9 +54,10 @@ namespace Modele
         /// <param name="nom"></param>
         public Utilisateur(string nom) : this(nom, null, null, null,0) { }
 
-        /*
-         * Méthodes redéfinies
-        */
+        #endregion
+
+        #region Méthodes redéfinies
+
         /// <summary>
         /// Redéfinition du protocole d'égalité
         /// </summary>
@@ -95,5 +96,7 @@ namespace Modele
         {
             return $"Utilisateur {Nom}, {Profession}";
         }
+
+        #endregion
     }
 }

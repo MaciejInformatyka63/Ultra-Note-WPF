@@ -6,18 +6,18 @@ namespace Modele
 {
     public class Style
     {
-        /*
-         * Champs
-        */
+        #region Champs
+
         // on fais un mapping de l'énumération pour pouvoir avoir des espaces sur les noms de police composés;
         Dictionary<Police, string> mappingPolice = new Dictionary<Police, string> {
             [Police.Arial] = "Arial",
             [Police.TimesNewRoman] = "Times New Roman"
         };
 
-        /*
-         * Propriétés
-        */
+        #endregion
+
+        #region Propriétés
+
         public int TailleDePolice { get; set; }
         public Police PoliceEcriture { get; set; }
         public Alignement AlignementTexte { get; set; }
@@ -26,9 +26,10 @@ namespace Modele
         public Boolean IsItalique { get; set; }
         public Boolean IsSouligne { get; set; }
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         /// <summary>
         /// constructeur de style
         /// </summary>
@@ -38,7 +39,7 @@ namespace Modele
         /// <param name="isGras"></param>
         /// <param name="isItalique"></param>
         /// <param name="isSouligne"></param>
-        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, /*bool isGras*/EpaisseurPolice epaisseur, bool isItalique, bool isSouligne)
+        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, EpaisseurPolice epaisseur, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
             PoliceEcriture = policeEcriture;
@@ -49,9 +50,10 @@ namespace Modele
             IsSouligne = isSouligne;
         }
 
-        /*
-         * Méthodes redéfinies
-        */
+        #endregion
+
+        #region Méthodes redéfinies
+
         /// <summary>
         /// Redéfinition de la méthode d'affichage par défaut
         /// </summary>
@@ -60,5 +62,7 @@ namespace Modele
         {
             return $"Style de police {mappingPolice[PoliceEcriture]} de taille {TailleDePolice} aligné à {AlignementTexte}";
         }
+
+        #endregion
     }
 }

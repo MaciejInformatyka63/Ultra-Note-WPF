@@ -6,17 +6,17 @@ namespace Modele
 {
     public class Note : Textable
     {
-        /*
-         * Champs
-        */
+        #region Champs
+
         // Déclaration des champs de la classe;
         // ici on choisis IList car le style statique (à gauche du égal) doit toujours être le plus haut;
         IList<Commentaire> commentaires = new List<Commentaire>();
         public Utilisateur utilisateur;
 
-        /*
-         * Propriétés
-        */
+        #endregion
+
+        #region Propriétés
+
         /// <summary>
         /// Liste des styles utilisateurs
         /// </summary>
@@ -46,9 +46,10 @@ namespace Modele
         /// </summary>
         public float CalculerTailleFichier { get; }
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         /// <summary>
         /// Constructeur de note qui prend tous les paramètres
         /// </summary>
@@ -68,9 +69,10 @@ namespace Modele
         /// <param name="texte"></param>
         public Note(string nom,string texte) : this(nom,texte,null,Bouquin.DossierEPF) { }
 
-        /*
-         * Méthodes
-        */
+        #endregion
+
+        #region Méthodes
+
         /// <summary>
         /// Méthode qui permet de renommer un fichier
         /// </summary>
@@ -105,9 +107,10 @@ namespace Modele
             }
         }
 
-        /*
-         * Méthodes redéfinies
-        */
+        #endregion
+
+        #region Méthodes redéfinies
+
         /// <summary>
         /// Redéfinition de la méthode ToString qui permet d'afficher une note
         /// </summary>
@@ -129,5 +132,7 @@ namespace Modele
             //if (this.Chemin.Equals(objAsFichier.Chemin)) return false;
             else return Equals(objAsNote);
         }*/
+
+        #endregion
     }
 }

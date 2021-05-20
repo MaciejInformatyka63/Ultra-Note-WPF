@@ -25,7 +25,7 @@ namespace TestsFonctionnels
             TestNote.TestDefStyleNote();
             Console.WriteLine("-----     -----     -----     TestEnum     -----     -----     -----");
             Console.WriteLine();
-            TestEnum.TestEnumTypeDocument();
+            //TestEnum.TestEnumTypeDocument();
 
         }
     }

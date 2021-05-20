@@ -6,18 +6,19 @@ using System.Text;
 namespace Modele
 {
     public class Manager
-    {/*
-         * Propriétés
-        */
+    {
+        # region Propriétés
+
         public Bouquin Bouquin { get; private set; }
         /// <summary>
         /// Propriété calculée qui permet de connaitre le nombre de notes de l'utilisateur
         /// </summary>
         public int NombreDeNotes => Bouquin.NombreDeNotes;
 
-        /*
-         * Constructeurs
-        */
+        #endregion
+
+        #region Constructeurs
+
         /// <summary>
         /// Constructeur de Manager 
         /// </summary>
@@ -26,9 +27,10 @@ namespace Modele
             this.Bouquin = bouquin;
         }
 
-        /*
-         * Méthodes
-        */
+        #endregion
+
+        #region Méthodes
+
         /// <summary>
         /// Méthode qui ajoute un fichier au bouquin
         /// </summary>
@@ -60,5 +62,7 @@ namespace Modele
             // et 2 si erreur mineure (certains fichiers ignorés);
             return Bouquin.AjouterUneListeDeNotes(notes);
         }
+
+        #endregion
     }
 }

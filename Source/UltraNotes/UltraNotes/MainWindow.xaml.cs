@@ -24,8 +24,6 @@ namespace Vue_Application
     /// </summary>
     public partial class MainWindow : Window
     {
-        // public Manager Mgr => (App.Current as App).LeManager;
-
         // On déclare un manager de cette manière;
         static IChargeur chargeur = new Stub();
         Manager manager = new Manager(chargeur.ChargeurBouquin(""));
@@ -61,11 +59,53 @@ namespace Vue_Application
             parametre.Show();
         }
 
-        private void effetGrasClick(object sender, RoutedEventArgs e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Méthode qui permet d'appliquer un effet de gras sur une portion de texte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /*private void effetGrasClick(object sender, RoutedEventArgs e)
         {
             BindingExpression be = textbox.GetBindingExpression(TextBox.FontWeightProperty);
             be.UpdateSource();
-        }
+        }*/
+
+
         /* VOICI UNE MANIERE DE SERIALISER AVEC FILESTREAM
         private void SaveRTBContent(object sender, RoutedEventArgs e)
         {
