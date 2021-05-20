@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Vue_Application"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Vue/MainWindow.xaml">
     <Application.Resources>
         <!--
         <system:String x:Key="defaultColor">#FF64BED8</system:String>

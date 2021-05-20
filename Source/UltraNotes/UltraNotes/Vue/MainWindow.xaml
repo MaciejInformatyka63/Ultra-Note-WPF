@@ -14,130 +14,130 @@
             <MenuItem Header="_Fichier">
                 <MenuItem Header="_Nouveau">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/file1.png"/>
+                        <Image Source="../icons/application/file1.png"/>
                     </MenuItem.Icon>
                     <MenuItem Header="_Document">
                         <MenuItem.Icon>
-                            <Image Source="icons/application/file2.png"/>
+                            <Image Source="../icons/application/file2.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="_Enregistrer">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/enregistrer.png"/>
+                        <Image Source="../icons/application/enregistrer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Enregistrer _sous..">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/enregistrer.png"/>
+                        <Image Source="../icons/application/enregistrer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Ouvrir"/>
                 <MenuItem Header="_Imprimer" IsEnabled="False">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditor/imprimante.png"/>
+                        <Image Source="../icons/texteditor/imprimante.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Réduire la fenêtre">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditor/taille.png"/>
+                        <Image Source="../icons/texteditor/taille.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Quitter">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/return.png"/>
+                        <Image Source="../icons/application/return.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Edition">
                 <MenuItem Header="_Annuler">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/annuler.png"/>
+                        <Image Source="../icons/texteditorcolor/annuler.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Rétablir">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/retablir.png"/>
+                        <Image Source="../icons/texteditorcolor/retablir.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Couper"/>
                 <MenuItem Header="C_opier">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/dupliquer.png"/>
+                        <Image Source="../icons/texteditorcolor/dupliquer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Coll_er">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/editer.png"/>
+                        <Image Source="../icons/texteditorcolor/editer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Effacer la sélection" IsEnabled="False">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/supprimer.png"/>
+                        <Image Source="../icons/application/supprimer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Insérer">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/attacher.png"/>
+                        <Image Source="../icons/texteditorcolor/attacher.png"/>
                     </MenuItem.Icon>
                     <MenuItem Header="_Image">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditor/image.png"/>
+                            <Image Source="../icons/texteditor/image.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_PDF" IsEnabled="False">
                         <MenuItem.Icon>
-                            <Image Source="icons/application/pdfred.png"/>
+                            <Image Source="../icons/application/pdfred.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_URL" IsEnabled="False">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/lienURL.png"/>
+                            <Image Source="../icons/texteditorcolor/lienURL.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_Checkbox">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/checkbox1.png"/>
+                            <Image Source="../icons/texteditorcolor/checkbox1.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="C_ode" IsEnabled="False">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/code.png"/>
+                            <Image Source="../icons/texteditorcolor/code.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_Forme" IsEnabled="False">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditor/formes.png"/>
+                            <Image Source="../icons/texteditor/formes.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="C_itation" IsEnabled="False">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/citation1.png"/>
+                            <Image Source="../icons/texteditorcolor/citation1.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Appliquer">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/surligner.png"/>
+                        <Image Source="../icons/texteditorcolor/surligner.png"/>
                     </MenuItem.Icon>
                     <MenuItem Header="_Gras" IsCheckable="True">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/gras.png"/>
+                            <Image Source="../icons/texteditorcolor/gras.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_Italique" IsCheckable="True">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/italique.png"/>
+                            <Image Source="../icons/texteditorcolor/italique.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_Souligné" IsCheckable="True">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditorcolor/souligne.png"/>
+                            <Image Source="../icons/texteditorcolor/souligne.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="_Taille">
                         <MenuItem.Icon>
-                            <Image Source="icons/texteditor/tailletexte.png"/>
+                            <Image Source="../icons/texteditor/tailletexte.png"/>
                         </MenuItem.Icon>
                         <MenuItem Header=" 5 "/>
                         <MenuItem Header=" 8 "/>
@@ -163,19 +163,19 @@
                 </MenuItem>
                 <MenuItem Header="_Préférences">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/parametres.png"/>
+                        <Image Source="../icons/application/parametres.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Contact">
                 <MenuItem Header="Nous _contacter" IsEnabled="False">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/hashtag.png"/>
+                        <Image Source="../icons/texteditorcolor/hashtag.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Soumettre un avis" IsEnabled="False">
                     <MenuItem.Icon>
-                        <Image Source="icons/texteditorcolor/filtrer.png"/>
+                        <Image Source="../icons/texteditorcolor/filtrer.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Rejoindre le projet" IsEnabled="False"/>
@@ -183,7 +183,7 @@
             <MenuItem Header="Aide">
                 <MenuItem Header="_Documentation" IsEnabled="False">
                     <MenuItem.Icon>
-                        <Image Source="icons/application/reader.png"/>
+                        <Image Source="../icons/application/reader.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="_Site web" IsEnabled="False"/>
@@ -194,7 +194,7 @@
         <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <Image HorizontalAlignment="Left"  Source="Assets/mountains.jpg"/>
+                    <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
                     <Button Height="45" Padding="0" HorizontalContentAlignment="Left"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
                             FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal"
@@ -204,7 +204,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="icons/application/file1.png" Margin="5,5"/>
+                                <Image Grid.Column="0" Source="../icons/application/file1.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                     </Button>
@@ -224,7 +224,7 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="icons/application/file2.png" Height="35" Margin="5,5"/>
+                                    <Image Grid.Column="0" Source="../icons/application/file2.png" Height="35" Margin="5,5"/>
                                     <TextBlock VerticalAlignment="Center" Text="{Binding Nom,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10"/>
                                 </Grid>
                             </DataTemplate>
@@ -261,27 +261,27 @@
                     
                 </TextBox>
                 <Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
-                    <Image Source="icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
+                    <Image Source="../icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
                 </Button> 
                 <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="2" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
                     <MenuItem>
                         <MenuItem.Header>
-                            <Image Source="icons/application/enregistrer.png" Margin="0,5,0,5"/>
+                            <Image Source="../icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
                         <MenuItem Header="Enregistrer" Cursor="Hand">
                             <MenuItem.Icon>
-                                <Image Source="icons/application/enregistrer.png"/>
+                                <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Enregistrer sous" Cursor="Hand">
                             <MenuItem.Icon>
-                                <Image Source="icons/application/enregistrer.png"/>
+                                <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
                 </Menu>
                 <Button x:Name="ButtonOptions" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
-                    <Image Source="icons/application/parametres.png" Margin="5,5"/>
+                    <Image Source="../icons/application/parametres.png" Margin="5,5"/>
                 </Button>
 
             </Grid>
@@ -300,39 +300,39 @@
             -->
             <WrapPanel x:Name="BarreOutils" DockPanel.Dock="Bottom">
                 <Button x:Name="ButtonAdd" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Ajouter un document">
-                    <Image Source="icons/texteditorcolor/ajouter.png"/>
+                    <Image Source="../icons/texteditorcolor/ajouter.png"/>
                 </Button>
                 <Button x:Name="ButtonBackward2" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Annuler la modification">
-                    <Image Source="icons/texteditorcolor/annuler.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/annuler.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonUndo" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Rétablir la modification">
-                    <Image Source="icons/texteditorcolor/retablir.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/retablir.png" Margin="3,3"/>
                 </Button>
                 <ToggleButton x:Name="effet_gras" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Gras"> <!--="effetGrasClick">-->
-                    <Image Source="icons/texteditorcolor/gras2.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/gras2.png" Margin="3,3"/>
                 </ToggleButton>
                 <ToggleButton x:Name="effet_italique" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Italique">
-                    <Image Source="icons/texteditorcolor/italique2.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/italique2.png" Margin="3,3"/>
                 </ToggleButton>
                 <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Souligné">
-                    <Image Source="icons/texteditorcolor/souligne2.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/souligne2.png" Margin="3,3"/>
                 </ToggleButton>
                 <Button x:Name="ButtonLeftAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Aligner à gauche">
-                    <Image Source="icons/texteditorcolor/alignementgauche.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/alignementgauche.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonCenterAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Centré">
-                    <Image Source="icons/texteditorcolor/alignementcentre.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/alignementcentre.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonRightAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Aligner à droite">
-                    <Image Source="icons/texteditorcolor/alignementdroite.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditorcolor/alignementdroite.png" Margin="3,3"/>
                 </Button>
                 <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Case à cocher">
-                    <Image Source="icons/texteditor/checkbox1.png" Margin="3,3"/>
+                    <Image Source="../icons/texteditor/checkbox1.png" Margin="3,3"/>
                 </Button>
                 <Menu x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Changer la couleur du texte">
                     <MenuItem>
                         <MenuItem.Header>
-                            <Image Source="icons/texteditorcolor/couleurtexte.png" Margin="0,5,0,5"/>
+                            <Image Source="../icons/texteditorcolor/couleurtexte.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
                         <MenuItem Header="Noir"/>
                         <MenuItem Header="Bleu"/>

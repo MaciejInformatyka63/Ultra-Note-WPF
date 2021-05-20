@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modele", "Modele\Modele.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{FC087FED-29E0-4B94-B501-CDB44DF68BDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsFonctionnels", "TestsFonctionnels\TestsFonctionnels.csproj", "{FC5A298F-A6DA-4675-834E-BA140232B671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsFonctionnels", "TestsFonctionnels\TestsFonctionnels.csproj", "{FC5A298F-A6DA-4675-834E-BA140232B671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_Unitaires", "Tests_Unitaires\Tests_Unitaires.csproj", "{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_Unitaires", "Tests_Unitaires\Tests_Unitaires.csproj", "{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
