@@ -21,7 +21,8 @@ namespace Modele
         public int TailleDePolice { get; set; }
         public Police PoliceEcriture { get; set; }
         public Alignement AlignementTexte { get; set; }
-        public Boolean IsGras { get; set; }
+        //public Boolean IsGras { get; set; }
+        public EpaisseurPolice Epaisseur { get; set; }
         public Boolean IsItalique { get; set; }
         public Boolean IsSouligne { get; set; }
 
@@ -37,12 +38,13 @@ namespace Modele
         /// <param name="isGras"></param>
         /// <param name="isItalique"></param>
         /// <param name="isSouligne"></param>
-        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne)
+        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, /*bool isGras*/EpaisseurPolice epaisseur, bool isItalique, bool isSouligne)
         {
             TailleDePolice = tailleDePolice;
             PoliceEcriture = policeEcriture;
             AlignementTexte = alignementTexte;
-            IsGras = isGras;
+            //IsGras = isGras;
+            Epaisseur = epaisseur;
             IsItalique = isItalique;
             IsSouligne = isSouligne;
         }

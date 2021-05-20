@@ -61,6 +61,11 @@ namespace Vue_Application
             parametre.Show();
         }
 
+        private void effetGrasClick(object sender, RoutedEventArgs e)
+        {
+            BindingExpression be = textbox.GetBindingExpression(TextBox.FontWeightProperty);
+            be.UpdateSource();
+        }
         /* VOICI UNE MANIERE DE SERIALISER AVEC FILESTREAM
         private void SaveRTBContent(object sender, RoutedEventArgs e)
         {

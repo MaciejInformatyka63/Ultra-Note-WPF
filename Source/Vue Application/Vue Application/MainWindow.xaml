@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
         Title="UltraNotes" Width="1200" Height="610">
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
@@ -308,7 +307,7 @@
                 <Button x:Name="ButtonUndo" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Rétablir la modification">
                     <Image Source="icons/texteditorcolor/retablir.png" Margin="3,3"/>
                 </Button>
-                <ToggleButton x:Name="effet_gras" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Gras">
+                <ToggleButton x:Name="effet_gras" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Gras" Click="effetGrasClick">
                     <Image Source="icons/texteditorcolor/gras2.png" Margin="3,3"/>
                 </ToggleButton>
                 <ToggleButton x:Name="effet_italique" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Italique">
@@ -371,15 +370,19 @@
                 <WebBrowser x:Name="texteditor"/>
                 -->
 
-                <!-- On utilise un format de texte RTF -->
+                <!-- On utilise un format de texte RTF 
                 <RichTextBox x:Name="RichTextBox" TextChanged="RichTextArea"
                      Margin="0,0,0,0" Padding="10,5,0,0" BorderThickness="0,1,0,1"
                      FontFamily="Corbel" FontSize="15" SpellCheck.IsEnabled="True"
                      HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
                      DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
-                     AllowDrop="True" Document="{Binding Texte}" >
+                     AllowDrop="True"/> -->
 
-                </RichTextBox>
+                <TextBox x:Name="textbox" Padding="10,5,0,0" BorderThickness="0,1,0,1"
+                    FontSize="15" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
+                    DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}" AllowDrop="True" FontWeight="{Binding Path=Epaisseur, UpdateSourceTrigger=Explicit}"/>
+
+                <!--Document="{Binding Path=IsGras, UpdateSourceTrigger=Explicit}"-->
 
                 <!-- Si on souhaite utiliser un ContentControl
                 <ContentControl x:Name="contentControl_MainWindow_Texte">
