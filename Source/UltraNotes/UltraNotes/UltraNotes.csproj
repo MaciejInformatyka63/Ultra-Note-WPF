@@ -29,6 +29,7 @@
     <None Remove="icons\texteditorcolor\alignementcentre.png" />
     <None Remove="icons\texteditorcolor\alignementdroite.png" />
     <None Remove="icons\texteditorcolor\alignementgauche.png" />
+    <None Remove="icons\texteditorcolor\alignementjustifie.jpg" />
     <None Remove="icons\texteditorcolor\annuler.png" />
     <None Remove="icons\texteditorcolor\attacher.png" />
     <None Remove="icons\texteditorcolor\charger.png" />
@@ -124,6 +125,9 @@
     <Resource Include="icons\texteditorcolor\alignementcentre.png" />
     <Resource Include="icons\texteditorcolor\alignementdroite.png" />
     <Resource Include="icons\texteditorcolor\alignementgauche.png" />
+    <Resource Include="icons\texteditorcolor\alignementjustifie.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\texteditorcolor\annuler.png" />
     <Resource Include="icons\texteditorcolor\attacher.png" />
     <Resource Include="icons\texteditorcolor\charger.png" />

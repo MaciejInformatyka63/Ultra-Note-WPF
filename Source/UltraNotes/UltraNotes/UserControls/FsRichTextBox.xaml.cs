@@ -227,6 +227,7 @@ namespace UltraNotes.UserControls
         /// <summary>
         /// Implements single-select on the alignment button group.
         /// </summary>
+        /*
         private void OnListButtonClick(object sender, RoutedEventArgs e)
         {
             var clickedButton = (ToggleButton)sender;
@@ -234,6 +235,7 @@ namespace UltraNotes.UserControls
             this.SetButtonGroupSelection(clickedButton, m_SelectedListButton, buttonGroup, false);
             m_SelectedListButton = clickedButton;
         }
+        */
 
         /// <summary>
         /// Formats regular text

@@ -288,85 +288,7 @@
 
             </Grid>
 
-            <!-- Barre d'outils de l'application 
-            Contient:
-             - Un bouton 'ajouter image' et 'ajouter checkbox';
-             - Un menu déroulant pour choisir l'alignement du texte;
-             - Un menu pour choisir la couleur du texte;
-             - Un menu pour choisir la couleur d'arrière plan du texte;
-             - Un menu déroulant pour sélectionner la police d'écriture;
-             - Un menu déroulant pour sélectionner la police;
-             - Un menu déroulant encadré pour sélectionner un style de titre;
-             - Un menu déroulant encadré pour sélectionner un style de paragraphe;
-             - Un menu déroulant encadré pour sélectionner un autre style;
-            -->
-            <WrapPanel x:Name="BarreOutils" DockPanel.Dock="Bottom">
-                <Button x:Name="ButtonAdd" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Ajouter un document">
-                    <Image Source="../icons/texteditorcolor/ajouter.png"/>
-                </Button>
-                <Button x:Name="ButtonBackward2" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Annuler la modification">
-                    <Image Source="../icons/texteditorcolor/annuler.png" Margin="3,3"/>
-                </Button>
-                <Button x:Name="ButtonUndo" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="Auto" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Rétablir la modification">
-                    <Image Source="../icons/texteditorcolor/retablir.png" Margin="3,3"/>
-                </Button>
-                <ToggleButton x:Name="effet_gras" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Gras"> <!--="effetGrasClick">-->
-                    <Image Source="../icons/texteditorcolor/gras2.png" Margin="3,3"/>
-                </ToggleButton>
-                <ToggleButton x:Name="effet_italique" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Italique">
-                    <Image Source="../icons/texteditorcolor/italique2.png" Margin="3,3"/>
-                </ToggleButton>
-                <ToggleButton x:Name="effet_souligne" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="27" ToolTip="Souligné">
-                    <Image Source="../icons/texteditorcolor/souligne2.png" Margin="3,3"/>
-                </ToggleButton>
-                <Button x:Name="ButtonLeftAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Aligner à gauche">
-                    <Image Source="../icons/texteditorcolor/alignementgauche.png" Margin="3,3"/>
-                </Button>
-                <Button x:Name="ButtonCenterAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Centré">
-                    <Image Source="../icons/texteditorcolor/alignementcentre.png" Margin="3,3"/>
-                </Button>
-                <Button x:Name="ButtonRightAlignment" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Aligner à droite">
-                    <Image Source="../icons/texteditorcolor/alignementdroite.png" Margin="3,3"/>
-                </Button>
-                <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Cursor="Hand" ToolTip="Case à cocher">
-                    <Image Source="../icons/texteditor/checkbox1.png" Margin="3,3"/>
-                </Button>
-                <Menu x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Margin="0,2" Padding="0" Cursor="Hand" ToolTip="Changer la couleur du texte">
-                    <MenuItem>
-                        <MenuItem.Header>
-                            <Image Source="../icons/texteditorcolor/couleurtexte.png" Margin="0,5,0,5"/>
-                        </MenuItem.Header>
-                        <MenuItem Header="Noir"/>
-                        <MenuItem Header="Bleu"/>
-                        <MenuItem Header="Rouge"/>
-                        <MenuItem Header="Vert"/>
-                    </MenuItem>
-                </Menu>
-                <ComboBox x:Name="PoliceEcritureCombo" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20"
-                          ToolTip="Police d'écriture">
-                    <ComboBoxItem Content="Calibri" IsSelected="True" FontFamily="Calibri"/>
-                    <ComboBoxItem Content="Liberation Serif" FontFamily="Liberation Serif"/>
-                    <ComboBoxItem Content="Gadugi" FontFamily="Gadugi"/>
-                    <ComboBoxItem Content="Impact" FontFamily="Impact"/>
-                </ComboBox>
-                <ComboBox x:Name="TaillePoliceCombo" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20" Padding="3" ToolTip="Taille de police">
-                    <ComboBoxItem Content="5"/>
-                    <ComboBoxItem Content="8"/>
-                    <ComboBoxItem Content="10"/>
-                    <ComboBoxItem Content="12" IsSelected="True"/>
-                    <ComboBoxItem Content="14"/>
-                    <ComboBoxItem Content="15"/>
-                    <ComboBoxItem Content=" 16 "/>
-                    <ComboBoxItem Content=" 18 "/>
-                    <ComboBoxItem Content=" 20 "/>
-                    <ComboBoxItem Content=" 25 "/>
-                    <ComboBoxItem Content=" 30 "/>
-                    <ComboBoxItem Content=" 35 "/>
-                    <ComboBoxItem Content=" 40 "/>
-                    <ComboBoxItem Content=" 45 "/>
-                    <ComboBoxItem Content=" 50 "/>
-                </ComboBox>
-            </WrapPanel>
+            
 
             <!-- Espace de saisie de texte-->
             <Grid>
@@ -381,11 +303,6 @@
                      AllowDrop="True"/>
                 -->
 
-                <!-- La RichTextBox -->
-                <fsc:FsRichTextBox x:Name="EditBox"
-                           Grid.Row="0" Margin="10,10,10,5" ToolbarBackground="#FFD2CB84" ToolbarBorderBrush="#FFC6BE75"
-                           ToolbarBorderThickness="1,1,1,0" CodeControlsVisibility="Collapsed" />
-
                 <!-- On utilise un format de texte RTF 
                 <TextBox x:Name="textbox" Text="{Binding Texte}" Padding="10,5,0,0" BorderThickness="0,1,0,1"
                     FontSize="15" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
@@ -399,6 +316,11 @@
                     <uclocal:MainWindow_Texte/>
                 </ContentControl>
                 -->
+
+                <!-- La RichTextBox -->
+                <fsc:FsRichTextBox x:Name="EditBox"
+                           Grid.Row="0" Margin="10,10,10,5" ToolbarBackground="#FFD2CB84" ToolbarBorderBrush="#FFC6BE75"
+                           ToolbarBorderThickness="1,1,1,0" CodeControlsVisibility="Collapsed" />
             </Grid>
         </DockPanel>
 
