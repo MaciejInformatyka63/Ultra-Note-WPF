@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vue_Application.UserControls
+namespace UltraNotes.UserControls
 {
     /// <summary>
     /// Logique d'interaction pour Parametre_General.xaml

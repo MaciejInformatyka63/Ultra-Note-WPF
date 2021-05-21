@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 
-namespace Vue_Application
+namespace UltraNotes
 {
     /// <summary>
     /// Interaction logic for App.xaml

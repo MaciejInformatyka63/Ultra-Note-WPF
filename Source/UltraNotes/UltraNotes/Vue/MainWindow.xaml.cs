@@ -13,20 +13,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Vue_Application.UserControls;
+using UltraNotes.UserControls;
 using Modele;
 using Data;
 
-namespace Vue_Application
+namespace UltraNotes.Vue
 {
     /// <summary>
     /// Logique intéractive de MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Champs
+
         // On déclare un manager de cette manière;
         static IChargeur chargeur = new Stub();
         Manager manager = new Manager(chargeur.ChargeurBouquin(""));
+
+        #endregion
+
+        #region Constructeurs
 
         /// <summary>
         /// Construteur de la classe MainWindow
@@ -37,6 +43,10 @@ namespace Vue_Application
 
             listViewNotes.DataContext = manager;
         }
+
+        #endregion
+
+        #region Méthodes privées
 
         /// <summary>
         /// Méthode appelée quand la valeur du layout RichTextBox change
@@ -59,40 +69,21 @@ namespace Vue_Application
             parametre.Show();
         }
 
+        #endregion
 
+        #region Event Handlers
 
+        /// <summary>
+        /// Forces an update of the FsRichTextBox.Document property.
+        /// </summary>
+        private void OnForceUpdateClick(object sender, RoutedEventArgs e)
+        {
+            this.EditBox.UpdateDocumentBindings();
+        }
 
+        #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #region Ressources commentées
 
         /// <summary>
         /// Méthode qui permet d'appliquer un effet de gras sur une portion de texte
@@ -171,5 +162,7 @@ namespace Vue_Application
             }
         }
         */
+
+        #endregion
     }
 }
