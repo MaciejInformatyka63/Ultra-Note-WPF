@@ -18,7 +18,7 @@
             </Button>
             <StackPanel>
                 <Image Source="icons/application/parametres.png" Margin="10" MaxHeight="70"/>
-                <ListView FontFamily="Champagne &amp; Limousines" FontSize="15" Cursor="Hand"
+                <ListView FontFamily="Champagne &amp; Limousines" FontSize="15" Cursor="Hand" x:Name="ListViewParam"
                           Background="#FF64BED8" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
                           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled">
@@ -53,7 +53,7 @@
             </Grid>
         </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
-            <uclocal:Parametre_General/>
+            <uclocal:Parametre_Affichage/>
         </ContentControl>
     </DockPanel>
 </Window>

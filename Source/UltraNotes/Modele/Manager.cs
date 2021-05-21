@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 
 namespace Modele
 {
     public class Manager
-    {
+{
         # region Propriétés
 
         public Bouquin Bouquin { get; private set; }
@@ -14,9 +15,7 @@ namespace Modele
         /// Propriété calculée qui permet de connaitre le nombre de notes de l'utilisateur
         /// </summary>
         public int NombreDeNotes => Bouquin.NombreDeNotes;
-
         #endregion
-
         #region Constructeurs
 
         /// <summary>

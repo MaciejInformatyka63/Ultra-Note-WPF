@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Vue_Application"
         mc:Ignorable="d"
         Title="UltraNotes" Width="1200" Height="610">
@@ -225,7 +226,8 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="../icons/application/file2.png" Height="35" Margin="5,5"/>
-                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10"/>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/> <!--j'ai enlevé le UpdateSourceTrigger=PropertyChange
+                                    dans le Binding de Text et ça a l'air de tjrs marcher-->
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -340,11 +342,26 @@
                         <MenuItem Header="Vert"/>
                     </MenuItem>
                 </Menu>
-                <ComboBox x:Name="choix_police" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20" ToolTip="Police d'écriture">
-                    <ComboBoxItem Content="Calibri" IsSelected="True" FontFamily="Calibri"/>
+                <ComboBox x:Name="choix_police" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20"
+                          ToolTip="Police d'écriture" ItemsSource="{Binding Source={StaticResource police}}">
+                    <ComboBox.Resources>
+                        <ObjectDataProvider x:Key="police"
+                                            ObjectType="{x:Type system:Enum}"
+                                            MethodName="GetValues">
+                            <ObjectDataProvider.MethodParameters>
+                                <x:Type Type="Police"/>
+                            </ObjectDataProvider.MethodParameters>
+                        </ObjectDataProvider>
+                    </ComboBox.Resources>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Key}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                    <!--ComboBoxItem Content="Calibri" IsSelected="True" FontFamily="Calibri"/>
                     <ComboBoxItem Content="Liberation Serif" FontFamily="Liberation Serif"/>
                     <ComboBoxItem Content="Gadugi" FontFamily="Gadugi"/>
-                    <ComboBoxItem Content="Impact" FontFamily="Impact"/>
+                    <ComboBoxItem Content="Impact" FontFamily="Impact"/-->
                 </ComboBox>
                 <ComboBox x:Name="taille_texte" Background="White" BorderBrush="{x:Null}" Cursor="Hand" Margin="5,5" Height="20" Padding="3" ToolTip="Taille de police">
                     <ComboBoxItem Content="5"/>
