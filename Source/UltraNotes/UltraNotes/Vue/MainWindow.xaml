@@ -8,10 +8,28 @@
         mc:Ignorable="d"
         Title="UltraNotes" Width="1200" Height="610">
 
+    <Window.Resources>
+        
+        <!-- Flat Button -->
+        <ControlTemplate x:Key="FlatButtonControlTemplate" TargetType="{x:Type Button}">
+            <Border x:Name="OuterBorder" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0">
+                <Border x:Name="InnerBorder" Background="Transparent" BorderBrush="Transparent" BorderThickness="1" CornerRadius="2">
+                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" RecognizesAccessKey="True" Margin="{TemplateBinding Padding}" />
+                </Border>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="OuterBorder" Property="BorderBrush" Value="White" />
+                    <Setter TargetName="InnerBorder" Property="BorderBrush" Value="{x:Null}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
     <DockPanel LastChildFill="True">
         <!-- Définition de la barre des menus -->
-        <Menu DockPanel.Dock="Top" Background="White">
+        <Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black">
             <MenuItem Header="_Fichier">
                 <MenuItem Header="_Nouveau">
                     <MenuItem.Icon>
@@ -199,7 +217,7 @@
                     <Button Height="45" Padding="0" HorizontalContentAlignment="Left"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
                             FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal"
-                            Foreground="White">
+                            Foreground="White" Template="{StaticResource FlatButtonControlTemplate}">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
