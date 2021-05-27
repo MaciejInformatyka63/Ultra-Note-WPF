@@ -4,12 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fsc="clr-namespace:UltraNotes.UserControls"
-        xmlns:local="clr-namespace:UltraNotes"
+        xmlns:local="clr-namespace:UltraNotes.VueModele"
         mc:Ignorable="d"
         Title="UltraNotes" Width="1200" Height="610">
 
     <Window.Resources>
-        
+        <!-- Value Converters -->
+        <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
         <!-- Flat Button -->
         <ControlTemplate x:Key="FlatButtonControlTemplate" TargetType="{x:Type Button}">
             <Border x:Name="OuterBorder" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0">
@@ -336,7 +337,7 @@
                 -->
 
                 <!-- La RichTextBox -->
-                <fsc:FsRichTextBox x:Name="EditBox"
+                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding Path=Texte, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
                            Grid.Row="0" Margin="10,10,10,5" ToolbarBackground="#FFD2CB84" ToolbarBorderBrush="#FFC6BE75"
                            ToolbarBorderThickness="1,1,1,0" CodeControlsVisibility="Collapsed" />
             </Grid>

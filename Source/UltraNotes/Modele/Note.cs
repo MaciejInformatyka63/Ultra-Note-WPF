@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Modele
 {
-    public class Note : Textable
+    public class Note : Textable,INotifyPropertyChanged
     {
         #region Champs
 
@@ -12,6 +13,30 @@ namespace Modele
         // ici on choisis IList car le style statique (à gauche du égal) doit toujours être le plus haut;
         IList<Commentaire> commentaires = new List<Commentaire>();
         public Utilisateur utilisateur;
+        private string p_Nom;
+
+        #endregion
+
+        #region INotifyPropertyChanged Members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+        #region Protected Methods
+
+        /// <summary>
+        /// Fires the PropertyChanged event.
+        /// </summary>
+        /// <param name="propertyName">The name of the changed property.</param>
+        protected void RaisePropertyChangedEvent(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                var e = new PropertyChangedEventArgs(propertyName);
+                PropertyChanged(this, e);
+            }
+        }
 
         #endregion
 
@@ -24,7 +49,16 @@ namespace Modele
         /// <summary>
         /// Propriété Nom qui représente le nom de la Note (son titre)
         /// </summary>
-        public string Nom { get; set; }
+        public string Nom
+        {
+            get { return p_Nom; }
+
+            set
+            {
+                p_Nom = value;
+                RaisePropertyChangedEvent("Nom");
+            }
+        }
         /// <summary>
         /// Propriété Image qui représente une image
         /// </summary>

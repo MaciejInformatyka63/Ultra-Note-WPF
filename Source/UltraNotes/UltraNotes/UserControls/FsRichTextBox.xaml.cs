@@ -23,7 +23,7 @@ namespace UltraNotes.UserControls
 
         // Static member variables
         private static ToggleButton m_SelectedAlignmentButton;
-        private static ToggleButton m_SelectedListButton;
+        //private static ToggleButton m_SelectedListButton;
 
         // Member variables
         private int m_InternalUpdatePending;
