@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using UltraNotes.UserControls;
 using Modele;
 using Data;
+using System.Windows.Markup;
 
 namespace UltraNotes.Vue
 {
@@ -41,7 +42,10 @@ namespace UltraNotes.Vue
         {
             InitializeComponent();
 
+            // on définie le DataContext;
             listViewNotes.DataContext = manager;
+            // on se place automatiquement sur le premier élément de la liste;
+            listViewNotes.SelectedItem = manager.Bouquin[0];
         }
 
         #endregion
@@ -67,6 +71,22 @@ namespace UltraNotes.Vue
         {
             Parametres parametre = new Parametres();
             parametre.Show();
+        }
+
+        /// <summary>
+        /// Méthode qui permet de créer une nouvelle note dans le bouquin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CreerNote_Click(object sender, RoutedEventArgs e)
+        {
+            // on instancie une nouvelle note;
+            // le contenu de la note est un fichier XML représentant un FlowDocument vide;
+            Note nouvelle_note = new Note(XamlWriter.Save(new FlowDocument()), "");
+            // on l'ajoute au bouquin;
+            manager.AjouterUnFichier(nouvelle_note);
+            // puis on la sélectionne automatiquement;
+            listViewNotes.SelectedItem = nouvelle_note;
         }
 
         #endregion

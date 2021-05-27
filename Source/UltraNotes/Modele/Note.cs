@@ -5,38 +5,21 @@ using System.ComponentModel;
 
 namespace Modele
 {
-    public class Note : Textable,INotifyPropertyChanged
+    public class Note : Textable, INotifyPropertyChanged
     {
         #region Champs
 
         // Déclaration des champs de la classe;
-        // ici on choisis IList car le style statique (à gauche du égal) doit toujours être le plus haut;
+        // ici on choisis IList car le type statique (à gauche du égal) doit toujours être le plus haut;
         IList<Commentaire> commentaires = new List<Commentaire>();
         public Utilisateur utilisateur;
         private string p_Nom;
 
         #endregion
 
-        #region INotifyPropertyChanged Members
+        #region Membres INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
-
-        #region Protected Methods
-
-        /// <summary>
-        /// Fires the PropertyChanged event.
-        /// </summary>
-        /// <param name="propertyName">The name of the changed property.</param>
-        protected void RaisePropertyChangedEvent(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                var e = new PropertyChangedEventArgs(propertyName);
-                PropertyChanged(this, e);
-            }
-        }
 
         #endregion
 
@@ -105,7 +88,7 @@ namespace Modele
 
         #endregion
 
-        #region Méthodes
+        #region Méthodes publiques
 
         /// <summary>
         /// Méthode qui permet de renommer un fichier
@@ -138,6 +121,23 @@ namespace Modele
             if (!StylesUtilisateur.Contains(style))
             {
                 StylesUtilisateur.Add(style);
+            }
+        }
+
+        #endregion
+
+        #region Méthodes Protected
+
+        /// <summary>
+        /// Fires the PropertyChanged event.
+        /// </summary>
+        /// <param name="propertyName">The name of the changed property.</param>
+        protected void RaisePropertyChangedEvent(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                var e = new PropertyChangedEventArgs(propertyName);
+                PropertyChanged(this, e);
             }
         }
 

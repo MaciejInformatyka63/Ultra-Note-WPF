@@ -94,33 +94,6 @@ namespace UltraNotes.UserControls
             set { SetValue(DocumentProperty, value); }
         }
 
-        /// <summary>
-        /// The ToolbarBackground dependency property.
-        /// </summary>
-        public Brush ToolbarBackground
-        {
-            get { return (Brush)GetValue(ToolbarBackgroundProperty); }
-            set { SetValue(ToolbarBackgroundProperty, value); }
-        }
-
-        /// <summary>
-        /// The ToolbarBorderBrush dependency property.
-        /// </summary>
-        public Brush ToolbarBorderBrush
-        {
-            get { return (Brush)GetValue(ToolbarBorderBrushProperty); }
-            set { SetValue(ToolbarBorderBrushProperty, value); }
-        }
-
-        /// <summary>
-        /// The thickness of the formatting toolbar border.
-        /// </summary>
-        public Thickness ToolbarBorderThickness
-        {
-            get { return (Thickness)GetValue(ToolbarBorderThicknessProperty); }
-            set { SetValue(ToolbarBorderThicknessProperty, value); }
-        }
-
         #endregion
 
         #region PropertyChanged Callback Methods

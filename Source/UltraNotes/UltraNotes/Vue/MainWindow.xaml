@@ -9,8 +9,6 @@
         Title="UltraNotes" Width="1200" Height="610">
 
     <Window.Resources>
-        <!-- Value Converters -->
-        <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
         <!-- Flat Button -->
         <ControlTemplate x:Key="FlatButtonControlTemplate" TargetType="{x:Type Button}">
             <Border x:Name="OuterBorder" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0">
@@ -25,6 +23,8 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <!-- Value Converters -->
+        <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
     </Window.Resources>
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
@@ -218,7 +218,8 @@
                     <Button Height="45" Padding="0" HorizontalContentAlignment="Left"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
                             FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal"
-                            Foreground="White" Template="{StaticResource FlatButtonControlTemplate}">
+                            Foreground="White" Template="{StaticResource FlatButtonControlTemplate}"
+                            Click="CreerNote_Click">
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -245,8 +246,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="../icons/application/file2.png" Height="35" Margin="5,5"/>
-                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/> <!--j'ai enlevé le UpdateSourceTrigger=PropertyChange
-                                    dans le Binding de Text et ça a l'air de tjrs marcher-->
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -260,9 +260,8 @@
 
             <!-- Barre de titre et de menu de l'application 
         Contient:
-         - Une flèche pour revenir au menu;
          - Le titre du document;
-         - Un bouton 'partager', 'importer", 'aperçu', 'rechercher', et 'options';
+         - Un bouton 'enregistrer" et 'options';
         -->
             <Grid DockPanel.Dock="Top" Height="38">
                 <Grid.ColumnDefinitions>
@@ -275,10 +274,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
-                           Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}"
-                           Grid.Column="0"
-                           FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
+                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=SelectedItem, ElementName=listViewNotes}"
+                         Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0"
+                         FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
                     
                 </TextBox>
                 <Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
@@ -310,36 +308,10 @@
             
 
             <!-- Espace de saisie de texte-->
-            <Grid>
-                <!-- Pour utiliser un Navigateur Web
-                <WebBrowser x:Name="texteditor"/>
-
-                <RichTextBox x:Name="RichTextBox" TextChanged="RichTextArea"
-                     Margin="0,0,0,0" Padding="10,5,0,0" BorderThickness="0,1,0,1"
-                     FontFamily="Corbel" FontSize="15" SpellCheck.IsEnabled="True"
-                     HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
-                     DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"
-                     AllowDrop="True"/>
-                -->
-
-                <!-- On utilise un format de texte RTF 
-                <TextBox x:Name="textbox" Text="{Binding Texte}" Padding="10,5,0,0" BorderThickness="0,1,0,1"
-                    FontSize="15" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
-                    AllowDrop="True" FontWeight="{Binding Path=Epaisseur, UpdateSourceTrigger=Explicit}"
-                    DataContext="{Binding ElementName=listViewNotes,Path=SelectedItem}"/> -->
-
-                <!--Document="{Binding Path=IsGras, UpdateSourceTrigger=Explicit}"-->
-
-                <!-- Si on souhaite utiliser un ContentControl
-                <ContentControl x:Name="contentControl_MainWindow_Texte">
-                    <uclocal:MainWindow_Texte/>
-                </ContentControl>
-                -->
-
+            <Grid DataContext="{Binding Path=SelectedItem, ElementName=listViewNotes}">
                 <!-- La RichTextBox -->
                 <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding Path=Texte, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
-                           Grid.Row="0" Margin="10,10,10,5" ToolbarBackground="#FFD2CB84" ToolbarBorderBrush="#FFC6BE75"
-                           ToolbarBorderThickness="1,1,1,0" CodeControlsVisibility="Collapsed" />
+                                   Grid.Row="0" Margin="10,10,10,5" CodeControlsVisibility="Collapsed" />
             </Grid>
         </DockPanel>
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Modele
@@ -12,7 +13,7 @@ namespace Modele
         /// <summary>
         /// Propriété sur une collection de notes en lecture seule
         /// </summary>
-        public IList<Note> BouquinDeNotes { get; } = new List<Note>();
+        public ObservableCollection<Note> BouquinDeNotes { get; } = new ObservableCollection<Note>();
         /// <summary>
         /// Propriété calculée qui rends le nombre d'élements de la collection bouquinDeNotes
         /// </summary>

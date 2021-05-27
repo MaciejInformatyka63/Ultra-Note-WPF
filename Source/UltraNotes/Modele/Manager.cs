@@ -10,12 +10,17 @@ namespace Modele
 {
         # region Propriétés
 
+        /// <summary>
+        /// Bouquin de notes associé à ce manager
+        /// </summary>
         public Bouquin Bouquin { get; private set; }
         /// <summary>
         /// Propriété calculée qui permet de connaitre le nombre de notes de l'utilisateur
         /// </summary>
         public int NombreDeNotes => Bouquin.NombreDeNotes;
+
         #endregion
+
         #region Constructeurs
 
         /// <summary>
