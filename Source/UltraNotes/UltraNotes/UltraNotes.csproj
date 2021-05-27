@@ -57,6 +57,9 @@
     <None Remove="icons\texteditorcolor\rogner.png" />
     <None Remove="icons\texteditorcolor\souligne.png" />
     <None Remove="icons\texteditorcolor\souligne2.png" />
+    <None Remove="icons\texteditorcolor\supprimer1.png" />
+    <None Remove="icons\texteditorcolor\supprimer2.png" />
+    <None Remove="icons\texteditorcolor\supprimer3.png" />
     <None Remove="icons\texteditorcolor\surligner.png" />
     <None Remove="icons\texteditorcolor\taille.png" />
     <None Remove="icons\texteditor\alignementcentre.png" />
@@ -90,6 +93,9 @@
     <None Remove="icons\texteditor\refresh.png" />
     <None Remove="icons\texteditor\rogner.png" />
     <None Remove="icons\texteditor\souligne.png" />
+    <None Remove="icons\texteditor\supprimer1.png" />
+    <None Remove="icons\texteditor\supprimer2.png" />
+    <None Remove="icons\texteditor\supprimer3.png" />
     <None Remove="icons\texteditor\tableau.png" />
     <None Remove="icons\texteditor\taille.png" />
     <None Remove="icons\texteditor\tailletexte.png" />
@@ -155,6 +161,9 @@
     <Resource Include="icons\texteditorcolor\rogner.png" />
     <Resource Include="icons\texteditorcolor\souligne.png" />
     <Resource Include="icons\texteditorcolor\souligne2.png" />
+    <Resource Include="icons\texteditorcolor\supprimer1.png" />
+    <Resource Include="icons\texteditorcolor\supprimer2.png" />
+    <Resource Include="icons\texteditorcolor\supprimer3.png" />
     <Resource Include="icons\texteditorcolor\surligner.png" />
     <Resource Include="icons\texteditorcolor\taille.png" />
     <Resource Include="icons\texteditor\alignementcentre.png" />
@@ -188,6 +197,9 @@
     <Resource Include="icons\texteditor\refresh.png" />
     <Resource Include="icons\texteditor\rogner.png" />
     <Resource Include="icons\texteditor\souligne.png" />
+    <Resource Include="icons\texteditor\supprimer1.png" />
+    <Resource Include="icons\texteditor\supprimer2.png" />
+    <Resource Include="icons\texteditor\supprimer3.png" />
     <Resource Include="icons\texteditor\tableau.png" />
     <Resource Include="icons\texteditor\taille.png" />
     <Resource Include="icons\texteditor\tailletexte.png" />

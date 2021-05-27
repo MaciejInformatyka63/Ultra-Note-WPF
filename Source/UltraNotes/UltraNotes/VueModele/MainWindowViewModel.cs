@@ -1,4 +1,5 @@
 ﻿using System;
+using Modele;
 using System.Collections.Generic;
 using System.Windows.Input;
 using System.Text;
@@ -10,7 +11,7 @@ namespace UltraNotes.VueModele
         #region Fields
 
         // Property variables
-        private string p_DocumentXaml;
+        //private string p_DocumentXaml;
 
         #endregion
 
@@ -37,16 +38,16 @@ namespace UltraNotes.VueModele
         /// <summary>
         /// The text from the FsRichTextBox, as a XAML markup string.
         /// </summary>
-        public string DocumentXaml
-        {
-            get { return p_DocumentXaml; }
+        //public string DocumentXaml
+        //{
+        //    get { return p_DocumentXaml; }
 
-            set
-            {
-                p_DocumentXaml = value;
-                base.RaisePropertyChangedEvent("DocumentXaml");
-            }
-        }
+        //    set
+        //    {
+        //        p_DocumentXaml = value;
+        //        base.RaisePropertyChangedEvent("DocumentXaml");
+        //    }
+        //}
 
         #endregion
     }

@@ -82,11 +82,24 @@ namespace UltraNotes.Vue
         {
             // on instancie une nouvelle note;
             // le contenu de la note est un fichier XML représentant un FlowDocument vide;
-            Note nouvelle_note = new Note(XamlWriter.Save(new FlowDocument()), "");
+            Note nouvelle_note = new Note("Ma nouvelle note", XamlWriter.Save(new FlowDocument()));
             // on l'ajoute au bouquin;
             manager.AjouterUnFichier(nouvelle_note);
             // puis on la sélectionne automatiquement;
             listViewNotes.SelectedItem = nouvelle_note;
+        }
+
+        /// <summary>
+        /// Méthode qui permet de supprimer le fichier courant du bouquin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SupprimerFichier_Click(object sender, RoutedEventArgs e)
+        {
+            // on supprime le fichier;
+            manager.SupprimerUneNote(listViewNotes.SelectedItem as Note);
+            // puis on sélectionne la première note du bouquin;
+            listViewNotes.SelectedItem = manager.Bouquin[0];
         }
 
         #endregion

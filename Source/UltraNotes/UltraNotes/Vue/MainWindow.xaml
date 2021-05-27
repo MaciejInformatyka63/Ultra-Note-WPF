@@ -239,7 +239,7 @@
                               ItemsSource="{Binding Bouquin.BouquinDeNotes}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Margin="10 0">
+                                <Grid Margin="10 0" ToolTip="{Binding Nom}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition/>
@@ -269,6 +269,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -281,8 +282,11 @@
                 </TextBox>
                 <Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Image Source="../icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
-                </Button> 
-                <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="2" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
+                </Button>
+                <Button x:Name="SupprimerFichier" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="SupprimerFichier_Click">
+                    <Image Source="../icons/texteditorcolor/supprimer1.png" Margin="0,5,0,5"/>
+                </Button>
+                <Menu x:Name="MenuSave" Background="White" BorderBrush="{x:Null}" Grid.Column="3" Width="30" Height="Auto" Margin="0,2" Padding="0,2,0,2" Cursor="Hand">
                     <MenuItem>
                         <MenuItem.Header>
                             <Image Source="../icons/application/enregistrer.png" Margin="0,5,0,5"/>
@@ -299,7 +303,7 @@
                         </MenuItem>
                     </MenuItem>
                 </Menu>
-                <Button x:Name="ButtonOptions" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
+                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
                     <Image Source="../icons/application/parametres.png" Margin="5,5"/>
                 </Button>
 
@@ -309,9 +313,16 @@
 
             <!-- Espace de saisie de texte-->
             <Grid DataContext="{Binding Path=SelectedItem, ElementName=listViewNotes}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
                 <!-- La RichTextBox -->
-                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding Path=Texte, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
+                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding Path=DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
                                    Grid.Row="0" Margin="10,10,10,5" CodeControlsVisibility="Collapsed" />
+                <TextBlock Text="{Binding DocumentXaml}" Grid.Row="1" />
+                <FlowDocumentPageViewer Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}}" Grid.Row="2" />
             </Grid>
         </DockPanel>
 

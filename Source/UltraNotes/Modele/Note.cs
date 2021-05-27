@@ -5,21 +5,19 @@ using System.ComponentModel;
 
 namespace Modele
 {
-    public class Note : Textable, INotifyPropertyChanged
+    public class Note : ViewModelBase
     {
         #region Champs
 
         // Déclaration des champs de la classe;
         // ici on choisis IList car le type statique (à gauche du égal) doit toujours être le plus haut;
-        IList<Commentaire> commentaires = new List<Commentaire>();
+        //IList<Commentaire> commentaires = new List<Commentaire>();
+        // renseigne un utilisateur;
         public Utilisateur utilisateur;
+        // variable de la propriété Nom;
         private string p_Nom;
-
-        #endregion
-
-        #region Membres INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        // variable de la propriété DocumentXaml;
+        private string p_DocumentXaml;
 
         #endregion
 
@@ -39,7 +37,20 @@ namespace Modele
             set
             {
                 p_Nom = value;
-                RaisePropertyChangedEvent("Nom");
+                base.RaisePropertyChangedEvent("Nom");
+            }
+        }
+        /// <summary>
+        /// Propriété DocumentXaml qui renseigne le contenu de la note
+        /// </summary>
+        public string DocumentXaml
+        {
+            get { return p_DocumentXaml; }
+
+            set
+            {
+                p_DocumentXaml = value;
+                base.RaisePropertyChangedEvent("DocumentXaml");
             }
         }
         /// <summary>
@@ -74,9 +85,10 @@ namespace Modele
         /// <param name="image">chemin de l'image qui apparaitra dans la note</param>
         /// <param name="chemin">chemin de la note contenue dans un dossier</param>
         /// <param name="nom">nom du fichier</param>
-        public Note(string nom,string texte,string image, string chemin): base(texte)
+        public Note(string nom,string documentXaml,string image, string chemin)
         {
             Nom = nom;
+            DocumentXaml = documentXaml;
             Image = image;
             Chemin = chemin;
         }
@@ -126,23 +138,6 @@ namespace Modele
 
         #endregion
 
-        #region Méthodes Protected
-
-        /// <summary>
-        /// Fires the PropertyChanged event.
-        /// </summary>
-        /// <param name="propertyName">The name of the changed property.</param>
-        protected void RaisePropertyChangedEvent(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                var e = new PropertyChangedEventArgs(propertyName);
-                PropertyChanged(this, e);
-            }
-        }
-
-        #endregion
-
         #region Méthodes redéfinies
 
         /// <summary>
@@ -151,7 +146,7 @@ namespace Modele
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Nom} : {Texte} à l'adresse {Chemin}";
+            return $"{Nom} : {DocumentXaml} à l'adresse {Chemin}";
         }
         /// <summary>
         /// Définie le protole d'égalité entre une Note et un objet

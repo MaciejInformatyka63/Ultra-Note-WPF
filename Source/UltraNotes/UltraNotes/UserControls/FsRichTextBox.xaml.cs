@@ -120,7 +120,7 @@ namespace UltraNotes.UserControls
             }
 
             // Set Document property on RichTextBox
-            thisControl.TextBox.Document = (e.NewValue == null) ? new FlowDocument() : (FlowDocument)e.NewValue;
+            //thisControl.TextBox.Document = (e.NewValue == null) ? new FlowDocument() : (FlowDocument)e.NewValue;
 
             // Reset flag
             thisControl.m_TextHasChanged = false;
