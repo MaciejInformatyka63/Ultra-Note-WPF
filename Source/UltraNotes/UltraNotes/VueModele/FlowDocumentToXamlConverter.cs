@@ -23,7 +23,7 @@ namespace UltraNotes.VueModele
             if (value != null)
             {
                 var xamlText = (string)value;
-                flowDocument = (FlowDocument)XamlReader.Parse(xamlText as string);
+                flowDocument = (FlowDocument)XamlReader.Parse(xamlText);
             }
 
             // Set return value
