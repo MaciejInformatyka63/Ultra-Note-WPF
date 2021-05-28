@@ -154,7 +154,7 @@
                     </Menu.ItemTemplate>
                 </Menu>-->
                 <ComboBox x:Name="FontColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                          ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontColorComboSelectionChanged">
+                          ToolTip="Police d'écriture" IsEditable="True" IsReadOnly="False" SelectionChanged="OnFontColorComboSelectionChanged">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Width="250" />

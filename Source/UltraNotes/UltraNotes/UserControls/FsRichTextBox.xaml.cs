@@ -324,7 +324,7 @@ namespace UltraNotes.UserControls
 
             // Set font color combo
             var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
-            FontColorCombo.Text = fontColor.ToString();
+            FontColorCombo.SelectedItem = fontColor;
 
             // Set Font buttons
             if (!String.IsNullOrEmpty(textRange.Text))
