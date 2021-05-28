@@ -146,20 +146,28 @@
                         Template="{StaticResource FlatButtonControlTemplate}">
                     <Image Source="../icons/texteditor/checkbox1.png"/>
                 </Button>
-                <!-- Changer la couleur du texte -->
-                <Menu x:Name="ButtonTextColor" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}"
-                      Height="27" Padding="0" Cursor="Hand" ToolTip="Changer la couleur du texte">
-                    <MenuItem>
-                        <MenuItem.Header>
-                            <Image Source="../icons/texteditor/couleurtexte.png"/>
-                        </MenuItem.Header>
-                        <MenuItem Header="Noir"/>
-                        <MenuItem Header="Bleu"/>
-                        <MenuItem Header="Rouge"/>
-                        <MenuItem Header="Vert"/>
-                    </MenuItem>
-                </Menu>
-                
+                <!-- Changer la couleur du texte 
+                <Menu x:Name="" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}"
+                      Height="27" Padding="0" Cursor="Hand" ToolTip="Changer la couleur du texte" SelectionChanged >
+                    <Menu.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                        </DataTemplate>
+                    </Menu.ItemTemplate>
+                </Menu>-->
+                <ComboBox x:Name="FontColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
+                          ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontColorComboSelectionChanged">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Width="250" />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="12" Height="15"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <!-- Police d'écriture  -->
                 <ComboBox x:Name="FontFamilyCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
                           ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontFamilyComboSelectionChanged">

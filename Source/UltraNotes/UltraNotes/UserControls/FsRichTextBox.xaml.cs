@@ -19,7 +19,7 @@ namespace UltraNotes.UserControls
     /// </summary>
     public partial class FsRichTextBox : UserControl
     {
-        #region Fields
+        #region Champs
 
         // Static member variables
         private static ToggleButton m_SelectedAlignmentButton;
@@ -61,7 +61,7 @@ namespace UltraNotes.UserControls
 
         #endregion
 
-        #region Constructor
+        #region Constructeur
 
         /// <summary>
         /// Default constructor.
@@ -74,7 +74,7 @@ namespace UltraNotes.UserControls
 
         #endregion
 
-        #region Properties
+        #region Propriétés
 
         /// <summary>
         /// The CodeControlsVisibility dependency property.
@@ -163,7 +163,26 @@ namespace UltraNotes.UserControls
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
         }
+        /// <summary>
+        /// Changes the font color of selected text.
+        /// </summary>
+        private void OnFontColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Exit if no selection
+            if (FontColorCombo.SelectedItem == null) return;
 
+            // clear selection if value unset
+            if (FontColorCombo.SelectedItem.ToString() == "{DependencyProperty.UnsetValue}")
+            {
+                FontColorCombo.SelectedItem = null;
+                return;
+            }
+
+            // Process selection
+            var color = FontColorCombo.SelectedItem.ToString();
+            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
+            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, color);
+        }
         /// <summary>
         /// Changes the font size of selected text.
         /// </summary>
@@ -241,7 +260,7 @@ namespace UltraNotes.UserControls
 
         #endregion
 
-        #region Public Methods
+        #region Méthodes publiques
 
         /// <summary>
         /// Forces an update of the Document property.
@@ -260,13 +279,18 @@ namespace UltraNotes.UserControls
 
         #endregion
 
-        #region Private Methods
+        #region Méthodes privées
 
         /// <summary>
         /// Initializes the control.
         /// </summary>
         private void Initialize()
         {
+            FontColorCombo.Items.Add("Black");
+            FontColorCombo.Items.Add("Blue");
+            FontColorCombo.Items.Add("Red");
+            FontColorCombo.Items.Add("Green");
+            FontColorCombo.Items.Add("Lavender");
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
             FontSizeCombo.Items.Add("10");
             FontSizeCombo.Items.Add("12");
@@ -321,6 +345,10 @@ namespace UltraNotes.UserControls
             // Set font size combo
             var fontSize = textRange.GetPropertyValue(TextElement.FontSizeProperty);
             FontSizeCombo.Text = fontSize.ToString();
+
+            // Set font color combo
+            var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
+            FontColorCombo.Text = fontColor.ToString();
 
             // Set Font buttons
             if (!String.IsNullOrEmpty(textRange.Text))
