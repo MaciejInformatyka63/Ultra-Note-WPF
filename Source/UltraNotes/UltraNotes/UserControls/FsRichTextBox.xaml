@@ -51,8 +51,6 @@
     <DockPanel LastChildFill="True" >
         <Border 
             DockPanel.Dock="Bottom" 
-            BorderThickness="{Binding ElementName=FsRichTextBoxControl, Path=ToolbarBorderThickness}" 
-            BorderBrush="{Binding ElementName=FsRichTextBoxControl, Path=ToolbarBorderBrush}" 
             SnapsToDevicePixels="True" >
             <!-- Barre d'outils de l'application 
             Contient:
@@ -182,7 +180,6 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-
                 <!-- Taille de police -->
                 <ComboBox x:Name="FontSizeCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23" Padding="3"
                            ToolTip="Taille de police" IsEditable="True" SelectionChanged="OnFontSizeComboSelectionChanged" >
@@ -192,6 +189,6 @@
         <RichTextBox x:Name="TextBox" TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="Aliased"
                      AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True" AllowDrop="True" FontSize="14"
                      IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
-                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Auto" SelectionChanged="OnTextBoxSelectionChanged" />
+                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Auto" SelectionChanged="OnTextBoxSelectionChanged" Tag="{Binding ElementName=RichTextBox,Path=Tag,Mode=TwoWay}" />
     </DockPanel>
 </UserControl>

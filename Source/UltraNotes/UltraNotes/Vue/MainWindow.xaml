@@ -229,7 +229,7 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                     </Button>
-                    <ListView x:Name="listViewNotes"
+                    <ListBox x:Name="listViewNotes"
                               FontFamily="Champagne &amp; Limousines" FontSize="15"
                               Foreground="White" Cursor="Hand"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
@@ -237,7 +237,7 @@
                               Background="{x:Null}"
                               BorderBrush="{x:Null}" FontWeight="Normal"
                               ItemsSource="{Binding Bouquin.BouquinDeNotes}">
-                        <ListView.ItemTemplate>
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="10 0" ToolTip="{Binding Nom}">
                                     <Grid.ColumnDefinitions>
@@ -249,8 +249,8 @@
                                     <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>
                                 </Grid>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
@@ -319,12 +319,12 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <!-- La RichTextBox -->
-                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
-                                   Grid.Row="0" Margin="10,10,10,5" CodeControlsVisibility="Collapsed" />
-                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertit en FlowDocument
+                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}}" Tag="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
+                                   Grid.Row="0" Margin="10,10,10,5" />
+                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertit en FlowDocument-->
                 <TextBox Text="{Binding DocumentXaml, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Row="1" Height="120" />
                 <FlowDocumentPageViewer Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Height="120" />
-                -->
+                
             </Grid>
         </DockPanel>
 

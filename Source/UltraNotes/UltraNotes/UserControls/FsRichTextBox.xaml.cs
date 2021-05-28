@@ -33,30 +33,13 @@ namespace UltraNotes.UserControls
 
         #region Dependency Property Declarations
 
-        // CodeControlsVisibility property
-        public static readonly DependencyProperty CodeControlsVisibilityProperty =
-            DependencyProperty.Register("CodeControlsVisibility", typeof(Visibility),
-            typeof(FsRichTextBox));
 
+
+   
         // Document property
         public static readonly DependencyProperty DocumentProperty =
             DependencyProperty.Register("Document", typeof(FlowDocument),
             typeof(FsRichTextBox), new PropertyMetadata(OnDocumentChanged));
-
-        // ToolbarBackground property
-        public static readonly DependencyProperty ToolbarBackgroundProperty =
-            DependencyProperty.Register("ToolbarBackground", typeof(Brush),
-            typeof(FsRichTextBox));
-
-        // ToolbarBorderBrush property
-        public static readonly DependencyProperty ToolbarBorderBrushProperty =
-            DependencyProperty.Register("ToolbarBorderBrush", typeof(Brush),
-            typeof(FsRichTextBox));
-
-        // ToolbarBorderThickness property
-        public static readonly DependencyProperty ToolbarBorderThicknessProperty =
-            DependencyProperty.Register("ToolbarBorderThickness", typeof(Thickness),
-            typeof(FsRichTextBox));
 
 
         #endregion
@@ -75,15 +58,6 @@ namespace UltraNotes.UserControls
         #endregion
 
         #region Propriétés
-
-        /// <summary>
-        /// The CodeControlsVisibility dependency property.
-        /// </summary>
-        public Visibility CodeControlsVisibility
-        {
-            get { return (Visibility)GetValue(CodeControlsVisibilityProperty); }
-            set { SetValue(CodeControlsVisibilityProperty, value); }
-        }
 
         /// <summary>
         /// The WPF FlowDocument contained in the control.
@@ -108,7 +82,7 @@ namespace UltraNotes.UserControls
              * the flag to 2 and decrement it each time through this method. */
 
             // Initialize
-            var thisControl = (FsRichTextBox)d;
+           var thisControl = (FsRichTextBox)d;
 
             // Exit if this update was internally generated
             if (thisControl.m_InternalUpdatePending > 0)
@@ -119,11 +93,17 @@ namespace UltraNotes.UserControls
                 return;
             }
 
+            thisControl.TextBox.Tag = e.OldValue;
             // Set Document property on RichTextBox
             thisControl.TextBox.Document = (e.NewValue == null) ? new FlowDocument() : (FlowDocument)e.NewValue;
 
             // Reset flag
             thisControl.m_TextHasChanged = false;
+        }
+
+        private static void ClavierRelevé(object sender, KeyEventArgs e)
+        {
+            
         }
 
         #endregion
