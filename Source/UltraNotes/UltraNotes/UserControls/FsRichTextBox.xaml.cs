@@ -93,17 +93,13 @@ namespace UltraNotes.UserControls
                 return;
             }
 
+            // on sauve la valeur du Tag
             thisControl.TextBox.Tag = e.OldValue;
             // Set Document property on RichTextBox
             thisControl.TextBox.Document = (e.NewValue == null) ? new FlowDocument() : (FlowDocument)e.NewValue;
 
             // Reset flag
             thisControl.m_TextHasChanged = false;
-        }
-
-        private static void ClavierRelevé(object sender, KeyEventArgs e)
-        {
-            
         }
 
         #endregion

@@ -319,12 +319,13 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <!-- La RichTextBox -->
-                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}}" Tag="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
+                <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
+                                   Tag="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
                                    Grid.Row="0" Margin="10,10,10,5" />
-                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertit en FlowDocument-->
+                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertit en FlowDocument
                 <TextBox Text="{Binding DocumentXaml, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Row="1" Height="120" />
                 <FlowDocumentPageViewer Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Height="120" />
-                
+                -->
             </Grid>
         </DockPanel>
 
