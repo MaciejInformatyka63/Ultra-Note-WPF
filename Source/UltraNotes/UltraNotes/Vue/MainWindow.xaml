@@ -211,7 +211,7 @@
         </Menu>
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="260" Background="#FF64BED8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
@@ -242,8 +242,8 @@
                                 <Grid Margin="10 0" ToolTip="{Binding Nom}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition/>
                                         <ColumnDefinition Width="Auto"/>
+                                        <!--ColumnDefinition Width="Auto"/-->
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="../icons/application/file2.png" Height="35" Margin="5,5"/>
                                     <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>

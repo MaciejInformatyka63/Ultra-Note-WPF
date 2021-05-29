@@ -164,7 +164,7 @@
                 </ToggleButton>
                 <!-- Changer la couleur du texte -->
                 <ComboBox x:Name="FontColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                          ToolTip="Couleur d'écriture" IsEditable="True" IsReadOnly="False" SelectionChanged="OnFontColorComboSelectionChanged">
+                          ToolTip="Couleur d'écriture" IsEditable="True" SelectionChanged="OnFontColorComboSelectionChanged">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Width="250" />

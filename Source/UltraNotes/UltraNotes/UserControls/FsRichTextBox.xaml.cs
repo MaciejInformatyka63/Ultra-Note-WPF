@@ -156,7 +156,7 @@ namespace UltraNotes.UserControls
             var color = FontColorCombo.SelectedItem.ToString();
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.ForegroundProperty, color);
-            TextBox.Focus();
+            TextBox.Focus(); 
         }
         /// <summary>
         /// Changes the font size of selected text.
