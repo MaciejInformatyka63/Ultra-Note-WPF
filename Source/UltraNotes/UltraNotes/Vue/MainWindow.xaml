@@ -296,7 +296,12 @@
                                 <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Enregistrer sous" Cursor="Hand">
+                        <MenuItem Header="Enregistrer sous..." Cursor="Hand">
+                            <MenuItem.Icon>
+                                <Image Source="../icons/application/enregistrer.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Enregistrer tout" Cursor="Hand">
                             <MenuItem.Icon>
                                 <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>

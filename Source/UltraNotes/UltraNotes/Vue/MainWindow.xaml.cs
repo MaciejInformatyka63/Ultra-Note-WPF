@@ -46,6 +46,8 @@ namespace UltraNotes.Vue
             listViewNotes.DataContext = manager;
             // on se place automatiquement sur le premier élément de la liste;
             listViewNotes.SelectedItem = manager.Bouquin[0];
+            // et on donne automatiquement le focus à la RichTextBox;
+            EditBox.TextBox.Focus();
         }
 
         #endregion
@@ -81,8 +83,13 @@ namespace UltraNotes.Vue
         private void CreerNote_Click(object sender, RoutedEventArgs e)
         {
             // on instancie une nouvelle note;
+            // le titre est "Ma nouvelle note" suivi de "#x", x étant le nombre de notes
+            // qui portent déjà le nom de "Ma nouvelle note";
+            string titre_doc = "Ma nouvelle note";
+            int nb_occurences = manager.Bouquin.BouquinDeNotes.Where(n => n.Nom.Contains(titre_doc)).Count();
+            titre_doc = (nb_occurences == 0) ? titre_doc : $"{titre_doc} #{nb_occurences}";
             // le contenu de la note est un fichier XML représentant un FlowDocument vide;
-            Note nouvelle_note = new Note("Ma nouvelle note", XamlWriter.Save(new FlowDocument()));
+            Note nouvelle_note = new Note(titre_doc, XamlWriter.Save(new FlowDocument()));
             // on l'ajoute au bouquin;
             manager.AjouterUnFichier(nouvelle_note);
             // puis on la sélectionne automatiquement;
@@ -98,20 +105,9 @@ namespace UltraNotes.Vue
         {
             // on supprime le fichier;
             manager.SupprimerUneNote(listViewNotes.SelectedItem as Note);
-            // puis on sélectionne la première note du bouquin;
-            listViewNotes.SelectedItem = manager.Bouquin[0];
-        }
-
-        #endregion
-
-        #region Event Handlers
-
-        /// <summary>
-        /// Forces an update of the FsRichTextBox.Document property.
-        /// </summary>
-        private void OnForceUpdateClick(object sender, RoutedEventArgs e)
-        {
-            this.EditBox.UpdateDocumentBindings();
+            // puis on sélectionne la dernière note du bouquin;
+            int dernier_element = (manager.NombreDeNotes <= 0) ? 0 : manager.NombreDeNotes - 1;
+            listViewNotes.SelectedItem = manager.Bouquin[dernier_element];
         }
 
         #endregion

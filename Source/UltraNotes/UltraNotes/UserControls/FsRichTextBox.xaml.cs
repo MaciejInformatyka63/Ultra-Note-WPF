@@ -23,7 +23,7 @@ namespace UltraNotes.UserControls
 
         // Static member variables
         private static ToggleButton m_SelectedAlignmentButton;
-        //private static ToggleButton m_SelectedListButton;
+        private static ToggleButton m_SelectedListButton;
 
         // Member variables
         private int m_InternalUpdatePending;
@@ -33,14 +33,10 @@ namespace UltraNotes.UserControls
 
         #region Dependency Property Declarations
 
-
-
-   
         // Document property
         public static readonly DependencyProperty DocumentProperty =
             DependencyProperty.Register("Document", typeof(FlowDocument),
             typeof(FsRichTextBox), new PropertyMetadata(OnDocumentChanged));
-
 
         #endregion
 
@@ -115,6 +111,7 @@ namespace UltraNotes.UserControls
             var buttonGroup = new[] { LeftButton, CenterButton, RightButton, JustifyButton };
             this.SetButtonGroupSelection(clickedButton, m_SelectedAlignmentButton, buttonGroup, true);
             m_SelectedAlignmentButton = clickedButton;
+            TextBox.Focus();
         }
 
         /// <summary>
@@ -138,6 +135,7 @@ namespace UltraNotes.UserControls
             var fontFamily = FontFamilyCombo.SelectedItem.ToString();
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
+            TextBox.Focus();
         }
         /// <summary>
         /// Changes the font color of selected text.
@@ -150,7 +148,7 @@ namespace UltraNotes.UserControls
             // clear selection if value unset
             if (FontColorCombo.SelectedItem.ToString() == "{DependencyProperty.UnsetValue}")
             {
-                FontColorCombo.SelectedItem = null;
+                FontColorCombo.SelectedItem = FontColorCombo.Items[0];
                 return;
             }
 
@@ -158,6 +156,7 @@ namespace UltraNotes.UserControls
             var color = FontColorCombo.SelectedItem.ToString();
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.ForegroundProperty, color);
+            TextBox.Focus();
         }
         /// <summary>
         /// Changes the font size of selected text.
@@ -179,6 +178,7 @@ namespace UltraNotes.UserControls
             var pixelSize = Convert.ToDouble(pointSize) * (96 / 72);
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.FontSizeProperty, pixelSize);
+            TextBox.Focus();
         }
 
         /// <summary>
@@ -195,7 +195,6 @@ namespace UltraNotes.UserControls
         /// <summary>
         /// Implements single-select on the alignment button group.
         /// </summary>
-        /*
         private void OnListButtonClick(object sender, RoutedEventArgs e)
         {
             var clickedButton = (ToggleButton)sender;
@@ -203,7 +202,6 @@ namespace UltraNotes.UserControls
             this.SetButtonGroupSelection(clickedButton, m_SelectedListButton, buttonGroup, false);
             m_SelectedListButton = clickedButton;
         }
-        */
 
         /// <summary>
         /// Formats regular text

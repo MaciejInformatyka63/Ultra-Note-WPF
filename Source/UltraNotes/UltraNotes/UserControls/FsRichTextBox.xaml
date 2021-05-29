@@ -144,17 +144,27 @@
                         Template="{StaticResource FlatButtonControlTemplate}">
                     <Image Source="../icons/texteditor/checkbox1.png"/>
                 </Button>
-                <!-- Changer la couleur du texte 
-                <Menu x:Name="" Grid.Column="5" Background="{x:Null}" BorderBrush="{x:Null}"
-                      Height="27" Padding="0" Cursor="Hand" ToolTip="Changer la couleur du texte" SelectionChanged >
-                    <Menu.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
-                        </DataTemplate>
-                    </Menu.ItemTemplate>
-                </Menu>-->
+                <!-- Insérer une puce normale -->
+                <ToggleButton x:Name="BulletsButton" Command="EditingCommands.ToggleBullets"
+                        CommandTarget="{Binding ElementName=TextBox}"
+                        Template="{StaticResource FlatToggleButtonControlTemplate}"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
+                        Cursor="Hand" ToolTip="Puce"
+                        Click="OnListButtonClick">
+                    <Image Source="../icons/texteditor/puces.png"/>
+                </ToggleButton>
+                <!-- Insérer une puce numérotée -->
+                <ToggleButton x:Name="NumberingButton" Command="EditingCommands.ToggleNumbering"
+                        CommandTarget="{Binding ElementName=TextBox}"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
+                        Template="{StaticResource FlatToggleButtonControlTemplate}"
+                        Cursor="Hand" ToolTip="Puce"
+                        Click="OnListButtonClick">
+                    <Image Source="../icons/texteditor/pucesnum.png"/>
+                </ToggleButton>
+                <!-- Changer la couleur du texte -->
                 <ComboBox x:Name="FontColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                          ToolTip="Police d'écriture" IsEditable="True" IsReadOnly="False" SelectionChanged="OnFontColorComboSelectionChanged">
+                          ToolTip="Couleur d'écriture" IsEditable="True" IsReadOnly="False" SelectionChanged="OnFontColorComboSelectionChanged">
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Width="250" />

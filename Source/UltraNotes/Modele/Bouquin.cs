@@ -116,6 +116,7 @@ namespace Modele
         #endregion
 
         # region Indexeurs
+
         /// <summary>
         /// Indexeur sur la collection de notes bouquinDeNotes
         /// </summary>
