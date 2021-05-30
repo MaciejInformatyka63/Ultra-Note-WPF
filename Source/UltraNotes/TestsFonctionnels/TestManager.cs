@@ -23,12 +23,12 @@ namespace TestsFonctionnels
 
             // on ajoute une entrée;
             Console.WriteLine("On ajoute une note via Manager:");
-            bool reponse = manager.AjouterUnFichier(new Note("quatre", "encore un autre nombre"));
+            bool reponse = manager.AjouterUneNote(new Note("quatre", "encore un autre nombre"));
             Display(manager);
 
             // on ajoute un fichier innexistant;
             Console.WriteLine("On ajoute une note nulle:");
-            manager.AjouterUnFichier(null);
+            manager.AjouterUneNote(null);
             Display(manager);
 
             // on vérifie les résultats;
@@ -54,7 +54,7 @@ namespace TestsFonctionnels
 
             // on crée un style pour une note;
             Console.WriteLine("Création d'un style pour une note via indexeur de type int");
-            manager.Bouquin[0].DefinirStyle(new Style(12, Police.Arial, Alignement.justify, false, EpaisseurPolice.Normal, false, true));
+            manager.Bouquin[0].DefinirStyle(new Style(12, Police.Arial, Alignement.Justifie, false, EpaisseurPolice.Normal, false, true));
             Console.WriteLine($"Le nouveau style de un est : {manager.Bouquin[0].StylesUtilisateur[0]}");
         }
 

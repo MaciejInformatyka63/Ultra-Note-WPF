@@ -40,7 +40,7 @@ namespace Modele
         /// </summary>
         /// <param name="note"></param>
         /// <returns></returns>
-        public bool AjouterUnFichier(Note note)
+        public bool AjouterUneNote(Note note)
         {
             // on fais appel au BouquinDeNotes de la classe Bouquin;
             return Bouquin.AjouterUneNote(note);

@@ -13,7 +13,7 @@ namespace TestsFonctionnels
 
             Console.WriteLine(note);
 
-            note.RenommerUnFichier("NouvelleNote");
+            note.Renommer("NouvelleNote");
 
             Console.WriteLine(note);
         }
@@ -21,7 +21,7 @@ namespace TestsFonctionnels
         {
             Note note = new Note("note","hello");
 
-            Style style = new Style(12, Police.Arial, Alignement.gauche, false, EpaisseurPolice.Normal, false, false);
+            Style style = new Style(12, Police.Arial, Alignement.Gauche, false, EpaisseurPolice.Normal, false, false);
 
             note.DefinirStyle(style);
 

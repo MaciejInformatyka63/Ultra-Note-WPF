@@ -6,32 +6,31 @@ namespace Modele
 {
     public class Style
     {
-        #region Champs
-
-        // on fais un mapping de l'énumération pour pouvoir avoir des espaces sur les noms de police composés;
-        Dictionary<Police, string> mappingPolice = new Dictionary<Police, string> {
-            [Police.Arial] = "Arial",
-            [Police.TimesNewRoman] = "Times New Roman"
-        };
-
-        #endregion
-
         #region Propriétés
 
-        public int TailleDePolice { get; set; }
-        public Police PoliceEcriture { get; set; }
-        public Alignement AlignementTexte { get; set; }
-        //public Boolean IsGras { get; set; }
-        public EpaisseurPolice Epaisseur { get; set; }
-        public Boolean IsItalique { get; set; }
-        public Boolean IsSouligne { get; set; }
+        public string Nom { get; set; }
+        public int TailleDePolice { get; set; } = 14;
+        public string PoliceEcriture { get; set; } = "Consolas";
+        public Alignement AlignementTexte { get; set; } = Alignement.Gauche;
+        public string CouleurTexte { get; set; } = "Black";
+        public Boolean IsGras { get; set; } = false;
+        public Boolean IsItalique { get; set; } = false;
+        public Boolean IsSouligne { get; set; } = false;
 
         #endregion
 
         #region Constructeurs
 
         /// <summary>
-        /// constructeur de style
+        /// contructeur de style
+        /// </summary>
+        /// <param name="nom"></param>
+        public Style(string nom)
+        {
+            Nom = nom;
+        }
+        /// <summary>
+        /// constructeur enrichi de style
         /// </summary>
         /// <param name="tailleDePolice"></param>
         /// <param name="policeEcriture">de type enum Police (à compléter...)</param>
@@ -39,13 +38,12 @@ namespace Modele
         /// <param name="isGras"></param>
         /// <param name="isItalique"></param>
         /// <param name="isSouligne"></param>
-        public Style(int tailleDePolice, Police policeEcriture, Alignement alignementTexte, bool isGras, EpaisseurPolice epaisseur, bool isItalique, bool isSouligne)
+        public Style(string nom, int tailleDePolice, string policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne) : this(nom)
         {
             TailleDePolice = tailleDePolice;
             PoliceEcriture = policeEcriture;
             AlignementTexte = alignementTexte;
-            //IsGras = isGras;
-            Epaisseur = epaisseur;
+            IsGras = isGras;
             IsItalique = isItalique;
             IsSouligne = isSouligne;
         }
@@ -60,7 +58,7 @@ namespace Modele
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Style de police {mappingPolice[PoliceEcriture]} de taille {TailleDePolice} aligné à {AlignementTexte}";
+            return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
         }
 
         #endregion

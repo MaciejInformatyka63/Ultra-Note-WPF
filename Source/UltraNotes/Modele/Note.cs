@@ -5,15 +5,11 @@ using System.ComponentModel;
 
 namespace Modele
 {
-    public class Note : ViewModelBase
+    public class Note : VueModeleBase
     {
         #region Champs
 
         // Déclaration des champs de la classe;
-        // ici on choisis IList car le type statique (à gauche du égal) doit toujours être le plus haut;
-        //IList<Commentaire> commentaires = new List<Commentaire>();
-        // renseigne un utilisateur;
-        public Utilisateur utilisateur;
         // variable de la propriété Nom;
         private string p_Nom;
         // variable de la propriété DocumentXaml;
@@ -54,17 +50,9 @@ namespace Modele
             }
         }
         /// <summary>
-        /// Propriété Image qui représente une image
-        /// </summary>
-        public string Image { get; private set; }
-        /// <summary>
-        /// Propriété Chemin qui représente un chemin vers un fichier
+        /// Propriété Chemin qui représente un chemin vers le fichier (ou il est enregistré)
         /// </summary>
         public string Chemin { get; set; }
-        /// <summary>
-        /// Propriété LienDuFicchier qui représente le chemin vers le fichier courant
-        /// </summary>
-        public string LienDuFichier { get; private set; }
         /// <summary>
         /// Propriété qui défini le type de la note (équivalent aux hashtag sur les réseaux sociaux)
         /// </summary>
@@ -89,7 +77,6 @@ namespace Modele
         {
             Nom = nom;
             DocumentXaml = documentXaml;
-            Image = image;
             Chemin = chemin;
         }
         /// <summary>
@@ -107,17 +94,9 @@ namespace Modele
         /// </summary>
         /// <param name="nomDuFichier">nom actuel</param>
         /// <param name="nouveauNom">nouveau nom</param>
-        public void RenommerUnFichier(string nouveauNom)
+        public void Renommer(string nouveauNom)
         {
-            // Etape 1 : on vérifie que le nom du nouveau fichier n'est pas déjà pris.
-            // On renomme le fichier si son nom est identique à un autre fichier pour le même dossier.
-            // Cela donnera par exemple pour trois fichiers aux noms identiques pour le même dossier:
-            //   - C:\\Users\me\Documents\Mon document.rtf
-            //   - C:\\Users\me\Documents\Mon document #1.rtf   --> ici le #1 est ajouté au nom du fichier car le nom existe déjà
-            //   - C:\\Users\me\Documents\Mon document #2.rtf   --> pareil ici, on a le nombre 2 (dans #2) car il y a deux fichiers qui ont le même nom
-            // Si deux noms de fichiers sont identiques dans un même dossier, alors une fenêtre d'avertissement Windows demandera
-            // à l'utilisateur s'il souhaite écraser l'ancien document.
-            
+            // on renomme la note;
             if (Nom==nouveauNom)
             {
                 Nom = Chemin;
@@ -148,19 +127,6 @@ namespace Modele
         {
             return $"{Nom} : {DocumentXaml} à l'adresse {Chemin}";
         }
-        /// <summary>
-        /// Définie le protole d'égalité entre une Note et un objet
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        /*public override bool Equals(object obj)
-        {
-            if (obj == null) return false;
-            Note objAsNote = (Note)obj;
-            if (objAsNote == null) return false;
-            //if (this.Chemin.Equals(objAsFichier.Chemin)) return false;
-            else return Equals(objAsNote);
-        }*/
 
         #endregion
     }

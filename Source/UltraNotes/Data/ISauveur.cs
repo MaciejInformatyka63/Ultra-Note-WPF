@@ -8,7 +8,7 @@ namespace Data
     {
         #region Méthodes à implémenter dans les classes qui réalisent cette interface
 
-        void SauveurBouquin();
+        void SauveurBouquin(string chemin);
 
         #endregion
     }

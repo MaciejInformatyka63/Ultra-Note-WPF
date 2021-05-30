@@ -105,7 +105,7 @@ namespace UltraNotes.UserControls
         /// <summary>
         /// Implements single-select on the alignment button group.
         /// </summary>
-        private void OnAlignmentButtonClick(object sender, RoutedEventArgs e)
+        private void OnAlignementBoutonClick(object sender, RoutedEventArgs e)
         {
             var clickedButton = (ToggleButton)sender;
             var buttonGroup = new[] { LeftButton, CenterButton, RightButton, JustifyButton };
@@ -135,7 +135,6 @@ namespace UltraNotes.UserControls
             var fontFamily = FontFamilyCombo.SelectedItem.ToString();
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
-            TextBox.Focus();
         }
         /// <summary>
         /// Changes the font color of selected text.
@@ -156,7 +155,6 @@ namespace UltraNotes.UserControls
             var color = FontColorCombo.SelectedItem.ToString();
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.ForegroundProperty, color);
-            TextBox.Focus(); 
         }
         /// <summary>
         /// Changes the font size of selected text.
@@ -178,7 +176,6 @@ namespace UltraNotes.UserControls
             var pixelSize = Convert.ToDouble(pointSize) * (96 / 72);
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
             textRange.ApplyPropertyValue(TextElement.FontSizeProperty, pixelSize);
-            TextBox.Focus();
         }
 
         /// <summary>
@@ -230,25 +227,6 @@ namespace UltraNotes.UserControls
         {
             // Set the TextChanged flag
             m_TextHasChanged = true;
-        }
-
-        #endregion
-
-        #region Méthodes publiques
-
-        /// <summary>
-        /// Forces an update of the Document property.
-        /// </summary>
-        public void UpdateDocumentBindings()
-        {
-            // Exit if text hasn't changed
-            if (!m_TextHasChanged) return;
-
-            // Set 'Internal Update Pending' flag
-            m_InternalUpdatePending = 2;
-
-            // Set Document property
-            SetValue(DocumentProperty, this.TextBox.Document);
         }
 
         #endregion

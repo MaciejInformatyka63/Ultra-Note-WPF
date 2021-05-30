@@ -11,11 +11,5 @@ namespace Tests_Unitaires
         {
             Note carré = new Note("carré", "Un carré est un rectangle particulier");
         }
-
-        [Fact]
-        public void EditionCommentaire()
-        {
-            Commentaire com = new Commentaire("ceci est un commentaire");
-        }
     }
 }

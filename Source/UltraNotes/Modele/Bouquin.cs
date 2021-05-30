@@ -47,15 +47,6 @@ namespace Modele
         # region Méthodes
 
         /// <summary>
-        /// Méthode qui supprime un fichier dans la liste des notes éditables par l'utilisateur en passant en paramètre la note concernée
-        /// </summary>
-        /// <param name="note">Une note non nulle</param>
-        /// <returns>retourne true si tout s'est bien passé, false sinon</returns>
-        public bool SupprimerUneNote(Note note)
-        {
-            return (bool)(BouquinDeNotes?.Remove(note));
-        }
-        /// <summary>
         /// Méthode qui ajoute un fichier dans la liste des notes éditables par l'utilisateur
         /// </summary>
         /// <param name="note"></param>
@@ -74,6 +65,15 @@ namespace Modele
             }
             // sinon on retourne false car l'opération ne s'est pas bien passé;
             return false;
+        }
+        /// <summary>
+        /// Méthode qui supprime un fichier dans la liste des notes éditables par l'utilisateur en passant en paramètre la note concernée
+        /// </summary>
+        /// <param name="note">Une note non nulle</param>
+        /// <returns>retourne true si tout s'est bien passé, false sinon</returns>
+        public bool SupprimerUneNote(Note note)
+        {
+            return (bool)(BouquinDeNotes?.Remove(note));
         }
         /// <summary>
         /// Méthode qui ajoute à la collection BouquinDeNotes une liste de notes

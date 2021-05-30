@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Modele
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class VueModeleBase : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged Members
 
@@ -19,11 +19,11 @@ namespace Modele
         /// Fires the PropertyChanged event.
         /// </summary>
         /// <param name="propertyName">The name of the changed property.</param>
-        protected void RaisePropertyChangedEvent(string propertyName)
+        protected void RaisePropertyChangedEvent(string nomPropriete)
         {
             if (PropertyChanged != null)
             {
-                var e = new PropertyChangedEventArgs(propertyName);
+                var e = new PropertyChangedEventArgs(nomPropriete);
                 PropertyChanged(this, e);
             }
         }

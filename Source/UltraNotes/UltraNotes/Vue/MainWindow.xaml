@@ -214,11 +214,12 @@
         </Menu>-->
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="260" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="270" Background="#FF64BED8">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
-                    <Button Height="45" Padding="0" HorizontalContentAlignment="Left"
+                    <Button x:Name="CreerNote_Bouton"
+                            Height="45" Padding="0" HorizontalContentAlignment="Left"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
                             FontFamily="Champagne &amp; Limousines" FontSize="15" FontWeight="Normal"
                             Foreground="White" Template="{StaticResource FlatButtonControlTemplate}"

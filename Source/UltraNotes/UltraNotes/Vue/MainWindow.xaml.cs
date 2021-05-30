@@ -91,7 +91,7 @@ namespace UltraNotes.Vue
             // le contenu de la note est un fichier XML représentant un FlowDocument vide;
             Note nouvelle_note = new Note(titre_doc, XamlWriter.Save(new FlowDocument()));
             // on l'ajoute au bouquin;
-            manager.AjouterUnFichier(nouvelle_note);
+            manager.AjouterUneNote(nouvelle_note);
             // puis on la sélectionne automatiquement;
             listViewNotes.SelectedItem = nouvelle_note;
         }

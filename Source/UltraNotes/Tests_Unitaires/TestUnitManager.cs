@@ -10,7 +10,7 @@ namespace Tests_Unitaires
         public void AjoutDeFichierExistant()
         {
             Manager manager = new Manager(new Bouquin());
-            manager.AjouterUnFichier(new Note("Nouveau document", "Bienvenue dans UltraNotes"));
+            manager.AjouterUneNote(new Note("Nouveau document", "Bienvenue dans UltraNotes"));
             //on regarde si la collection Notes contient bien un élément ajouté par la méthode AjouterUnFichier
             Assert.Equal(1, manager.NombreDeNotes);
         }
@@ -19,7 +19,7 @@ namespace Tests_Unitaires
         public void AjoutDeFichiersInnexistant()
         {
             Manager manager = new Manager(new Bouquin());
-            manager.AjouterUnFichier(null);
+            manager.AjouterUneNote(null);
             Assert.Equal(0, manager.NombreDeNotes);
         }
 
@@ -50,7 +50,7 @@ namespace Tests_Unitaires
         {
             Note note = new Note("un", "le nombre un");
             Manager manager = new Manager(new Bouquin());
-            manager.AjouterUnFichier(note);
+            manager.AjouterUneNote(note);
             Assert.Equal(note, manager.Bouquin[0]);
         }
 
@@ -59,7 +59,7 @@ namespace Tests_Unitaires
         {
             Note note = new Note("un", "le nombre un");
             Manager manager = new Manager(new Bouquin());
-            manager.AjouterUnFichier(note);
+            manager.AjouterUneNote(note);
             Assert.Equal(note, manager.Bouquin["un"]);
         }
     }
