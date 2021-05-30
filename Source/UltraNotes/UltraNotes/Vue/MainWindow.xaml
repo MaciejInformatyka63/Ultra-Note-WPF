@@ -30,6 +30,9 @@
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
     <DockPanel LastChildFill="True">
         <!-- Définition de la barre des menus -->
+        <fsc:Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black"/>
+
+        <!-- Définition de la barre des menus 
         <Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black">
             <MenuItem Header="_Fichier">
                 <MenuItem Header="_Nouveau">
@@ -208,7 +211,7 @@
                 </MenuItem>
                 <MenuItem Header="_Site web" IsEnabled="False"/>
             </MenuItem>
-        </Menu>
+        </Menu>-->
 
         <!-- Définition du menu -->
         <Grid DockPanel.Dock="Left" Width="260" Background="#FF64BED8">

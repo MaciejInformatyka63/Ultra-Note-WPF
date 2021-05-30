@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="UltraNotes.UserControls.Menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UltraNotes.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!-- Définition de la barre des menus -->
+    <Menu>
+        <MenuItem Header="_Fichier">
+            <MenuItem Header="_Nouveau">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/file1.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="_Document">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/application/file2.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Enregistrer">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/enregistrer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Enregistrer _sous..">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/enregistrer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Ouvrir"/>
+            <MenuItem Header="_Imprimer" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditor/imprimante.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Réduire la fenêtre">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditor/taille.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Quitter">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/return.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="_Edition">
+            <MenuItem Header="_Annuler" Command="ApplicationCommands.Undo" CommandTarget="{Binding ElementName=TextBox}">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/annuler.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Rétablir">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/retablir.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Couper"/>
+            <MenuItem Header="C_opier">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/dupliquer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Coll_er">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/editer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Effacer la sélection" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/supprimer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Insérer">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/attacher.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="_Image">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditor/image.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_PDF" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/application/pdfred.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_URL" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/lienURL.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Checkbox">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/checkbox1.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="C_ode" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/code.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Forme" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditor/formes.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="C_itation" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/citation1.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Appliquer">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/surligner.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="_Gras" IsCheckable="True">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/gras.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Italique" IsCheckable="True">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/italique.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Souligné" IsCheckable="True">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditorcolor/souligne.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="FontSizeMenu" Header="_Taille">
+                    <MenuItem.Icon>
+                        <Image Source="../icons/texteditor/tailletexte.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="FontFamilyMenu" Header="_Police"/>
+            <MenuItem Header="_Préférences">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/parametres.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem Header="Contact">
+            <MenuItem Header="Nous _contacter" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/hashtag.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Soumettre un avis" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="../icons/texteditorcolor/filtrer.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Rejoindre le projet" IsEnabled="False"/>
+        </MenuItem>
+        <MenuItem Header="Aide">
+            <MenuItem Header="_Documentation" IsEnabled="False">
+                <MenuItem.Icon>
+                    <Image Source="../icons/application/reader.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="_Site web" IsEnabled="False"/>
+        </MenuItem>
+    </Menu>
+</UserControl>
