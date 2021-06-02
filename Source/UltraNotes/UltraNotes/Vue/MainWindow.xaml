@@ -312,7 +312,9 @@
                         </MenuItem>
                     </MenuItem>
                 </Menu>
-                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
+                <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="30" Height="34" Padding="0" Cursor="Hand"
+                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
                     <Image Source="../icons/application/parametres.png" Margin="5,5"/>
                 </Button>
 

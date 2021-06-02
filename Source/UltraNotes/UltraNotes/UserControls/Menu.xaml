@@ -52,18 +52,18 @@
                     <Image Source="../icons/texteditorcolor/annuler.png"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="_Rétablir">
+            <MenuItem Header="_Rétablir" Command="ApplicationCommands.Redo" CommandTarget="{Binding ElementName=TextBox}">
                 <MenuItem.Icon>
                     <Image Source="../icons/texteditorcolor/retablir.png"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="_Couper"/>
-            <MenuItem Header="C_opier">
+            <MenuItem Header="_Couper" Command="ApplicationCommands.Cut" CommandTarget="{Binding ElementName=TextBox}"/>
+            <MenuItem Header="C_opier" Command="ApplicationCommands.Copy" CommandTarget="{Binding ElementName=TextBox}">
                 <MenuItem.Icon>
                     <Image Source="../icons/texteditorcolor/dupliquer.png"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Coll_er">
+            <MenuItem Header="Coll_er" Command="ApplicationCommands.Paste" CommandTarget="{Binding ElementName=TextBox}">
                 <MenuItem.Icon>
                     <Image Source="../icons/texteditorcolor/editer.png"/>
                 </MenuItem.Icon>
@@ -139,7 +139,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem x:Name="FontFamilyMenu" Header="_Police"/>
-            <MenuItem Header="_Préférences">
+            <MenuItem Header="_Préférences" Click="ButtonOptions_Click">
                 <MenuItem.Icon>
                     <Image Source="../icons/application/parametres.png"/>
                 </MenuItem.Icon>

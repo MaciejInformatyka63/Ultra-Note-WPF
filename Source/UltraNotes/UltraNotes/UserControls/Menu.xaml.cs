@@ -23,6 +23,16 @@ namespace UltraNotes.UserControls
             InitializeComponent();
             this.Initialize();
         }
+        /// <summary>
+        /// Méthode qui ouvre la fenêtre des paramètres quand le bouton associé à été cliqué
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonOptions_Click(object sender, RoutedEventArgs e)
+        {
+            Parametres parametre = new Parametres();
+            parametre.Show();
+        }
         private void Initialize()
         {
             FontFamilyMenu.ItemsSource = Fonts.SystemFontFamilies;
