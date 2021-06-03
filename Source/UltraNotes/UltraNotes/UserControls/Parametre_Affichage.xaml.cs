@@ -40,7 +40,7 @@ namespace UltraNotes.UserControls
         #region Méthodes SelectionChanged
 
         /// <summary>
-        /// Changes the font color of the background
+        /// Changes the color of the background
         /// </summary>
         private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
