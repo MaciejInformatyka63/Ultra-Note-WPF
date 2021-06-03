@@ -55,23 +55,14 @@ namespace UltraNotes.Vue
         #region Méthodes privées
 
         /// <summary>
-        /// Méthode appelée quand la valeur du layout RichTextBox change
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RichTextArea(object sender, TextChangedEventArgs e)
-        {
-            // some content;
-        }
-
-        /// <summary>
         /// Méthode qui ouvre la fenêtre des paramètres quand le bouton associé à été cliqué
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonOptions_Click(object sender, RoutedEventArgs e)
+        private void BoutonOptions_Click(object sender, RoutedEventArgs e)
         {
             Parametres parametre = new Parametres();
+            parametre.BouquinNotes = manager.Bouquin;
             parametre.Show();
         }
 

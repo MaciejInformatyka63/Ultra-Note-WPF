@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modele;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,35 +19,44 @@ namespace UltraNotes.UserControls
     /// </summary>
     public partial class Parametre_Affichage : UserControl
     {
+        #region Propriétés
+
+        public Bouquin BouquinUtilisateur
+        {
+            get { return (Bouquin)GetValue(BouquinUtilisateurProperty); }
+            set { SetValue(BouquinUtilisateurProperty, value); }
+        }
+
+        #endregion
+
+        #region Déclaration des Dependency Properties
+
+        public static readonly DependencyProperty BouquinUtilisateurProperty =
+            DependencyProperty.Register("BouquinUtilisateur", typeof(Bouquin), typeof(Parametre_Affichage));
+
+        #endregion
+
+        #region Constructeurs
+
         public Parametre_Affichage()
         {
             InitializeComponent();
-            this.Initialize();
+            DataContext = BouquinUtilisateur;
         }
+
+        #endregion
+
+        #region Méthodes SelectionChanged
+
         /// <summary>
         /// Changes the font color of the background
         /// </summary>
         private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /* Exit if no selection
-            if (FontColorCombo.SelectedItem == null) return;
-
-            // clear selection if value unset
-            if (FontColorCombo.SelectedItem.ToString() == "{DependencyProperty.UnsetValue}")
-            {
-                FontColorCombo.SelectedItem = FontColorCombo.Items[0];
-                return;
-            }
-
-            / Process selection*/
-            var color = BackgroundColorCombo.SelectedItem.ToString();
-            ColorGrid.Background.SetValue(Control.BackgroundProperty, color);
+            if (BackgroundColorCombo.SelectedItem == null) return;
+            BouquinUtilisateur.ThemeApplication = BackgroundColorCombo.SelectedItem.ToString();
         }
 
-        private void Initialize()
-        {
-            BackgroundColorCombo.Items.Add("Red");
-            BackgroundColorCombo.Items.Add("Blue");
-        }
+        #endregion
     }
 }

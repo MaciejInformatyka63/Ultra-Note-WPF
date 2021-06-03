@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modele;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +19,23 @@ namespace UltraNotes.UserControls
     /// </summary>
     public partial class Menu : UserControl
     {
+        #region Propriétés
+
+        public Manager Manager
+        {
+            get { return (Manager)GetValue(ManagerProperty); }
+            set { SetValue(ManagerProperty, value); }
+        }
+
+        #endregion
+
+        #region Déclaration des Dependency Properties
+
+        public static readonly DependencyProperty ManagerProperty =
+            DependencyProperty.Register("Manager", typeof(int), typeof(Manager));
+
+        #endregion
+
         public Menu()
         {
             InitializeComponent();
@@ -31,6 +49,7 @@ namespace UltraNotes.UserControls
         private void ButtonOptions_Click(object sender, RoutedEventArgs e)
         {
             Parametres parametre = new Parametres();
+            parametre.BouquinNotes = Manager.Bouquin;
             parametre.Show();
         }
         private void Initialize()

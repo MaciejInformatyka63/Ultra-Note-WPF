@@ -32,189 +32,8 @@
         <!-- Définition de la barre des menus -->
         <fsc:Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black"/>
 
-        <!-- Définition de la barre des menus 
-        <Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black">
-            <MenuItem Header="_Fichier">
-                <MenuItem Header="_Nouveau">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/file1.png"/>
-                    </MenuItem.Icon>
-                    <MenuItem Header="_Document">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/application/file2.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="_Enregistrer">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/enregistrer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Enregistrer _sous..">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/enregistrer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Ouvrir"/>
-                <MenuItem Header="_Imprimer" IsEnabled="False">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditor/imprimante.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Réduire la fenêtre">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditor/taille.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Quitter">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/return.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header="_Edition">
-                <MenuItem Header="_Annuler">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/annuler.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Rétablir">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/retablir.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Couper"/>
-                <MenuItem Header="C_opier">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/dupliquer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Coll_er">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/editer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Effacer la sélection" IsEnabled="False">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/supprimer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Insérer">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/attacher.png"/>
-                    </MenuItem.Icon>
-                    <MenuItem Header="_Image">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditor/image.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_PDF" IsEnabled="False">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/application/pdfred.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_URL" IsEnabled="False">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/lienURL.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_Checkbox">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/checkbox1.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="C_ode" IsEnabled="False">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/code.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_Forme" IsEnabled="False">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditor/formes.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="C_itation" IsEnabled="False">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/citation1.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Appliquer">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/surligner.png"/>
-                    </MenuItem.Icon>
-                    <MenuItem Header="_Gras" IsCheckable="True">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/gras.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_Italique" IsCheckable="True">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/italique.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_Souligné" IsCheckable="True">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditorcolor/souligne.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="_Taille">
-                        <MenuItem.Icon>
-                            <Image Source="../icons/texteditor/tailletexte.png"/>
-                        </MenuItem.Icon>
-                        <MenuItem Header=" 5 "/>
-                        <MenuItem Header=" 8 "/>
-                        <MenuItem Header=" 10 "/>
-                        <MenuItem Header=" 12 "/>
-                        <MenuItem Header=" 14 "/>
-                        <MenuItem Header=" 15 "/>
-                        <MenuItem Header=" 16 "/>
-                        <MenuItem Header=" 18 "/>
-                        <MenuItem Header=" 20 "/>
-                        <MenuItem Header=" 25 "/>
-                        <MenuItem Header=" 30 "/>
-                        <MenuItem Header=" 35 "/>
-                        <MenuItem Header=" 40 "/>
-                        <MenuItem Header=" 45 "/>
-                        <MenuItem Header=" 50 "/>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="_Police">
-                    <MenuItem Header="_Calibri"/>
-                    <MenuItem Header="_Liberation Sérif"/>
-                    <MenuItem Header="_Gadugi"/>
-                </MenuItem>
-                <MenuItem Header="_Préférences">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/parametres.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header="Contact">
-                <MenuItem Header="Nous _contacter" IsEnabled="False">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/hashtag.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Soumettre un avis" IsEnabled="False">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/texteditorcolor/filtrer.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Rejoindre le projet" IsEnabled="False"/>
-            </MenuItem>
-            <MenuItem Header="Aide">
-                <MenuItem Header="_Documentation" IsEnabled="False">
-                    <MenuItem.Icon>
-                        <Image Source="../icons/application/reader.png"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="_Site web" IsEnabled="False"/>
-            </MenuItem>
-        </Menu>-->
-
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="270" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="270" Background="{Binding ThemeApplication}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
@@ -314,7 +133,7 @@
                 </Menu>
                 <Button x:Name="ButtonOptions" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}"
                         Width="30" Height="34" Padding="0" Cursor="Hand"
-                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="ButtonOptions_Click">
+                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="BoutonOptions_Click">
                     <Image Source="../icons/application/parametres.png" Margin="5,5"/>
                 </Button>
 
@@ -333,7 +152,7 @@
                 <fsc:FsRichTextBox x:Name="EditBox" Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
                                    Tag="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, Mode=TwoWay}"
                                    Grid.Row="0" Margin="10,10,10,5" />
-                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertit en FlowDocument
+                <!-- Ressources utiles pour visualiser la valeur de la propriété DocumentXaml de Notes, en brut et convertie en FlowDocument
                 <TextBox Text="{Binding DocumentXaml, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Row="1" Height="120" />
                 <FlowDocumentPageViewer Document="{Binding DocumentXaml, Converter={StaticResource flowDocumentConverter}, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Height="120" />
                 -->

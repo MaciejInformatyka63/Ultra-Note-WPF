@@ -12,12 +12,12 @@
         <Grid DockPanel.Dock="Left" Width="250" Background="{Binding ThemeApplication}">
             <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">
                 <WrapPanel>
-                    <Image Source="icons/application/return.png" Margin="5,5"/>
+                    <Image Source="../icons/application/return.png" Margin="5,5"/>
                     <TextBlock Text="Quitter" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF43414F"/>
                 </WrapPanel>
             </Button>
             <StackPanel>
-                <Image Source="icons/application/parametres.png" Margin="10" MaxHeight="70"/>
+                <Image Source="../icons/application/parametres.png" Margin="10" MaxHeight="70"/>
                 <ListView FontFamily="Champagne &amp; Limousines" FontSize="15" Cursor="Hand" x:Name="ListViewParam"
                           Background="{Binding ThemeApplication}" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
                           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -53,7 +53,7 @@
             </Grid>
         </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
-            <uclocal:Parametre_Affichage/>
+            <uclocal:Parametre_Affichage BouquinUtilisateur="{Binding BouquinNotes}"/>
         </ContentControl>
     </DockPanel>
 </Window>

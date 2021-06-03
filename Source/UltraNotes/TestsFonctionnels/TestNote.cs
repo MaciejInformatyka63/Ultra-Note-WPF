@@ -21,7 +21,7 @@ namespace TestsFonctionnels
         {
             Note note = new Note("note","hello");
 
-            Style style = new Style(12, Police.Arial, Alignement.Gauche, false, EpaisseurPolice.Normal, false, false);
+            Style style = new Style("Style1", 12, "Arial", Alignement.Gauche, false, false, false);
 
             note.DefinirStyle(style);
 

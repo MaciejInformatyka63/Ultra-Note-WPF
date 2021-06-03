@@ -23,9 +23,24 @@ namespace Modele
         /// </summary>
         public Boolean ModeContraste { get; private set; } = false;
         /// <summary>
-        /// Propriété qui précise le theme de l'application (la couleur principale)
+        /// Propriété qui précise les couleurs du theme de l'application
         /// </summary>
-        public static string ThemeApplication { get; set; } = "Red";
+        public string ThemeApplication { get; set; }
+        /// <summary>
+        /// Propriété qui précise les couleurs du theme de l'application
+        /// </summary>
+        public Dictionary<string, string> ThemeApplicationCouleurs { get; set; } = new Dictionary<string, string>()
+        {
+            {"Défaut", "#FF64BED8" },
+            {"Vert", "#59F0A2" },
+            {"Orange", "#E6A05A" },
+            {"Bleu profond", "#3A9981" },
+            {"Bleu nuit", "#428B99" },
+            {"Violet", "#845399" },
+            {"Violet profond", "#995489" },
+            {"Marron", "#995F3D" },
+            {"Contraste", "#252C2E" }
+        };
         /// <summary>
         /// Propriété qui précise le dossier d'enregistrement par défaut d'une note
         /// </summary>

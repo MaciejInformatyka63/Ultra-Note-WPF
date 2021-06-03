@@ -54,7 +54,7 @@ namespace TestsFonctionnels
 
             // on crée un style pour une note;
             Console.WriteLine("Création d'un style pour une note via indexeur de type int");
-            manager.Bouquin[0].DefinirStyle(new Style(12, Police.Arial, Alignement.Justifie, false, EpaisseurPolice.Normal, false, true));
+            manager.Bouquin[0].DefinirStyle(new Style("Style1", 12, "Arial", Alignement.Justifie, false, false, true));
             Console.WriteLine($"Le nouveau style de un est : {manager.Bouquin[0].StylesUtilisateur[0]}");
         }
 

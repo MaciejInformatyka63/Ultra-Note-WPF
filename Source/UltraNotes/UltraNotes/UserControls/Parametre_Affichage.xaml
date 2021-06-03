@@ -18,11 +18,12 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <WrapPanel Grid.Row="0">
+                <WrapPanel Grid.Row="0" DataContext="{Binding BouquinNotes}">
                     <TextBlock Text="Choisir un thème de couleur pour l'application : " Margin="5,10" HorizontalAlignment="Left"
                                FontSize="14" FontFamily="Microsoft yahei"/>
                     <ComboBox x:Name="BackgroundColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                        ToolTip="Thème" IsEditable="True" SelectionChanged="OnBackgroundColorComboSelectionChanged">
+                        ToolTip="Thème de l'application" IsEditable="True" ItemsSource="{Binding ThemeApplicationCouleurs.Keys}"
+                        SelectionChanged="OnBackgroundColorComboSelectionChanged">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel Width="250" />

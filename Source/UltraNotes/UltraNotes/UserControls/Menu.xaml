@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <!-- Définition de la barre des menus -->
-    <Menu>
+    <Menu Background="White">
         <MenuItem Header="_Fichier">
             <MenuItem Header="_Nouveau">
                 <MenuItem.Icon>
