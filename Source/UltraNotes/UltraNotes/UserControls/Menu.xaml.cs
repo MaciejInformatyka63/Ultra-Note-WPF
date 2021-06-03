@@ -49,7 +49,6 @@ namespace UltraNotes.UserControls
         private void ButtonOptions_Click(object sender, RoutedEventArgs e)
         {
             Parametres parametre = new Parametres();
-            parametre.BouquinNotes = Manager.Bouquin;
             parametre.Show();
         }
         private void Initialize()

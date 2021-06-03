@@ -21,18 +21,9 @@ namespace UltraNotes.UserControls
     {
         #region Propriétés
 
-        public Bouquin BouquinUtilisateur
-        {
-            get { return (Bouquin)GetValue(BouquinUtilisateurProperty); }
-            set { SetValue(BouquinUtilisateurProperty, value); }
-        }
-
-        #endregion
-
-        #region Déclaration des Dependency Properties
-
-        public static readonly DependencyProperty BouquinUtilisateurProperty =
-            DependencyProperty.Register("BouquinUtilisateur", typeof(Bouquin), typeof(Parametre_Affichage));
+        // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
+        // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
+        public Manager MonManager => (App.Current as App).LeManager;
 
         #endregion
 
@@ -41,7 +32,7 @@ namespace UltraNotes.UserControls
         public Parametre_Affichage()
         {
             InitializeComponent();
-            DataContext = BouquinUtilisateur;
+            BackgroundColorCombo.DataContext = MonManager.Bouquin;
         }
 
         #endregion
@@ -54,7 +45,7 @@ namespace UltraNotes.UserControls
         private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (BackgroundColorCombo.SelectedItem == null) return;
-            BouquinUtilisateur.ThemeApplication = BackgroundColorCombo.SelectedItem.ToString();
+            MonManager.Bouquin.ThemeApplication = BackgroundColorCombo.SelectedItem.ToString();
         }
 
         #endregion

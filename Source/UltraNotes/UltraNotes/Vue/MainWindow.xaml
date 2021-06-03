@@ -25,6 +25,9 @@
         </ControlTemplate>
         <!-- Value Converters -->
         <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
+        <Style TargetType="Grid" x:Key="couleurDeFond">
+            <Setter Property="Background" Value="{Binding MonManager.ThemeApplication}" />
+        </Style>
     </Window.Resources>
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
@@ -33,7 +36,7 @@
         <fsc:Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black"/>
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="270" Background="{Binding ThemeApplication}">
+        <Grid DockPanel.Dock="Left" Width="270" Style="{StaticResource couleurDeFond}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>

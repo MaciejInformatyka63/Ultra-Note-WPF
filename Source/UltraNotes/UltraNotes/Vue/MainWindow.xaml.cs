@@ -25,11 +25,11 @@ namespace UltraNotes.Vue
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region Champs
+        #region Propriétés
 
-        // On déclare un manager de cette manière;
-        static IChargeur chargeur = new Stub();
-        Manager manager = new Manager(chargeur.ChargeurBouquin(""));
+        // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
+        // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
+        public Manager MonManager => (App.Current as App).LeManager;
 
         #endregion
 
@@ -43,9 +43,9 @@ namespace UltraNotes.Vue
             InitializeComponent();
 
             // on définie le DataContext;
-            listViewNotes.DataContext = manager;
+            listViewNotes.DataContext = MonManager;
             // on se place automatiquement sur le premier élément de la liste;
-            listViewNotes.SelectedItem = manager.Bouquin[0];
+            listViewNotes.SelectedItem = MonManager.Bouquin[0];
             // et on donne automatiquement le focus à la RichTextBox;
             EditBox.TextBox.Focus();
         }
@@ -62,7 +62,6 @@ namespace UltraNotes.Vue
         private void BoutonOptions_Click(object sender, RoutedEventArgs e)
         {
             Parametres parametre = new Parametres();
-            parametre.BouquinNotes = manager.Bouquin;
             parametre.Show();
         }
 
@@ -77,12 +76,12 @@ namespace UltraNotes.Vue
             // le titre est "Ma nouvelle note" suivi de "#x", x étant le nombre de notes
             // qui portent déjà le nom de "Ma nouvelle note";
             string titre_doc = "Ma nouvelle note";
-            int nb_occurences = manager.Bouquin.BouquinDeNotes.Where(n => n.Nom.Contains(titre_doc)).Count();
+            int nb_occurences = MonManager.Bouquin.BouquinDeNotes.Where(n => n.Nom.Contains(titre_doc)).Count();
             titre_doc = (nb_occurences == 0) ? titre_doc : $"{titre_doc} #{nb_occurences}";
             // le contenu de la note est un fichier XML représentant un FlowDocument vide;
             Note nouvelle_note = new Note(titre_doc, XamlWriter.Save(new FlowDocument()));
             // on l'ajoute au bouquin;
-            manager.AjouterUneNote(nouvelle_note);
+            MonManager.AjouterUneNote(nouvelle_note);
             // puis on la sélectionne automatiquement;
             listViewNotes.SelectedItem = nouvelle_note;
         }
@@ -95,10 +94,10 @@ namespace UltraNotes.Vue
         private void SupprimerFichier_Click(object sender, RoutedEventArgs e)
         {
             // on supprime le fichier;
-            manager.SupprimerUneNote(listViewNotes.SelectedItem as Note);
+            MonManager.SupprimerUneNote(listViewNotes.SelectedItem as Note);
             // puis on sélectionne la dernière note du bouquin;
-            int dernier_element = (manager.NombreDeNotes <= 0) ? 0 : manager.NombreDeNotes - 1;
-            listViewNotes.SelectedItem = manager.Bouquin[dernier_element];
+            int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;
+            listViewNotes.SelectedItem = MonManager.Bouquin[dernier_element];
         }
 
         #endregion

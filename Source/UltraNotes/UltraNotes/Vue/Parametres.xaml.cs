@@ -21,33 +21,11 @@ namespace UltraNotes
     /// </summary>
     public partial class Parametres : Window
     {
-        /*
-        #region Propriétés
-
-        public Bouquin Bouquin
-        {
-            get { return (Bouquin)GetValue(BouquinProperty); }
-            set { SetValue(BouquinProperty, value); }
-        }
-
-        #endregion
-
-        #region Déclaration des Dependency Properties
-
-        public static readonly DependencyProperty BouquinProperty =
-            DependencyProperty.Register("Bouquin", typeof(int), typeof(Bouquin), new PropertyMetadata(0));
-
-        #endregion
-        */
-
-        public Bouquin BouquinNotes { get; set; }
-
         #region Constructeurs
 
         public Parametres()
         {
             InitializeComponent();
-            DataContext = BouquinNotes;
         }
 
         #endregion

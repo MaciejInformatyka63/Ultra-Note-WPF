@@ -18,7 +18,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <WrapPanel Grid.Row="0" DataContext="{Binding BouquinNotes}">
+                <WrapPanel Grid.Row="0">
                     <TextBlock Text="Choisir un thème de couleur pour l'application : " Margin="5,10" HorizontalAlignment="Left"
                                FontSize="14" FontFamily="Microsoft yahei"/>
                     <ComboBox x:Name="BackgroundColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"

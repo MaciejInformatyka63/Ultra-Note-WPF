@@ -23,9 +23,9 @@ namespace Modele
         /// </summary>
         public Boolean ModeContraste { get; private set; } = false;
         /// <summary>
-        /// Propriété qui précise les couleurs du theme de l'application
+        /// Propriété qui précise la couleurs du theme de l'application choisie par l'utilisateur, au format hexadécimal
         /// </summary>
-        public string ThemeApplication { get; set; }
+        public string ThemeApplication { get; set; } = "#FF64BED8";
         /// <summary>
         /// Propriété qui précise les couleurs du theme de l'application
         /// </summary>

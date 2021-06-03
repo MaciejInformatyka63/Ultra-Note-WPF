@@ -53,7 +53,7 @@
             </Grid>
         </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">
-            <uclocal:Parametre_Affichage BouquinUtilisateur="{Binding BouquinNotes}"/>
+            <uclocal:Parametre_Affichage/>
         </ContentControl>
     </DockPanel>
 </Window>

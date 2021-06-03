@@ -6,11 +6,10 @@
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              StartupUri="Vue/MainWindow.xaml">
     <Application.Resources>
-        <!--
-        <system:String x:Key="defaultColor">#FF64BED8</system:String>
-        <Style TargetType="Grid" x:Key="defaultBackground">
-            <Setter Property="Background" Value="{StaticResource defaultColor}" />
+        
+        <Style TargetType="Grid" x:Key="couleurDeFond">
+            <Setter Property="Background" Value="{Binding LeManager.ThemeApplication}" />
         </Style>
-        -->
+        
     </Application.Resources>
 </Application>
