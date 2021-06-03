@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace Modele
 {
-    public class Note : VueModeleBase
+    public class Note : INotifyPropertyChanged
     {
         #region Champs
 
@@ -20,6 +20,10 @@ namespace Modele
         #region Propriétés
 
         /// <summary>
+        /// Propriété qui est chargée d'envoyer des notifications à la vue pour notifier le changement d'une propriété
+        /// </summary>
+        void OnPropertyChanged(string nomPropriete) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomPropriete));
+        /// <summary>
         /// Liste des styles utilisateurs
         /// </summary>
         public IList<Style> StylesUtilisateur { get; } = new List<Style>();
@@ -33,7 +37,7 @@ namespace Modele
             set
             {
                 p_Nom = value;
-                base.RaisePropertyChangedEvent("Nom");
+                OnPropertyChanged("Nom");
             }
         }
         /// <summary>
@@ -46,7 +50,7 @@ namespace Modele
             set
             {
                 p_DocumentXaml = value;
-                base.RaisePropertyChangedEvent("DocumentXaml");
+                OnPropertyChanged("DocumentXaml");
             }
         }
         /// <summary>
@@ -61,6 +65,12 @@ namespace Modele
         /// Propriété calculée qui permet d'obtenir la taille du fichier courant
         /// </summary>
         public float CalculerTailleFichier { get; }
+
+        #endregion
+
+        #region INotifyPropertyChanged Members
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 

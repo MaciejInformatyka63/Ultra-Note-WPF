@@ -2,14 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 
 namespace Modele
 {
-    public class Bouquin : IEnumerable
+    public class Bouquin : IEnumerable, INotifyPropertyChanged
     {
-        # region Propriétés
+        #region Membres INotifyPropertyChanged
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+        #region Champs
+
+        private string p_themeApplication = "#FF64BED8";
+
+        #endregion
+
+        #region Propriétés
+
+        /// <summary>
+        /// Propriété qui est chargée d'envoyer des notifications à la vue pour notifier le changement d'une propriété
+        /// </summary>
+        void OnPropertyChanged(string nomPropriete) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomPropriete));
         /// <summary>
         /// Propriété sur une collection de notes en lecture seule
         /// </summary>
@@ -25,7 +42,15 @@ namespace Modele
         /// <summary>
         /// Propriété qui précise la couleurs du theme de l'application choisie par l'utilisateur, au format hexadécimal
         /// </summary>
-        public string ThemeApplication { get; set; } = "#FF64BED8";
+        public string ThemeApplication
+        {
+            get { return p_themeApplication; }
+            set
+            {
+                p_themeApplication = value;
+                OnPropertyChanged("ThemeApplication");
+            }
+        }
         /// <summary>
         /// Propriété qui précise les couleurs du theme de l'application
         /// </summary>
@@ -59,7 +84,7 @@ namespace Modele
 
         #endregion
 
-        # region Méthodes
+        #region Méthodes
 
         /// <summary>
         /// Méthode qui ajoute un fichier dans la liste des notes éditables par l'utilisateur

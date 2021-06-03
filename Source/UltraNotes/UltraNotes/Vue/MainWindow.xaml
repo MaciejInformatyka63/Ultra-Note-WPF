@@ -25,9 +25,6 @@
         </ControlTemplate>
         <!-- Value Converters -->
         <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
-        <Style TargetType="Grid" x:Key="couleurDeFond">
-            <Setter Property="Background" Value="{Binding MonManager.ThemeApplication}" />
-        </Style>
     </Window.Resources>
 
     <!-- Définition respectivement de l'éditeur de texte à droite et du navigateur de fichier à gauche -->
