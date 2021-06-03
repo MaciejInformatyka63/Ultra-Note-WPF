@@ -21,6 +21,32 @@ namespace UltraNotes.UserControls
         public Parametre_Affichage()
         {
             InitializeComponent();
+            this.Initialize();
+        }
+        /// <summary>
+        /// Changes the font color of the background
+        /// </summary>
+        private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /* Exit if no selection
+            if (FontColorCombo.SelectedItem == null) return;
+
+            // clear selection if value unset
+            if (FontColorCombo.SelectedItem.ToString() == "{DependencyProperty.UnsetValue}")
+            {
+                FontColorCombo.SelectedItem = FontColorCombo.Items[0];
+                return;
+            }
+
+            / Process selection*/
+            var color = BackgroundColorCombo.SelectedItem.ToString();
+            ColorGrid.Background.SetValue(Control.BackgroundProperty, color);
+        }
+
+        private void Initialize()
+        {
+            BackgroundColorCombo.Items.Add("Red");
+            BackgroundColorCombo.Items.Add("Blue");
         }
     }
 }

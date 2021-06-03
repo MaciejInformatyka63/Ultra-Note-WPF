@@ -25,7 +25,7 @@ namespace Modele
         /// <summary>
         /// Propriété qui précise le theme de l'application (la couleur principale)
         /// </summary>
-        public string ThemeApplication { get; private set; }
+        public static string ThemeApplication { get; set; } = "Red";
         /// <summary>
         /// Propriété qui précise le dossier d'enregistrement par défaut d'une note
         /// </summary>

@@ -9,7 +9,7 @@
         Title="Parametres"
         Height="450" Width="800">
     <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Left" Width="250" Background="#FF64BED8">
+        <Grid DockPanel.Dock="Left" Width="250" Background="{Binding ThemeApplication}">
             <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">
                 <WrapPanel>
                     <Image Source="icons/application/return.png" Margin="5,5"/>
@@ -19,7 +19,7 @@
             <StackPanel>
                 <Image Source="icons/application/parametres.png" Margin="10" MaxHeight="70"/>
                 <ListView FontFamily="Champagne &amp; Limousines" FontSize="15" Cursor="Hand" x:Name="ListViewParam"
-                          Background="#FF64BED8" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
+                          Background="{Binding ThemeApplication}" Foreground="White" BorderBrush="{x:Null}" FontWeight="Normal"
                           ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <ListViewItem Height="45" Selected="ListViewItem_General">
