@@ -19,23 +19,6 @@ namespace UltraNotes.UserControls
     /// </summary>
     public partial class Menu : UserControl
     {
-        #region Propriétés
-
-        public Manager Manager
-        {
-            get { return (Manager)GetValue(ManagerProperty); }
-            set { SetValue(ManagerProperty, value); }
-        }
-
-        #endregion
-
-        #region Déclaration des Dependency Properties
-
-        public static readonly DependencyProperty ManagerProperty =
-            DependencyProperty.Register("Manager", typeof(int), typeof(Manager));
-
-        #endregion
-
         public Menu()
         {
             InitializeComponent();
