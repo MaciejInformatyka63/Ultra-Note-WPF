@@ -17,7 +17,7 @@ namespace Modele
 
         #region Champs
 
-        private string p_themeApplication = "#FF64BED8";
+        private string p_themeApplication = "#64BED8";
 
         #endregion
 
@@ -56,7 +56,7 @@ namespace Modele
         /// </summary>
         public Dictionary<string, string> ThemeApplicationCouleurs { get; set; } = new Dictionary<string, string>()
         {
-            {"Défaut", "#FF64BED8" },
+            {"Défaut", "#64BED8" },
             {"Vert", "#59F0A2" },
             {"Orange", "#E6A05A" },
             {"Bleu profond", "#3A9981" },

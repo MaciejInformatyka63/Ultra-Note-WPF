@@ -1,6 +1,7 @@
 ﻿using Modele;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,6 +34,7 @@ namespace UltraNotes.UserControls
         {
             InitializeComponent();
             BackgroundColorCombo.DataContext = MonManager.Bouquin;
+            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
         }
 
         #endregion
@@ -45,7 +47,8 @@ namespace UltraNotes.UserControls
         private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (BackgroundColorCombo.SelectedItem == null) return;
-            MonManager.Bouquin.ThemeApplication = BackgroundColorCombo.SelectedItem.ToString();
+            MonManager.Bouquin.ThemeApplication = MonManager.Bouquin.ThemeApplicationCouleurs[BackgroundColorCombo.SelectedItem.ToString()];
+            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
         }
 
         #endregion

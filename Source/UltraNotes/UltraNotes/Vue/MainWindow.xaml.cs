@@ -48,6 +48,9 @@ namespace UltraNotes.Vue
             listViewNotes.SelectedItem = MonManager.Bouquin[0];
             // et on donne automatiquement le focus à la RichTextBox;
             EditBox.TextBox.Focus();
+
+            // on défini également le DataContext de la grille de fond;
+            GrilleDeFond.DataContext = MonManager.Bouquin;
         }
 
         #endregion

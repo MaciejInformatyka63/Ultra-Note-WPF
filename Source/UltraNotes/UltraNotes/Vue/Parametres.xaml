@@ -9,8 +9,8 @@
         Title="Parametres"
         Height="450" Width="800">
     <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Left" Width="250" Background="{Binding ThemeApplication}">
-            <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">
+        <Grid x:Name="GrilleDeFond" DockPanel.Dock="Left" Width="250" Background="{Binding ThemeApplication}">
+            <Button x:Name="ButtonReturn" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Arrow" Background="White" BorderBrush="{x:Null}" Height="30" Padding="5,0">
                 <WrapPanel>
                     <Image Source="../icons/application/return.png" Margin="5,5"/>
                     <TextBlock Text="Quitter" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF43414F"/>

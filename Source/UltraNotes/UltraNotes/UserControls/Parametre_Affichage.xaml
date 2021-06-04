@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DockPanel>
-            <Grid x:Name="ColorGrid" DockPanel.Dock="Top" Background="{Binding Path=ThemeApplication,UpdateSourceTrigger=LostFocus}">
+            <Grid x:Name="ColorGrid" DockPanel.Dock="Top" Background="{Binding ThemeApplication}">
                 <TextBlock Text="Options d'affichage" HorizontalAlignment="Center" VerticalAlignment="Top"
                     FontSize="14" FontWeight="ExtraBold" FontFamily="Microsoft yahei"
                     Margin="5,10" Padding="5,0"/>
@@ -21,7 +21,7 @@
                 <WrapPanel Grid.Row="0">
                     <TextBlock Text="Choisir un thème de couleur pour l'application : " Margin="5,10" HorizontalAlignment="Left"
                                FontSize="14" FontFamily="Microsoft yahei"/>
-                    <ComboBox x:Name="BackgroundColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
+                    <ComboBox x:Name="BackgroundColorCombo" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
                         ToolTip="Thème de l'application" IsEditable="True" ItemsSource="{Binding ThemeApplicationCouleurs.Keys}"
                         SelectionChanged="OnBackgroundColorComboSelectionChanged">
                         <ComboBox.ItemsPanel>
@@ -35,10 +35,6 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <!--ComboBox Height="23" FontSize="10" Cursor="Arrow">
-                        <ComboBoxItem IsSelected="False" Content="Rouge" Background="DarkSalmon"/>
-                        <ComboBoxItem IsSelected="True" Content="Bleu" Background="#FF64BED8"/>
-                    </-->
                 </WrapPanel>
                 <WrapPanel Grid.Row="1">
                     <TextBlock Text="Mode contrasté : " Margin="5,10" HorizontalAlignment="Left"

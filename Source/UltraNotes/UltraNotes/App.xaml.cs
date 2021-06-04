@@ -34,7 +34,7 @@ namespace UltraNotes
 
         public App()
         {
-            
+
         }
 
         #endregion

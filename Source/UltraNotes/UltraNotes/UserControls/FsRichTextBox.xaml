@@ -13,7 +13,7 @@
         <ControlTemplate x:Key="FlatButtonControlTemplate" TargetType="{x:Type Button}">
             <Border x:Name="OuterBorder" BorderBrush="Transparent" BorderThickness="1" CornerRadius="2">
                 <Border x:Name="InnerBorder" Background="Transparent" BorderBrush="Transparent" BorderThickness="1" CornerRadius="2">
-                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" Margin="{TemplateBinding Padding}" />
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
                 </Border>
             </Border>
             <ControlTemplate.Triggers>
@@ -29,7 +29,7 @@
         <ControlTemplate x:Key="FlatToggleButtonControlTemplate" TargetType="{x:Type ToggleButton}">
             <Border x:Name="OuterBorder" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0">
                 <Border x:Name="InnerBorder" Background="Transparent" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0">
-                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" Margin="{TemplateBinding Padding}" />
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
                 </Border>
             </Border>
             <ControlTemplate.Triggers>

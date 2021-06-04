@@ -7,9 +7,5 @@
              StartupUri="Vue/MainWindow.xaml">
     <Application.Resources>
 
-        <Style TargetType="Grid" x:Key="couleurDeFond">
-            <Setter Property="Background" Value="{Binding LeManager.ThemeApplication}" />
-        </Style>
-
     </Application.Resources>
 </Application>

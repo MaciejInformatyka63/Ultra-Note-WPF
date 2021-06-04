@@ -21,11 +21,22 @@ namespace UltraNotes
     /// </summary>
     public partial class Parametres : Window
     {
+        #region Propriétés
+
+        // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
+        // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
+        public Manager MonManager => (App.Current as App).LeManager;
+
+        #endregion
+
         #region Constructeurs
 
         public Parametres()
         {
             InitializeComponent();
+
+            // on définit la grille de fond;
+            GrilleDeFond.DataContext = MonManager.Bouquin;
         }
 
         #endregion

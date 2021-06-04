@@ -33,7 +33,7 @@
         <fsc:Menu DockPanel.Dock="Top" Background="White" BorderBrush="Black"/>
 
         <!-- Définition du menu -->
-        <Grid DockPanel.Dock="Left" Width="270" Style="{StaticResource couleurDeFond}">
+        <Grid x:Name="GrilleDeFond" DockPanel.Dock="Left" Width="270" Background="{Binding ThemeApplication}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
