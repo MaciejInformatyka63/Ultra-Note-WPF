@@ -8,6 +8,14 @@
 
   <ItemGroup>
     <None Remove="Assets\mountains.jpg" />
+    <None Remove="Assets\mountainsBrown.jpg" />
+    <None Remove="Assets\mountainsContrast.jpg" />
+    <None Remove="Assets\mountainsDeepBlue.jpg" />
+    <None Remove="Assets\mountainsDeepPurple.jpg" />
+    <None Remove="Assets\mountainsGreen.jpg" />
+    <None Remove="Assets\mountainsNightBlue.jpg" />
+    <None Remove="Assets\mountainsOrange.jpg" />
+    <None Remove="Assets\mountainsPurple.jpg" />
     <None Remove="icons\application\attacher.png" />
     <None Remove="icons\application\cloud.png" />
     <None Remove="icons\application\enregistrer.png" />
@@ -108,6 +116,30 @@
 
   <ItemGroup>
     <Content Include="Assets\mountains.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsBrown.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsContrast.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsDeepBlue.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsDeepPurple.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsGreen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsNightBlue.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsOrange.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\mountainsPurple.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="icons\application\attacher.png" />

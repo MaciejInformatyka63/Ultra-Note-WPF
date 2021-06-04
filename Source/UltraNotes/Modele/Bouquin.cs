@@ -18,6 +18,7 @@ namespace Modele
         #region Champs
 
         private string p_themeApplication = "#64BED8";
+        private string p_imageMainWindow = "../Assets/mountains.jpg";
 
         #endregion
 
@@ -52,6 +53,19 @@ namespace Modele
             }
         }
         /// <summary>
+        /// Propriété qui précise l'image de la page principale
+        /// </summary>
+        public string ImageMainWindow
+        {
+            get { return p_imageMainWindow; }
+            set
+            {
+                p_imageMainWindow = value;
+                OnPropertyChanged("ImageMainWindow");
+            }
+        }
+        
+        /// <summary>
         /// Propriété qui précise les couleurs du theme de l'application
         /// </summary>
         public Dictionary<string, string> ThemeApplicationCouleurs { get; set; } = new Dictionary<string, string>()
@@ -65,6 +79,21 @@ namespace Modele
             {"Violet profond", "#995489" },
             {"Marron", "#995F3D" },
             {"Contraste", "#252C2E" }
+        };
+        /// <summary>
+        /// Propriété qui précise les images de la page principale
+        /// </summary>
+        public Dictionary<string, string> BanqueImagesMainWindow { get; set; } = new Dictionary<string, string>()
+        {
+            {"Défaut", "../Assets/mountains.jpg" },
+            {"Vert", "../Assets/mountainsGreen.jpg" },
+            {"Orange", "../Assets/mountainsOrange.jpg" },
+            {"Bleu profond", "../Assets/mountainsDeepBlue.jpg" },
+            {"Bleu nuit", "../Assets/mountainsNightBlue.jpg" },
+            {"Violet", "../Assets/mountainsPurple.jpg" },
+            {"Violet profond", "../Assets/mountainsDeepPurple.jpg" },
+            {"Marron", "../Assets/mountainsBrown.jpg" },
+            {"Contraste", "../Assets/mountainsContrast.jpg" }
         };
         /// <summary>
         /// Propriété qui précise le dossier d'enregistrement par défaut d'une note

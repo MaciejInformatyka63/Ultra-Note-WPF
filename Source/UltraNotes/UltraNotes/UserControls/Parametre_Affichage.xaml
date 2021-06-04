@@ -39,9 +39,9 @@
                 <WrapPanel Grid.Row="1">
                     <TextBlock Text="Mode contrasté : " Margin="5,10" HorizontalAlignment="Left"
                                FontSize="14" FontFamily="Microsoft yahei"/>
-                    <ComboBox Height="23" FontSize="10">
-                        <ComboBoxItem IsSelected="True" Content="Non"/>
-                        <ComboBoxItem Content="Oui"/>
+                    <ComboBox x:Name="ContrastCombo" Height="23" FontSize="10" SelectionChanged="OnContrastComboSelectionChanged">
+                        <ComboBoxItem x:Name="non" Content="Non"/>
+                        <ComboBoxItem x:Name="oui" Content="Oui"/>
                     </ComboBox>
                 </WrapPanel>
             </Grid>

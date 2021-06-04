@@ -47,10 +47,38 @@ namespace UltraNotes.UserControls
         private void OnBackgroundColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (BackgroundColorCombo.SelectedItem == null) return;
+            //mise à jour de la propriété ThemeApplication
             MonManager.Bouquin.ThemeApplication = MonManager.Bouquin.ThemeApplicationCouleurs[BackgroundColorCombo.SelectedItem.ToString()];
+            //mise à jour de la propriété ImageMainWindow
+            MonManager.Bouquin.ImageMainWindow = MonManager.Bouquin.BanqueImagesMainWindow[BackgroundColorCombo.SelectedItem.ToString()];
             Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
         }
 
+        private void OnContrastComboSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ContrastCombo.SelectedItem == null) return;
+            //mise à jour des propriétés ImageMainWindow et ThemeApplication
+            if (ContrastCombo.SelectedItem == oui)
+            {
+                MonManager.Bouquin.ImageMainWindow = "../Assets/mountainsContrast.jpg";
+                MonManager.Bouquin.ThemeApplication = "#252C2E";
+                Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+            }
+            if (ContrastCombo.SelectedItem == non)
+            {
+                MonManager.Bouquin.ImageMainWindow = "../Assets/mountains.jpg";
+                MonManager.Bouquin.ThemeApplication = "#64BED8";
+                Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+            }
+        }
+
         #endregion
+
+        private void ContrasteBoutonClique(object sender, SelectionChangedEventArgs e)
+        {
+            MonManager.Bouquin.ImageMainWindow = "../Assets/mountainsContrast.jpg";
+            MonManager.Bouquin.ThemeApplication = "#252C2E";
+            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+        }
     }
 }

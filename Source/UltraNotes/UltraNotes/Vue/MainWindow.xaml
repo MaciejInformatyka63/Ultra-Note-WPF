@@ -36,7 +36,7 @@
         <Grid x:Name="GrilleDeFond" DockPanel.Dock="Left" Width="270" Background="{Binding ThemeApplication}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <Image HorizontalAlignment="Left"  Source="../Assets/mountains.jpg"/>
+                    <Image x:Name="ImagePagePrincipale" HorizontalAlignment="Left"  Source="{Binding ImageMainWindow}"/>
                     <Button x:Name="CreerNote_Bouton"
                             Height="45" Padding="0" HorizontalContentAlignment="Left"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
