@@ -6,7 +6,7 @@
         xmlns:fsc="clr-namespace:UltraNotes.UserControls"
         xmlns:local="clr-namespace:UltraNotes.VueModele"
         mc:Ignorable="d"
-        Title="UltraNotes" Width="1200" Height="610">
+        Title="UltraNotes" Width="1100" Height="570">
 
     <Window.Resources>
         <!-- Flat Button -->
