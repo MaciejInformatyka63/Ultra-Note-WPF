@@ -52,7 +52,7 @@
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
                             </Grid>
                     </Button>
-                    <ListBox x:Name="listViewNotes"
+                    <ListBox x:Name="listBoxNotes"
                               FontFamily="Champagne &amp; Limousines" FontSize="15"
                               Foreground="White" Cursor="Hand"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
@@ -98,7 +98,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=SelectedItem, ElementName=listViewNotes}"
+                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=SelectedItem, ElementName=listBoxNotes}"
                          Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0"
                          FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
                     
@@ -142,7 +142,7 @@
             
 
             <!-- Espace de saisie de texte-->
-            <Grid DataContext="{Binding Path=SelectedItem, ElementName=listViewNotes}">
+            <Grid DataContext="{Binding Path=SelectedItem, ElementName=listBoxNotes}">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="Auto"/>

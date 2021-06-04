@@ -43,9 +43,9 @@ namespace UltraNotes.Vue
             InitializeComponent();
 
             // on définie le DataContext;
-            listViewNotes.DataContext = MonManager;
+            listBoxNotes.DataContext = MonManager;
             // on se place automatiquement sur le premier élément de la liste;
-            listViewNotes.SelectedItem = MonManager.Bouquin[0];
+            listBoxNotes.SelectedItem = MonManager.Bouquin[0];
             // et on donne automatiquement le focus à la RichTextBox;
             EditBox.TextBox.Focus();
 
@@ -86,7 +86,7 @@ namespace UltraNotes.Vue
             // on l'ajoute au bouquin;
             MonManager.AjouterUneNote(nouvelle_note);
             // puis on la sélectionne automatiquement;
-            listViewNotes.SelectedItem = nouvelle_note;
+            listBoxNotes.SelectedItem = nouvelle_note;
         }
 
         /// <summary>
@@ -97,10 +97,10 @@ namespace UltraNotes.Vue
         private void SupprimerFichier_Click(object sender, RoutedEventArgs e)
         {
             // on supprime le fichier;
-            MonManager.SupprimerUneNote(listViewNotes.SelectedItem as Note);
+            MonManager.SupprimerUneNote(listBoxNotes.SelectedItem as Note);
             // puis on sélectionne la dernière note du bouquin;
             int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;
-            listViewNotes.SelectedItem = MonManager.Bouquin[dernier_element];
+            listBoxNotes.SelectedItem = MonManager.Bouquin[dernier_element];
         }
 
         #endregion
