@@ -931,7 +931,7 @@
 												"$ref": "AAAAAAF50wy8w1LC5Ys="
 											},
 											"edgePosition": 1,
-											"text": "4 : ajoute une note à ListViewNotes"
+											"text": "4 : ajoute une note à listBoxNotes"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1177,7 +1177,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF50t4gAO2nMKg="
 							},
-							"name": "ajoute une note à ListViewNotes",
+							"name": "ajoute une note à listBoxNotes",
 							"source": {
 								"$ref": "AAAAAAF50vtQRVIvoCI="
 							},
