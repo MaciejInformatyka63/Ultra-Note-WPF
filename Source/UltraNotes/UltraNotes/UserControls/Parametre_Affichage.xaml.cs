@@ -73,12 +73,5 @@ namespace UltraNotes.UserControls
         }
 
         #endregion
-
-        private void ContrasteBoutonClique(object sender, SelectionChangedEventArgs e)
-        {
-            MonManager.Bouquin.ImageMainWindow = "../Assets/mountainsContrast.jpg";
-            MonManager.Bouquin.ThemeApplication = "#252C2E";
-            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
-        }
     }
 }
