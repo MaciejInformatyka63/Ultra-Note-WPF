@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using Modele;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -65,6 +66,10 @@ namespace UltraNotes.UserControls
             get { return (FlowDocument)GetValue(DocumentProperty); }
             set { SetValue(DocumentProperty, value); }
         }
+
+        // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
+        // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
+        public Manager MonManager => (App.Current as App).LeManager;
 
         #endregion
 
@@ -161,6 +166,24 @@ namespace UltraNotes.UserControls
         }
 
         /// <summary>
+        /// Change le style du texte sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnStyleComboSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // On quitte si la selection est nulle
+            if (StyleCombo.SelectedItem == null) return;
+
+            // sinon on change le style du texte sélectionné
+            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
+            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, (StyleCombo.SelectedItem as Modele.Style).PoliceEcriture);
+            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, (StyleCombo.SelectedItem as Modele.Style).TailleDePolice);
+            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, (StyleCombo.SelectedItem as Modele.Style).CouleurTexte);
+
+        }
+
+        /// <summary>
         /// Formats inline code.
         /// </summary>
         private void OnInlineCodeClick(object sender, RoutedEventArgs e)
@@ -230,7 +253,11 @@ namespace UltraNotes.UserControls
         /// </summary>
         private void Initialize()
         {
+            // style utilisateur
+            StyleCombo.ItemsSource = MonManager.Bouquin[0].StylesUtilisateur;
+            // police d'écriture
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
+            // taille de police
             FontSizeCombo.Items.Add("10");
             FontSizeCombo.Items.Add("12");
             FontSizeCombo.Items.Add("14");

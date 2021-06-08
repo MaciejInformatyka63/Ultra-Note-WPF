@@ -188,20 +188,15 @@
             <ComboBox x:Name="FontSizeCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23" Padding="3"
                         ToolTip="Taille de police" IsEditable="True" SelectionChanged="OnFontSizeComboSelectionChanged" >
             </ComboBox>
-            <!-- Styles utilisateur
+            <!-- Styles utilisateur -->
             <ComboBox x:Name="StyleCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                        ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontFamilyComboSelectionChanged">
-                <ComboBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Width="250" />
-                    </ItemsPanelTemplate>
-                </ComboBox.ItemsPanel>
+                        ToolTip="Style utilisateur" IsEditable="True" SelectionChanged="OnStyleComboSelectionChanged">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                        <TextBlock Text="{Binding Nom}" FontFamily="{Binding PoliceEcriture}" FontSize="{Binding TailleDePolice}" Foreground="{Binding CouleurTexte}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
-            </ComboBox>  -->
+            </ComboBox>
         </WrapPanel>
         <RichTextBox x:Name="TextBox" TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="Aliased"
                      AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True" AllowDrop="True" FontSize="14" Padding="4,8,4,10"

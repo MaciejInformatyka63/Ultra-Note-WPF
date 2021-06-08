@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +10,7 @@ namespace Modele
         #region Propriétés
 
         public string Nom { get; set; }
-        public int TailleDePolice { get; set; } = 14;
+        public double TailleDePolice { get; set; } = 14;
         public string PoliceEcriture { get; set; } = "Consolas";
         public Alignement AlignementTexte { get; set; } = Alignement.Gauche;
         public string CouleurTexte { get; set; } = "Black";
@@ -58,7 +59,8 @@ namespace Modele
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
+            //return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
+            return $"{Nom}";
         }
 
         #endregion

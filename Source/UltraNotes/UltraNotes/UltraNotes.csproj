@@ -238,4 +238,10 @@
     <Resource Include="icons\texteditor\tailletexte.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Style - Copier.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

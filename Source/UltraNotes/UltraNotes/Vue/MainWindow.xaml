@@ -66,7 +66,6 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="Auto"/>
-                                        <!--ColumnDefinition Width="Auto"/-->
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="../icons/application/file2.png" Height="35" Margin="5,5"/>
                                     <TextBlock VerticalAlignment="Center" Text="{Binding Nom}" Grid.Column="1" Margin="10"/>
