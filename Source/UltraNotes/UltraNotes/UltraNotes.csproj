@@ -142,6 +142,7 @@
     <Content Include="Assets\mountainsPurple.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
     <Resource Include="icons\application\attacher.png" />
     <Resource Include="icons\application\cloud.png" />
     <Resource Include="icons\application\enregistrer.png" />

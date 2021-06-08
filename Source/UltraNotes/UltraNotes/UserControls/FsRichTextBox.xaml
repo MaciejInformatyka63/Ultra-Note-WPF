@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UltraNotes.UserControls"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
 
@@ -61,8 +62,6 @@
                      - Un menu pour choisir la couleur d'arrière plan du texte;
                      - Un menu déroulant pour sélectionner la police d'écriture;
                      - Un menu déroulant pour sélectionner la police;
-                     - Un menu déroulant encadré pour sélectionner un style de titre;
-                     - Un menu déroulant encadré pour sélectionner un style de paragraphe;
                      - Un menu déroulant encadré pour sélectionner un autre style;
                     -->
             <!-- Bouton pour ajouter un document -->
@@ -163,19 +162,7 @@
                 <Image Source="../icons/texteditor/pucesnum.png"/>
             </ToggleButton>
             <!-- Changer la couleur du texte -->
-            <ComboBox x:Name="FontColorCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
-                        ToolTip="Couleur d'écriture" IsEditable="True" SelectionChanged="OnFontColorComboSelectionChanged">
-                <ComboBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Width="250" />
-                    </ItemsPanelTemplate>
-                </ComboBox.ItemsPanel>
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" FontSize="12" Height="15"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+            <xctk:ColorPicker Name="FontColorCombo" SelectedColorChanged="OnFontColorComboSelectionChanged"></xctk:ColorPicker>
             <!-- Police d'écriture  -->
             <ComboBox x:Name="FontFamilyCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
                         ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontFamilyComboSelectionChanged">

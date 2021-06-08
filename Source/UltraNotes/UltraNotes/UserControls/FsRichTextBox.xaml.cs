@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -115,46 +116,29 @@ namespace UltraNotes.UserControls
         }
 
         /// <summary>
-        /// Formats code blocks.
-        /// </summary>
-        private void OnCodeBlockClick(object sender, RoutedEventArgs e)
-        {
-            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, "Consolas");
-            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, "FireBrick");
-            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, 11D);
-            textRange.ApplyPropertyValue(Block.MarginProperty, new Thickness(0));
-        }
-
-        /// <summary>
         /// Changes the font family of selected text.
         /// </summary>
         private void OnFontFamilyComboSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (FontFamilyCombo.SelectedItem == null) return;
             var fontFamily = FontFamilyCombo.SelectedItem.ToString();
-            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
+            if (TextBox.Selection.Start == TextBox.Selection.End)
+            {
+                var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
+                textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
+            }
         }
         /// <summary>
         /// Changes the font color of selected text.
         /// </summary>
-        private void OnFontColorComboSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OnFontColorComboSelectionChanged(object sender, EventArgs e)
         {
-            // Exit if no selection
-            if (FontColorCombo.SelectedItem == null) return;
+            // On quitte si la selection est vide
+            if (FontColorCombo.SelectedColor == null) return;
 
-            // clear selection if value unset
-            if (FontColorCombo.SelectedItem.ToString() == "{DependencyProperty.UnsetValue}")
-            {
-                FontColorCombo.SelectedItem = FontColorCombo.Items[0];
-                return;
-            }
-
-            // Process selection
-            var color = FontColorCombo.SelectedItem.ToString();
+            // on change la couleur
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, color);
+            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, FontColorCombo.SelectedColor.ToString());
         }
         /// <summary>
         /// Changes the font size of selected text.
@@ -201,18 +185,6 @@ namespace UltraNotes.UserControls
         }
 
         /// <summary>
-        /// Formats regular text
-        /// </summary>
-        private void OnNormalTextClick(object sender, RoutedEventArgs e)
-        {
-            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, FontFamily);
-            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, FontSize);
-            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, Foreground);
-            textRange.ApplyPropertyValue(Block.MarginProperty, new Thickness(Double.NaN));
-        }
-
-        /// <summary>
         /// Updates the toolbar when the text selection changes.
         /// </summary>
         private void OnTextBoxSelectionChanged(object sender, RoutedEventArgs e)
@@ -238,11 +210,6 @@ namespace UltraNotes.UserControls
         /// </summary>
         private void Initialize()
         {
-            FontColorCombo.Items.Add("Black");
-            FontColorCombo.Items.Add("Blue");
-            FontColorCombo.Items.Add("Red");
-            FontColorCombo.Items.Add("Green");
-            FontColorCombo.Items.Add("Lavender");
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
             FontSizeCombo.Items.Add("10");
             FontSizeCombo.Items.Add("12");
@@ -299,8 +266,8 @@ namespace UltraNotes.UserControls
             FontSizeCombo.Text = fontSize.ToString();
 
             // Set font color combo
-            var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
-            FontColorCombo.SelectedItem = fontColor;
+            //var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
+            //FontColorCombo.SelectedItem = fontColor;
 
             // Set Font buttons
             if (!String.IsNullOrEmpty(textRange.Text))
