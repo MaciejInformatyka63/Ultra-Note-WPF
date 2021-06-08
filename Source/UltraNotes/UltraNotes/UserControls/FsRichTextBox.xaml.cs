@@ -123,11 +123,8 @@ namespace UltraNotes.UserControls
         {
             if (FontFamilyCombo.SelectedItem == null) return;
             var fontFamily = FontFamilyCombo.SelectedItem.ToString();
-            if (TextBox.Selection.Start == TextBox.Selection.End)
-            {
-                var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-                textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
-            }
+            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
+            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, fontFamily);
         }
         /// <summary>
         /// Changes the font color of selected text.
@@ -216,14 +213,6 @@ namespace UltraNotes.UserControls
         }
 
         /// <summary>
-        /// Updates the toolbar when the text selection changes.
-        /// </summary>
-        private void OnTextBoxSelectionChanged(object sender, RoutedEventArgs e)
-        {
-            this.SetToolbar();
-        }
-
-        /// <summary>
         ///  Invoked when the user changes text in this user control.
         /// </summary>
         private void OnTextChanged(object sender, TextChangedEventArgs e)
@@ -280,35 +269,6 @@ namespace UltraNotes.UserControls
 
             // Select the clicked button
             clickedButton.IsChecked = true;
-        }
-
-        /// <summary>
-        /// Sets the toolbar.
-        /// </summary>
-        private void SetToolbar()
-        {
-            // Set font family combo
-            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            var fontFamily = textRange.GetPropertyValue(TextElement.FontFamilyProperty);
-            FontFamilyCombo.SelectedItem = fontFamily;
-
-            // Set font size combo
-            var fontSize = textRange.GetPropertyValue(TextElement.FontSizeProperty);
-            FontSizeCombo.Text = fontSize.ToString();
-
-            // Set Font buttons
-            if (!String.IsNullOrEmpty(textRange.Text))
-            {
-                BoldButton.IsChecked = textRange.GetPropertyValue(TextElement.FontWeightProperty).Equals(FontWeights.Bold);
-                ItalicButton.IsChecked = textRange.GetPropertyValue(TextElement.FontStyleProperty).Equals(FontStyles.Italic);
-                UnderlineButton.IsChecked = textRange.GetPropertyValue(Inline.TextDecorationsProperty).Equals(TextDecorations.Underline);
-            }
-
-            // Set Alignment buttons
-            LeftButton.IsChecked = textRange.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Left);
-            CenterButton.IsChecked = textRange.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Center);
-            RightButton.IsChecked = textRange.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Right);
-            JustifyButton.IsChecked = textRange.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Justify);
         }
 
         #endregion
