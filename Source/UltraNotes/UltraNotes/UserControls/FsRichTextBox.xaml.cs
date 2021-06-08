@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -185,6 +186,36 @@ namespace UltraNotes.UserControls
         }
 
         /// <summary>
+        /// Ouvre un gestionnaire de fichier et insert une image dans la FsRichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AjoutImage_Click(object sender, RoutedEventArgs e)
+        {
+            // on ouvre un gestionnaire de fichier
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "Insérer une image";
+            dialog.Filter = "Tous les fichiers images|*.jpg;*.png;*.bmp";
+            bool? resultat = dialog.ShowDialog();
+
+            // on récupère le résultat de la fenêtre et on l'insère dans notre projet;
+            if (resultat == true)
+            {
+                string filePath = dialog.FileName;
+                BitmapImage bitmap = new BitmapImage(new Uri(filePath, UriKind.Absolute));
+                Image image = new Image();
+                image.Source = bitmap;
+                image.Width = TextBox.Width;
+
+                if (image != null)
+                {
+                    TextPointer tp = TextBox.CaretPosition.GetInsertionPosition(LogicalDirection.Forward);
+                    Floater floater = new Floater(new BlockUIContainer(image), tp);
+                }
+            }
+        }
+
+        /// <summary>
         /// Updates the toolbar when the text selection changes.
         /// </summary>
         private void OnTextBoxSelectionChanged(object sender, RoutedEventArgs e)
@@ -264,10 +295,6 @@ namespace UltraNotes.UserControls
             // Set font size combo
             var fontSize = textRange.GetPropertyValue(TextElement.FontSizeProperty);
             FontSizeCombo.Text = fontSize.ToString();
-
-            // Set font color combo
-            //var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
-            //FontColorCombo.SelectedItem = fontColor;
 
             // Set Font buttons
             if (!String.IsNullOrEmpty(textRange.Text))

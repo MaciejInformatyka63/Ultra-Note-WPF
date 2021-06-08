@@ -65,10 +65,17 @@
                      - Un menu déroulant encadré pour sélectionner un autre style;
                     -->
             <!-- Bouton pour ajouter un document -->
-            <Button x:Name="ButtonAdd" Background="{x:Null}" BorderBrush="{x:Null}" Width="25" Height="25" Cursor="Hand"
+            <Menu x:Name="ButtonAdd" Background="{x:Null}" BorderBrush="{x:Null}" Height="25" Cursor="Hand"
                     ToolTip="Ajouter un document">
-                <Image Source="../icons/texteditorcolor/ajouter.png"/>
-            </Button>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Image Source="../icons/texteditorcolor/ajouter.png"/>
+                    </MenuItem.Header>
+                    <MenuItem Header="Créer un style..." />
+                    <MenuItem Header="Ajouter une image..." Click="AjoutImage_Click" />
+                </MenuItem>
+                
+            </Menu>
             <!-- Bouton pour annuler une modification -->
             <Button x:Name="ButtonBackward2" Command="ApplicationCommands.Undo"
                     CommandTarget="{Binding ElementName=TextBox}" ToolTip="Annuler la modification"
@@ -90,21 +97,21 @@
                             CommandTarget="{Binding ElementName=TextBox}" ToolTip="Gras"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
-                <Image Source="../icons/texteditor/gras.png" Margin="3,3"/>
+                <Image Source="../icons/texteditor/gras.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Effet d'italique -->
             <ToggleButton x:Name="ItalicButton" Command="EditingCommands.ToggleItalic"
                             CommandTarget="{Binding ElementName=TextBox}" ToolTip="Italique"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
-                <Image Source="../icons/texteditor/italique.png" Margin="3,3"/>
+                <Image Source="../icons/texteditor/italique.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Effet de souligné -->
             <ToggleButton x:Name="UnderlineButton" Command="EditingCommands.ToggleUnderline"
                             CommandTarget="{Binding ElementName=TextBox}" ToolTip="Souligné"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
-                <Image Source="../icons/texteditor/souligne.png" Margin="3,3"/>
+                <Image Source="../icons/texteditor/souligne.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Aligné à gauche -->
             <ToggleButton x:Name="LeftButton" Command="EditingCommands.AlignLeft"
@@ -112,14 +119,14 @@
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
-                <Image Source="../icons/texteditor/alignementgauche.png"/>
+                <Image Source="../icons/texteditor/alignementgauche.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Aligné au centre -->
             <ToggleButton x:Name="CenterButton" Command="EditingCommands.AlignCenter"
                     CommandTarget="{Binding ElementName=TextBox}" ToolTip="Centré"
                     Template="{StaticResource FlatToggleButtonControlTemplate}" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
-                <Image Source="../icons/texteditor/alignementcentre.png"/>
+                <Image Source="../icons/texteditor/alignementcentre.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Aligné à droite -->
             <ToggleButton x:Name="RightButton" Command="EditingCommands.AlignRight"
@@ -127,7 +134,7 @@
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
-                <Image Source="../icons/texteditor/alignementdroite.png"/>
+                <Image Source="../icons/texteditor/alignementdroite.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Alignement justifie -->
             <ToggleButton x:Name="JustifyButton" Command="EditingCommands.AlignJustify"
@@ -135,13 +142,13 @@
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
-                <Image Source="../icons/texteditor/alignementjustifie.png"/>
+                <Image Source="../icons/texteditor/alignementjustifie.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Insérer une case à cocher -->
             <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
                     Cursor="Hand" ToolTip="Case à cocher"
                     Template="{StaticResource FlatButtonControlTemplate}">
-                <Image Source="../icons/texteditor/checkbox1.png"/>
+                <Image Source="../icons/texteditor/checkbox1.png" Margin="3,3"/>
             </Button>
             <!-- Insérer une puce normale -->
             <ToggleButton x:Name="BulletsButton" Command="EditingCommands.ToggleBullets"
@@ -150,7 +157,7 @@
                     Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
                     Cursor="Hand" ToolTip="Puce"
                     Click="OnListButtonClick">
-                <Image Source="../icons/texteditor/puces.png"/>
+                <Image Source="../icons/texteditor/puces.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Insérer une puce numérotée -->
             <ToggleButton x:Name="NumberingButton" Command="EditingCommands.ToggleNumbering"
@@ -159,10 +166,10 @@
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Cursor="Hand" ToolTip="Puce"
                     Click="OnListButtonClick">
-                <Image Source="../icons/texteditor/pucesnum.png"/>
+                <Image Source="../icons/texteditor/pucesnum.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Changer la couleur du texte -->
-            <xctk:ColorPicker Name="FontColorCombo" SelectedColorChanged="OnFontColorComboSelectionChanged"></xctk:ColorPicker>
+            <xctk:ColorPicker Name="FontColorCombo" SelectedColorChanged="OnFontColorComboSelectionChanged" Margin="5,0" Width="40" Height="23" ></xctk:ColorPicker>
             <!-- Police d'écriture  -->
             <ComboBox x:Name="FontFamilyCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
                         ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontFamilyComboSelectionChanged">
@@ -180,6 +187,20 @@
             <!-- Taille de police -->
             <ComboBox x:Name="FontSizeCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23" Padding="3"
                         ToolTip="Taille de police" IsEditable="True" SelectionChanged="OnFontSizeComboSelectionChanged" >
+            </ComboBox>
+            <!-- Styles utilisateur  -->
+            <ComboBox x:Name="StyleCombo" Background="White" BorderBrush="{x:Null}" Cursor="Arrow" Margin="5,0" Height="23"
+                        ToolTip="Police d'écriture" IsEditable="True" SelectionChanged="OnFontFamilyComboSelectionChanged">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Width="250" />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontFamily="{Binding}" FontSize="15" Height="20"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
         </WrapPanel>
         <RichTextBox x:Name="TextBox" TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="Aliased"
