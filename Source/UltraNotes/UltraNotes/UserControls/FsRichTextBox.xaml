@@ -71,7 +71,7 @@
                     <MenuItem.Header>
                         <Image Source="../icons/texteditorcolor/ajouter.png"/>
                     </MenuItem.Header>
-                    <MenuItem Header="Créer un style..." />
+                    <MenuItem Header="Créer un style..." Click="CréerStyle_Click" />
                     <MenuItem Header="Ajouter une image..." Click="AjoutImage_Click" />
                 </MenuItem>
                 

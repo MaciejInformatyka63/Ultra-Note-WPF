@@ -17,6 +17,7 @@ namespace Data
             bouquin.AjouterUneNote(new Note("canvas", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><Paragraph><InlineUIContainer><Canvas Height=\"100\" Width=\"100\" Top=\"0\" Left=\"0\" Background=\"Red\"/></InlineUIContainer></Paragraph></FlowDocument>"));
             bouquin.AjouterUneNote(new Note("checkbox", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><Paragraph><InlineUIContainer><RadioButton IsEnabled=\"True\" >x</RadioButton></InlineUIContainer></Paragraph></FlowDocument>"));
             bouquin[0].DefinirStyle(new Style("Mon titre 1", 18D, "Consolas", Alignement.Centre, "Violet", true, true, false));
+            bouquin[0].DefinirStyle(new Style("Defaut", 12D, "Consolas", Alignement.Gauche, "Black", false, false, false));
             return bouquin;
             //<InlineUIContainer><Button> click </Button></InlineUIContainer> <Canvas Height="100" Width="100" Top="0" Left="0" Background="Red"/> <Image Source=\".. / Assets / mountains.jpg\"/>
         }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UltraNotes.Vue;
 
 namespace UltraNotes.UserControls
 {
@@ -59,7 +60,7 @@ namespace UltraNotes.UserControls
         #region Propriétés
 
         /// <summary>
-        /// The WPF FlowDocument contained in the control.
+        /// FlowDocument WPF contenu dans le controle.
         /// </summary>
         public FlowDocument Document
         {
@@ -76,32 +77,32 @@ namespace UltraNotes.UserControls
         #region PropertyChanged Callback Methods
 
         /// <summary>
-        /// Called when the Document property is changed
+        /// Appellé quand la propriété Document est modifiée
         /// </summary>
         private static void OnDocumentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            /* For unknown reasons, this method gets called twice when the 
-             * Document property is set. Until we figure out why, we initialize
-             * the flag to 2 and decrement it each time through this method. */
+            /* Pour des raisons inconnues, cette méthode est appellée 2 fois 
+             * quand la propriété Document est "settée". Jusqu'à ce qu'on trouve la raison, nous initialisons
+             * le flag à 2 et le décrémentons chaque fois que l'on passe par cette méthode. */
 
-            // Initialize
-           var thisControl = (FsRichTextBox)d;
+            // Initialisation
+            var thisControl = (FsRichTextBox)d;
 
             // Exit if this update was internally generated
             if (thisControl.m_InternalUpdatePending > 0)
             {
 
-                // Decrement flags and exit
+                // Décrémentation du flag et sortie
                 thisControl.m_InternalUpdatePending--;
                 return;
             }
 
             // on sauve la valeur du Tag
             thisControl.TextBox.Tag = e.OldValue;
-            // Set Document property on RichTextBox
+            // On "sette" la propriété Document de la RichTextBox
             thisControl.TextBox.Document = (e.NewValue == null) ? new FlowDocument() : (FlowDocument)e.NewValue;
 
-            // Reset flag
+            // Réinitialisation du flag
             thisControl.m_TextHasChanged = false;
         }
 
@@ -240,6 +241,12 @@ namespace UltraNotes.UserControls
                     Floater floater = new Floater(new BlockUIContainer(image), tp);
                 }
             }
+        }
+
+        private void CréerStyle_Click(object sender, RoutedEventArgs e)
+        {
+            FenetreStyle fenetreStyle = new FenetreStyle();
+            fenetreStyle.Show();
         }
 
         /// <summary>
