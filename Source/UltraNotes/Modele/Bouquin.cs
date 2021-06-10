@@ -64,7 +64,6 @@ namespace Modele
                 OnPropertyChanged("ImageMainWindow");
             }
         }
-        
         /// <summary>
         /// Propriété qui précise les couleurs du theme de l'application
         /// </summary>

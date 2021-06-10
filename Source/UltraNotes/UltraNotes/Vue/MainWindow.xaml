@@ -59,7 +59,8 @@
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               Background="{x:Null}"
                               BorderBrush="{x:Null}" FontWeight="Normal"
-                              ItemsSource="{Binding Bouquin.BouquinDeNotes}">
+                              ItemsSource="{Binding Bouquin.BouquinDeNotes}"
+                             SelectionChanged="listBoxNotes_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="10 0" ToolTip="{Binding Nom}">

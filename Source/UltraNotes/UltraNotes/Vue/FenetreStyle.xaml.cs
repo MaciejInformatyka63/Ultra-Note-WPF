@@ -26,13 +26,14 @@ namespace UltraNotes.Vue
         #region Champs privées
 
         private static ToggleButton m_SelectedAlignmentButton;
+        private string p_NomStyle;
         private double p_TaillePolice;
         private string p_Police;
-        private Alignement p_ALignement = Alignement.Gauche;
+        private Alignement p_ALignement;
         private string p_CouleurPolice;
-        private bool p_EstGras = false;
-        private bool p_EstItalique = false;
-        private bool p_EstSouligne = false;
+        private bool p_IsGras;
+        private bool p_IsItalique;
+        private bool p_IsSouligne;
 
         #endregion
 
@@ -41,7 +42,8 @@ namespace UltraNotes.Vue
         // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
         // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
         public Manager MonManager => (App.Current as App).LeManager;
-        public string Nom { get; set; }
+        // idem pour la note courant sélectionnée;
+        public int NoteSelectionnee => (App.Current as App).NoteSelectionne;
 
         #endregion
 
@@ -53,112 +55,59 @@ namespace UltraNotes.Vue
             this.Initialize();
             //on définit le DataContext de la TextBox
             NomStyle.DataContext = this;
-            AperçuStyle.DataContext = MonManager.Bouquin[0].StylesUtilisateur[MonManager.Bouquin[0].StylesUtilisateur.Count-1];
         }
 
         #endregion
 
-        private void BoutonGras_Click(object sender, RoutedEventArgs e)
-        {
-            var boutonclique = (ToggleButton)sender ;
-            if (boutonclique.IsChecked == true) p_EstGras = true;
-            else p_EstGras = false;
-        }
-
-        private void BoutonItalique_Click(object sender, RoutedEventArgs e)
-        {
-            var boutonclique = (ToggleButton)sender;
-            if (boutonclique.IsChecked == true) p_EstItalique = true;
-            else p_EstItalique = false;
-        }
-
-        private void BoutonSurligne_Click(object sender, RoutedEventArgs e)
-        {
-            var boutonclique = (ToggleButton)sender;
-            if (boutonclique.IsChecked == true) p_EstSouligne = true;
-            else p_EstSouligne = false;
-        }
+        #region Event Handler
 
         private void CreerUnStyle_Click(object sender, RoutedEventArgs e)
         {
-            Modele.Style style = new Modele.Style(Nom, p_TaillePolice, p_Police, p_ALignement, p_CouleurPolice, p_EstGras, p_EstItalique, p_EstSouligne);
-            MonManager.Bouquin[0].StylesUtilisateur.Add(style);
+            // le nom du style
+            p_NomStyle = NomStyle.Text ?? "Style utilisateur";
+            // mise en forme
+            p_IsGras = BoldButton.IsChecked ?? false;
+            p_IsItalique = ItalicButton.IsChecked ?? false;
+            p_IsSouligne = UnderlineButton.IsChecked ?? false;
+            // texte
+            p_Police = FontFamilyCombo.SelectedItem?.ToString() ?? "Arial";
+            p_TaillePolice = Convert.ToDouble(FontSizeCombo.SelectedItem?.ToString());
+            if (p_TaillePolice == 0D) p_TaillePolice = 14D;
+            p_CouleurPolice = FontColorCombo.SelectedColorText?.ToString();
+            if (p_CouleurPolice.Equals("")) p_CouleurPolice = "Black";
+            // mise en page
+            if ((bool)LeftButton.IsChecked) p_ALignement = Alignement.Gauche;
+            if ((bool)CenterButton.IsChecked) p_ALignement = Alignement.Centre;
+            if ((bool)RightButton.IsChecked) p_ALignement = Alignement.Droite;
+            if ((bool)JustifyButton.IsChecked) p_ALignement = Alignement.Justifie;
+
+            // on ajoute les styles au document actuel
+            Modele.Style style = new Modele.Style(p_NomStyle, p_TaillePolice, p_Police, p_ALignement, p_CouleurPolice, p_IsGras, p_IsItalique, p_IsSouligne);
+            MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur.Add(style);
+
+            // on ferme la fenêtre
+            Close();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
 
         /// <summary>
-        /// Change la police de caractère
+        /// Implements single-select on the alignment button group.
         /// </summary>
-        private void OnFontFamilyComboSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (FontFamilyCombo.SelectedItem == null) return;
-            p_Police = FontFamilyCombo.SelectedItem.ToString();
-        }
-        /// <summary>
-        /// Change la couleur de la police
-        /// </summary>
-        private void OnFontColorComboSelectionChanged(object sender, EventArgs e)
-        {
-            // On quitte si la selection est vide
-            if (FontColorCombo.SelectedColor == null) return;
-            // on change la couleur
-            p_CouleurPolice = FontColorCombo.SelectedColor.ToString();
-        }
-        /// <summary>
-        /// Change la taille de la police
-        /// </summary>
-        private void OnFontSizeComboSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (FontSizeCombo.SelectedItem == null) return;
-            if (FontSizeCombo.SelectedItem.ToString() == null) return;
-
-            // on convertit le string en double
-            var taille = FontSizeCombo.SelectedItem.ToString();
-            p_TaillePolice = Convert.ToDouble(taille) * (96 / 72);
-        }
-
         private void OnAlignementBoutonClick(object sender, RoutedEventArgs e)
         {
             var clickedButton = (ToggleButton)sender;
             var buttonGroup = new[] { LeftButton, CenterButton, RightButton, JustifyButton };
             this.SetButtonGroupSelection(clickedButton, m_SelectedAlignmentButton, buttonGroup, true);
             m_SelectedAlignmentButton = clickedButton;
-            foreach (var button in buttonGroup)
-            {
-                if(button.IsChecked==true)
-                {
-                    switch (button.ToString())
-                    {
-                        case "LeftButton":
-                            p_ALignement=Alignement.Gauche;
-                            break;
-                        case "CenterButton":
-                            p_ALignement = Alignement.Centre;
-                            break;
-                        case "RightButton":
-                            p_ALignement = Alignement.Droite;
-                            break;
-                        case "JustifyButton":
-                            p_ALignement = Alignement.Justifie;
-                            break;
-                    }
-                }
-            }
         }
 
-        private void SetButtonGroupSelection(ToggleButton clickedButton, ToggleButton currentSelectedButton, IEnumerable<ToggleButton> buttonGroup, bool ignoreClickWhenSelected)
-        {
-            if (clickedButton == currentSelectedButton)
-            {
-                if (ignoreClickWhenSelected) clickedButton.IsChecked = true;
-                return;
-            }
-            foreach (var button in buttonGroup)
-            {
-                button.IsChecked = false;
-            }
-            clickedButton.IsChecked = true;
-        }
+        #endregion
+
+        #region Méthodes privées
 
         private void Initialize()
         {
@@ -173,5 +122,38 @@ namespace UltraNotes.Vue
             FontSizeCombo.Items.Add("36");
         }
 
+        /// <summary>
+        /// Sets a selection in a button group.
+        /// </summary>
+        /// <param name="clickedButton">The button that was clicked.</param>
+        /// <param name="currentSelectedButton">The currently-selected button in the group.</param>
+        /// <param name="buttonGroup">The button group to which the button belongs.</param>
+        /// <param name="ignoreClickWhenSelected">Whether to ignore a click on the button when it is selected.</param>
+        private void SetButtonGroupSelection(ToggleButton clickedButton, ToggleButton currentSelectedButton, IEnumerable<ToggleButton> buttonGroup, bool ignoreClickWhenSelected)
+        {
+            /* In some cases, if the user clicks the currently-selected button, we want to ignore
+             * the click; for example, when a text alignment button is clicked. In other cases, we
+             * want to deselect the button, but do nothing else; for example, when a list butteting
+             * or numbering button is clicked. The ignoreClickWhenSelected variable controls that
+             * behavior. */
+
+            // Exit if currently-selected button is clicked
+            if (clickedButton == currentSelectedButton)
+            {
+                if (ignoreClickWhenSelected) clickedButton.IsChecked = true;
+                return;
+            }
+
+            // Deselect all buttons
+            foreach (var button in buttonGroup)
+            {
+                button.IsChecked = false;
+            }
+
+            // Select the clicked button
+            clickedButton.IsChecked = true;
+        }
+
+        #endregion
     }
 }

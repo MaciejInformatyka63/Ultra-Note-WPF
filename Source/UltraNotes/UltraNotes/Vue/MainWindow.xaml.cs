@@ -25,11 +25,23 @@ namespace UltraNotes.Vue
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Champs
+
+        public Note noteSelectionne;
+
+        #endregion
+
         #region Propriétés
 
         // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
         // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
         public Manager MonManager => (App.Current as App).LeManager;
+        // idem pour note sélecitonnée qui définie la note courante;
+        public int NoteSelectionnee
+        {
+            get => (App.Current as App).NoteSelectionne;
+            set => (App.Current as App).NoteSelectionne = value;
+        }
 
         #endregion
 
@@ -51,6 +63,8 @@ namespace UltraNotes.Vue
 
             // on défini également le DataContext de la grille de fond;
             GrilleDeFond.DataContext = MonManager.Bouquin;
+            // et la note courante sélectionnée;
+            NoteSelectionnee = 0;
         }
 
         #endregion
@@ -101,6 +115,12 @@ namespace UltraNotes.Vue
             // puis on sélectionne la dernière note du bouquin;
             int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;
             listBoxNotes.SelectedItem = MonManager.Bouquin[dernier_element];
+        }
+
+        private void listBoxNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // on défini la note courante sélectionnée;
+            NoteSelectionnee = listBoxNotes.SelectedIndex;
         }
 
         #endregion

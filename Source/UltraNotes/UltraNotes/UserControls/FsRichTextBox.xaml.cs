@@ -71,6 +71,8 @@ namespace UltraNotes.UserControls
         // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
         // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
         public Manager MonManager => (App.Current as App).LeManager;
+        // idem pour la note courant sélectionnée;
+        public int NoteSelectionnee => (App.Current as App).NoteSelectionne;
 
         #endregion
 
@@ -268,7 +270,7 @@ namespace UltraNotes.UserControls
         private void Initialize()
         {
             // style utilisateur
-            StyleCombo.ItemsSource = MonManager.Bouquin[0].StylesUtilisateur;
+            StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
             // police d'écriture
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
             // taille de police
