@@ -176,22 +176,29 @@ namespace UltraNotes.UserControls
             if (StyleCombo.SelectedItem == null) return;
 
             // sinon on change le style du texte sélectionné
+            Modele.Style style = (StyleCombo.SelectedItem as Modele.Style);
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, (StyleCombo.SelectedItem as Modele.Style).PoliceEcriture);
-            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, (StyleCombo.SelectedItem as Modele.Style).TailleDePolice);
-            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, (StyleCombo.SelectedItem as Modele.Style).CouleurTexte);
-
-        }
-
-        /// <summary>
-        /// Formats inline code.
-        /// </summary>
-        private void OnInlineCodeClick(object sender, RoutedEventArgs e)
-        {
-            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
-            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, "Consolas");
-            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, 11D);
-            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, "FireBrick");
+            textRange.ApplyPropertyValue(TextElement.FontFamilyProperty, style.PoliceEcriture);
+            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, style.TailleDePolice);
+            textRange.ApplyPropertyValue(TextElement.ForegroundProperty, style.CouleurTexte);
+            if (style.IsGras) EditingCommands.ToggleBold.Execute(null, TextBox);
+            if (style.IsItalique) EditingCommands.ToggleItalic.Execute(null, TextBox);
+            if (style.IsSouligne) EditingCommands.ToggleUnderline.Execute(null, TextBox);
+            switch (style.AlignementTexte)
+            {
+                case Alignement.Gauche:
+                    EditingCommands.AlignLeft.Execute(null, TextBox);
+                    break;
+                case Alignement.Centre:
+                    EditingCommands.AlignCenter.Execute(null, TextBox);
+                    break;
+                case Alignement.Droite:
+                    EditingCommands.AlignRight.Execute(null, TextBox);
+                    break;
+                case Alignement.Justifie:
+                    EditingCommands.AlignJustify.Execute(null, TextBox);
+                    break;
+            }
         }
 
         /// <summary>

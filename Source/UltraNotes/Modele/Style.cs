@@ -10,7 +10,7 @@ namespace Modele
         #region Propriétés
 
         public string Nom { get; set; }
-        public double TailleDePolice { get; set; } = 14;
+        public double TailleDePolice { get; set; } = 14D;
         public string PoliceEcriture { get; set; } = "Consolas";
         public Alignement AlignementTexte { get; set; } = Alignement.Gauche;
         public string CouleurTexte { get; set; } = "Black";
@@ -39,11 +39,12 @@ namespace Modele
         /// <param name="isGras"></param>
         /// <param name="isItalique"></param>
         /// <param name="isSouligne"></param>
-        public Style(string nom, int tailleDePolice, string policeEcriture, Alignement alignementTexte, bool isGras, bool isItalique, bool isSouligne) : this(nom)
+        public Style(string nom, double tailleDePolice, string policeEcriture, Alignement alignementTexte, string couleur, bool isGras, bool isItalique, bool isSouligne) : this(nom)
         {
             TailleDePolice = tailleDePolice;
             PoliceEcriture = policeEcriture;
             AlignementTexte = alignementTexte;
+            CouleurTexte = couleur;
             IsGras = isGras;
             IsItalique = isItalique;
             IsSouligne = isSouligne;

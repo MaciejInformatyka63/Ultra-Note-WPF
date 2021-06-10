@@ -94,28 +94,28 @@
             </Button>
             <!-- Effet de gras -->
             <ToggleButton x:Name="BoldButton" Command="EditingCommands.ToggleBold"
-                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Gras"
+                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Gras (Ctrl+B)"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
                 <Image Source="../icons/texteditor/gras.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Effet d'italique -->
             <ToggleButton x:Name="ItalicButton" Command="EditingCommands.ToggleItalic"
-                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Italique"
+                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Italique (Ctrl+I)"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
                 <Image Source="../icons/texteditor/italique.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Effet de souligné -->
             <ToggleButton x:Name="UnderlineButton" Command="EditingCommands.ToggleUnderline"
-                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Souligné"
+                            CommandTarget="{Binding ElementName=TextBox}" ToolTip="Souligné (Ctrl+U)"
                             Template="{StaticResource FlatToggleButtonControlTemplate}"
                             Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="31">
                 <Image Source="../icons/texteditor/souligne.png" Margin="5,5"/>
             </ToggleButton>
             <!-- Aligné à gauche -->
             <ToggleButton x:Name="LeftButton" Command="EditingCommands.AlignLeft"
-                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Aligner à gauche"
+                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Aligner à gauche (Ctrl+L)"
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
@@ -123,14 +123,14 @@
             </ToggleButton>
             <!-- Aligné au centre -->
             <ToggleButton x:Name="CenterButton" Command="EditingCommands.AlignCenter"
-                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Centré"
+                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Centré (Ctrl+E)"
                     Template="{StaticResource FlatToggleButtonControlTemplate}" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
                 <Image Source="../icons/texteditor/alignementcentre.png" Margin="3,3"/>
             </ToggleButton>
             <!-- Aligné à droite -->
             <ToggleButton x:Name="RightButton" Command="EditingCommands.AlignRight"
-                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Aligner à droite"
+                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Aligner à droite (Ctrl+R)"
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
@@ -138,7 +138,7 @@
             </ToggleButton>
             <!-- Alignement justifie -->
             <ToggleButton x:Name="JustifyButton" Command="EditingCommands.AlignJustify"
-                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Alignement justifié"
+                    CommandTarget="{Binding ElementName=TextBox}" ToolTip="Alignement justifié (Ctrl+J)"
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="31"
                     Cursor="Hand" Click="OnAlignementBoutonClick">
@@ -155,7 +155,7 @@
                     CommandTarget="{Binding ElementName=TextBox}"
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
-                    Cursor="Hand" ToolTip="Puce"
+                    Cursor="Hand" ToolTip="Puce (Ctrl+Shift+L)"
                     Click="OnListButtonClick">
                 <Image Source="../icons/texteditor/puces.png" Margin="3,3"/>
             </ToggleButton>
@@ -164,7 +164,7 @@
                     CommandTarget="{Binding ElementName=TextBox}"
                     Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
                     Template="{StaticResource FlatToggleButtonControlTemplate}"
-                    Cursor="Hand" ToolTip="Puce"
+                    Cursor="Hand" ToolTip="Puce numérotée (Ctrl+Shift+N)"
                     Click="OnListButtonClick">
                 <Image Source="../icons/texteditor/pucesnum.png" Margin="3,3"/>
             </ToggleButton>
@@ -202,6 +202,6 @@
                      AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True" AllowDrop="True" FontSize="14" Padding="4,8,4,10"
                      IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                      Tag="{Binding ElementName=RichTextBox,Path=Tag,Mode=TwoWay}"
-                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Auto"/>
+                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Visible"/>
     </DockPanel>
 </UserControl>
