@@ -9,6 +9,27 @@ namespace Modele
 {
     public class Bouquin : IEnumerable, INotifyPropertyChanged
     {
+
+        #region Persistance
+
+        public IPersistanceBouquin Persistance { get; set; }
+
+        public void ChargeDonnées()
+        {
+            var données = Persistance.ChargeDonnées();
+            foreach(var n in données)
+            {
+                BouquinDeNotes.Add(n);
+            }
+        }
+
+        public void SauvegardeDonnées()
+        {
+            Persistance.SauvegardeDonnées(BouquinDeNotes);
+        }
+
+        #endregion
+
         #region Membres INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -106,8 +127,9 @@ namespace Modele
         /// <summary>
         /// Constructeur de la classe
         /// </summary>
-        public Bouquin()
+        public Bouquin(IPersistanceBouquin persistance)
         {
+            Persistance = persistance;
         }
 
         #endregion

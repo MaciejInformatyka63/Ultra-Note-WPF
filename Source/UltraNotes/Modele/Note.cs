@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace Modele
 {
+    [DataContract]
     public class Note : INotifyPropertyChanged
     {
         #region Champs
@@ -31,6 +33,7 @@ namespace Modele
         /// <summary>
         /// Propriété Nom qui représente le nom de la Note (son titre)
         /// </summary>
+        [DataMember]
         public string Nom
         {
             get { return p_Nom; }
@@ -44,6 +47,7 @@ namespace Modele
         /// <summary>
         /// Propriété DocumentXaml qui renseigne le contenu de la note
         /// </summary>
+        [DataMember]
         public string DocumentXaml
         {
             get { return p_DocumentXaml; }

@@ -98,7 +98,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=SelectedItem, ElementName=listBoxNotes}"
+                <TextBox x:Name="TitreNote" Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Path=SelectedItem, ElementName=listBoxNotes}"
                          Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="{x:Null}" Grid.Column="0"
                          FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
                     
@@ -114,7 +114,7 @@
                         <MenuItem.Header>
                             <Image Source="../icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
-                        <MenuItem Header="Enregistrer" Cursor="Hand">
+                        <MenuItem Header="Enregistrer" Cursor="Hand" Click="EnregistrerNote_Click">
                             <MenuItem.Icon>
                                 <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>

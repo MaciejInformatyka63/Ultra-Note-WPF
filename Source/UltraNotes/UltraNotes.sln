@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsFonctionnels", "TestsF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_Unitaires", "Tests_Unitaires\Tests_Unitaires.csproj", "{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContractPersistance", "DataContractPersistance\DataContractPersistance.csproj", "{450F57D5-FDE3-4E75-8469-759B13B93B54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_DataContract", "Test_DataContract\Test_DataContract.csproj", "{21AC13F6-921B-4CE5-BA4C-8464B57A881A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B2DB5C9-E928-47D4-BBD1-C649D9BBA49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450F57D5-FDE3-4E75-8469-759B13B93B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450F57D5-FDE3-4E75-8469-759B13B93B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450F57D5-FDE3-4E75-8469-759B13B93B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450F57D5-FDE3-4E75-8469-759B13B93B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AC13F6-921B-4CE5-BA4C-8464B57A881A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AC13F6-921B-4CE5-BA4C-8464B57A881A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AC13F6-921B-4CE5-BA4C-8464B57A881A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AC13F6-921B-4CE5-BA4C-8464B57A881A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using Modele;
 using System;
 using Data;
+using DataContractPersistance;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -19,7 +20,7 @@ namespace UltraNotes
         #region Champs
      
         // on instancie un Stub;
-        static IChargeur chargeur = new Stub();
+        //static IChargeur chargeur = new Stub();
         // index de la note courant dans l'éditeur;
         int index_note;
 
@@ -30,7 +31,9 @@ namespace UltraNotes
         /// <summary>
         /// On déclare un Manager commun à toutes les fenêtres, UserControls inclus
         /// </summary>
-        public Manager LeManager { get; private set; } = new Manager(chargeur.ChargeurBouquin(""));
+        //public Manager LeManager { get; private set; } = new Manager(chargeur.ChargeurBouquin(""));
+        public Manager LeManager { get; private set; } = new Manager(new Bouquin(new DataContractPers()));
+        //public Manager LeManager { get; private set; } = new Manager(new Bouquin(new Data.Stub()));
         /// <summary>
         /// Note actuellement sélectionnée dans l'éditeur de texte
         /// </summary>
@@ -46,7 +49,9 @@ namespace UltraNotes
 
         public App()
         {
-
+            LeManager.Bouquin.ChargeDonnées();
+            //LeManager.Bouquin.Persistance = new DataContractPersistance.DataContractPers();
+            LeManager.Bouquin.SauvegardeDonnées();
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ using UltraNotes.UserControls;
 using Modele;
 using Data;
 using System.Windows.Markup;
+using DataContractPersistance;
 
 namespace UltraNotes.Vue
 {
@@ -115,6 +117,19 @@ namespace UltraNotes.Vue
             // puis on sélectionne la dernière note du bouquin;
             int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;
             listBoxNotes.SelectedItem = MonManager.Bouquin[dernier_element];
+        }
+
+        private void EnregistrerNote_Click(object sender, RoutedEventArgs e)
+        {
+            DataContractPers dataContractPers = new DataContractPers();
+            var settings = new XmlWriterSettings() { Indent = true };
+            using (TextWriter tw = File.CreateText(System.IO.Path.Combine(dataContractPers.FilePath, TitreNote.Text)))
+            {
+                using (XmlWriter writer = XmlWriter.Create(tw, settings))
+                {
+                        dataContractPers.Serializer.WriteObject(writer,listBoxNotes.SelectedItem);
+                }
+            }
         }
 
         private void listBoxNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)

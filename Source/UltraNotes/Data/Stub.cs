@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Data
 {
-    public class Stub : IChargeur
+    public class Stub : IPersistanceBouquin
     {
-        public Bouquin ChargeurBouquin(string chemin)
+        /*public Bouquin ChargeurBouquin(string chemin)
         {
             Bouquin bouquin = new Bouquin();
             bouquin.AjouterUneNote(new Note("Mon super document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Un méga super document avec plein de super mots !!</Paragraph></FlowDocument>"));
@@ -19,7 +19,27 @@ namespace Data
             bouquin[0].DefinirStyle(new Style("Mon titre 1", 18D, "Consolas", Alignement.Centre, "Violet", true, true, false));
             bouquin[0].DefinirStyle(new Style("Defaut", 12D, "Consolas", Alignement.Gauche, "Black", false, false, false));
             return bouquin;
-            //<InlineUIContainer><Button> click </Button></InlineUIContainer> <Canvas Height="100" Width="100" Top="0" Left="0" Background="Red"/> <Image Source=\".. / Assets / mountains.jpg\"/>
+        }*/
+
+        public IEnumerable<Note> ChargeDonnées()
+        {
+            List<Note> lesNotes = ChargeNotes();
+            return lesNotes;
         }
+
+        public void SauvegardeDonnées(IEnumerable<Note> notes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Note> ChargeNotes()
+        {
+            List<Note> notes = new List<Note>();
+            notes.Add(new Note("Mon super document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Un méga super document avec plein de super mots !!</Paragraph></FlowDocument>"));
+            notes.Add(new Note("Nouveau document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Bienvenue dans UltraNotes !</Paragraph></FlowDocument>"));
+            notes.Add(new Note("Cours de maths n°1", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Les suites : les suites doivent se suivre, sinon ce ne sont pas des suites. Incroyable !</Paragraph></FlowDocument>"));
+            return notes;
+        }
+
     }
 }
