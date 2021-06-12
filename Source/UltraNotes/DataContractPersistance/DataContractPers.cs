@@ -17,9 +17,12 @@ namespace DataContractPersistance
                                                                             PreserveObjectReferences = true 
                                                                         });
 
-        public IEnumerable<Note> ChargeDonnées()
+        public IEnumerable<Note> ChargeDonnees()
         {   
             List<Note> notes = new List<Note>();
+
+            // on teste si le dossier existe, sinon on le crée
+            if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
 
             foreach (var ficNote in Directory.EnumerateFiles(FilePath))
             {
@@ -38,12 +41,10 @@ namespace DataContractPersistance
             return notes;
         }
 
-        public void SauvegardeDonnées(IEnumerable<Note> notes)
+        public void SauvegardeDonnees(IEnumerable<Note> notes)
         {
-            if(!Directory.Exists(FilePath))
-            {
-                Directory.CreateDirectory(FilePath);
-            }
+            // on teste si le dossier existe, sinon on le crée
+            if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
 
             var settings = new XmlWriterSettings() { Indent = true };
             foreach(Note n in notes)

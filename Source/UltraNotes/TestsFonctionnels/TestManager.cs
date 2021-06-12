@@ -11,7 +11,7 @@ namespace TestsFonctionnels
         public static void TestManipManager()
         {
             // on crée un bouquin et un manager;
-            Bouquin bouquin = new Bouquin();
+            Bouquin bouquin = new Bouquin(new Stub());
             bouquin.AjouterUneListeDeNotes(new Note[]
             {
                 new Note("un", "La premier nombre"),
@@ -42,7 +42,7 @@ namespace TestsFonctionnels
         public static void TestManipNoteViaManager()
         {
             // on crée un bouquin et un manager;
-            Bouquin bouquin = new Bouquin();
+            Bouquin bouquin = new Bouquin(new Stub());
             bouquin.AjouterUneListeDeNotes(new Note[]
             {
                 new Note("un", "La premier nombre"),
@@ -54,7 +54,7 @@ namespace TestsFonctionnels
 
             // on crée un style pour une note;
             Console.WriteLine("Création d'un style pour une note via indexeur de type int");
-            manager.Bouquin[0].DefinirStyle(new Style("Style1", 12, "Arial", Alignement.Justifie, false, false, true));
+            manager.Bouquin[0].DefinirStyle(new Style("Style1", 12, "Arial", Alignement.Justifie, "Black", false, false, true));
             Console.WriteLine($"Le nouveau style de un est : {manager.Bouquin[0].StylesUtilisateur[0]}");
         }
 

@@ -14,18 +14,18 @@ namespace Modele
 
         public IPersistanceBouquin Persistance { get; set; }
 
-        public void ChargeDonnées()
+        public void ChargeDonnees()
         {
-            var données = Persistance.ChargeDonnées();
+            var données = Persistance.ChargeDonnees();
             foreach(var n in données)
             {
                 BouquinDeNotes.Add(n);
             }
         }
 
-        public void SauvegardeDonnées()
+        public void SauvegardeDonnees()
         {
-            Persistance.SauvegardeDonnées(BouquinDeNotes);
+            Persistance.SauvegardeDonnees(BouquinDeNotes);
         }
 
         #endregion

@@ -71,7 +71,7 @@ namespace UltraNotes.Vue
 
         #endregion
 
-        #region Méthodes privées
+        #region Events Handler
 
         /// <summary>
         /// Méthode qui ouvre la fenêtre des paramètres quand le bouton associé à été cliqué
@@ -121,21 +121,40 @@ namespace UltraNotes.Vue
 
         private void EnregistrerNote_Click(object sender, RoutedEventArgs e)
         {
+            EnregistrerNote(listBoxNotes.SelectedItem as Note);
+        }
+
+        private void EnregistrerToutesLesNote_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Note note in MonManager.Bouquin.BouquinDeNotes) EnregistrerNote(note);
+        }
+
+        /// <summary>
+        /// Méthode appelée quand l'utilisateur touche aux éléments de la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBoxNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // on défini la note courante sélectionnée;
+            NoteSelectionnee = listBoxNotes.SelectedIndex;
+        }
+
+        #endregion
+
+        #region Méthodes privées
+
+        private void EnregistrerNote(Note note)
+        {
             DataContractPers dataContractPers = new DataContractPers();
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(System.IO.Path.Combine(dataContractPers.FilePath, TitreNote.Text)))
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, settings))
                 {
-                        dataContractPers.Serializer.WriteObject(writer,listBoxNotes.SelectedItem);
+                        dataContractPers.Serializer.WriteObject(writer,note);
                 }
             }
-        }
-
-        private void listBoxNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // on défini la note courante sélectionnée;
-            NoteSelectionnee = listBoxNotes.SelectedIndex;
         }
 
         #endregion

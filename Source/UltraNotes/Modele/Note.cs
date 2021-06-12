@@ -63,13 +63,9 @@ namespace Modele
         /// </summary>
         public string Chemin { get; set; }
         /// <summary>
-        /// Propriété qui défini le type de la note (équivalent aux hashtag sur les réseaux sociaux)
+        /// Propriété qui défini le type de la note
         /// </summary>
-        public TypeDocument Type { get; private set; }
-        /// <summary>
-        /// Propriété calculée qui permet d'obtenir la taille du fichier courant
-        /// </summary>
-        public float CalculerTailleFichier { get; }
+        public TypeDocument Type { get; set; }
 
         #endregion
 

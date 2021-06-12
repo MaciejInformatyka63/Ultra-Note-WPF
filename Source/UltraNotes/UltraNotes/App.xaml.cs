@@ -49,9 +49,9 @@ namespace UltraNotes
 
         public App()
         {
-            LeManager.Bouquin.ChargeDonnées();
+            LeManager.Bouquin.ChargeDonnees();
             //LeManager.Bouquin.Persistance = new DataContractPersistance.DataContractPers();
-            LeManager.Bouquin.SauvegardeDonnées();
+            LeManager.Bouquin.SauvegardeDonnees();
         }
 
         #endregion

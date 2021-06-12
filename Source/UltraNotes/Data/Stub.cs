@@ -21,13 +21,13 @@ namespace Data
             return bouquin;
         }*/
 
-        public IEnumerable<Note> ChargeDonnées()
+        public IEnumerable<Note> ChargeDonnees()
         {
             List<Note> lesNotes = ChargeNotes();
             return lesNotes;
         }
 
-        public void SauvegardeDonnées(IEnumerable<Note> notes)
+        public void SauvegardeDonnees(IEnumerable<Note> notes)
         {
             throw new NotImplementedException();
         }

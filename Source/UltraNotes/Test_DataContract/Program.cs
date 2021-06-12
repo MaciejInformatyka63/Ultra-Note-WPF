@@ -8,9 +8,9 @@ namespace Test_DataContract
         static void Main(string[] args)
         {
             Manager manager = new Manager(new Bouquin(new Data.Stub()));
-            manager.Bouquin.ChargeDonnées();
+            manager.Bouquin.ChargeDonnees();
             manager.Bouquin.Persistance = new DataContractPersistance.DataContractPers();
-            manager.Bouquin.SauvegardeDonnées();
+            manager.Bouquin.SauvegardeDonnees();
         }
     }
 }

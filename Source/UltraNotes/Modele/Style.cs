@@ -34,6 +34,7 @@ namespace Modele
                 OnPropertyChanged(Nom);
             }
         }
+
         public double TailleDePolice { get; set; } = 14D;
         public string PoliceEcriture { get; set; } = "Consolas";
         public Alignement AlignementTexte { get; set; } = Alignement.Gauche;

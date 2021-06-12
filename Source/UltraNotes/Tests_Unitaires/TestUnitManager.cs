@@ -1,4 +1,5 @@
 ﻿using System;
+using Data;
 using Xunit;
 using Modele;
 
@@ -9,7 +10,7 @@ namespace Tests_Unitaires
         [Fact]
         public void AjoutDeFichierExistant()
         {
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             manager.AjouterUneNote(new Note("Nouveau document", "Bienvenue dans UltraNotes"));
             //on regarde si la collection Notes contient bien un élément ajouté par la méthode AjouterUnFichier
             Assert.Equal(1, manager.NombreDeNotes);
@@ -18,7 +19,7 @@ namespace Tests_Unitaires
         [Fact]
         public void AjoutDeFichiersInnexistant()
         {
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             manager.AjouterUneNote(null);
             Assert.Equal(0, manager.NombreDeNotes);
         }
@@ -26,7 +27,7 @@ namespace Tests_Unitaires
         [Fact]
         public void SuppressionDeFichierInnexistant()
         {
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             bool reponse = manager.SupprimerUneNote(new Note("Nouveau document", "Bienvenue dans UltraNotes"));
             Assert.False(reponse);
         }
@@ -34,7 +35,7 @@ namespace Tests_Unitaires
         [Fact]
         public void SuppressionDeFichierExistant()
         {
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             manager.AjouterListeDeNotes(new Note[]
             {
                 new Note("Nouveau document", "Bienvenue dans UltraNotes"),
@@ -49,7 +50,7 @@ namespace Tests_Unitaires
         public void IndexeurIntViaManager()
         {
             Note note = new Note("un", "le nombre un");
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             manager.AjouterUneNote(note);
             Assert.Equal(note, manager.Bouquin[0]);
         }
@@ -58,7 +59,7 @@ namespace Tests_Unitaires
         public void IndexeurStringTitreViaManager()
         {
             Note note = new Note("un", "le nombre un");
-            Manager manager = new Manager(new Bouquin());
+            Manager manager = new Manager(new Bouquin(new Stub()));
             manager.AjouterUneNote(note);
             Assert.Equal(note, manager.Bouquin["un"]);
         }
