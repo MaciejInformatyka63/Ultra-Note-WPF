@@ -121,12 +121,24 @@ namespace UltraNotes.Vue
 
         private void EnregistrerNote_Click(object sender, RoutedEventArgs e)
         {
-            EnregistrerNote(listBoxNotes.SelectedItem as Note);
+            // on provoque une mise à jour de la propriété Document de la FsRichTextBox
+            var saveDoc = listBoxNotes.SelectedItem;
+            listBoxNotes.SelectedItem = null;
+            // on enregistre
+            MonManager.Bouquin.SauvegardeNote(saveDoc as Note);
+            // puis on reviens sur l'éléments sélectionné;
+            listBoxNotes.SelectedItem = saveDoc;
         }
 
         private void EnregistrerToutesLesNote_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Note note in MonManager.Bouquin.BouquinDeNotes) EnregistrerNote(note);
+            // on provoque une mise à jour de la propriété Document de la FsRichTextBox
+            var saveDoc = listBoxNotes.SelectedItem;
+            listBoxNotes.SelectedItem = null;
+            // on enregistre
+            foreach (Note note in MonManager.Bouquin.BouquinDeNotes) MonManager.Bouquin.SauvegardeDonnees();
+            // puis on reviens sur l'éléments sélectionné;
+            listBoxNotes.SelectedItem = saveDoc;
         }
 
         /// <summary>
@@ -138,23 +150,6 @@ namespace UltraNotes.Vue
         {
             // on défini la note courante sélectionnée;
             NoteSelectionnee = listBoxNotes.SelectedIndex;
-        }
-
-        #endregion
-
-        #region Méthodes privées
-
-        private void EnregistrerNote(Note note)
-        {
-            DataContractPers dataContractPers = new DataContractPers();
-            var settings = new XmlWriterSettings() { Indent = true };
-            using (TextWriter tw = File.CreateText(System.IO.Path.Combine(dataContractPers.FilePath, TitreNote.Text)))
-            {
-                using (XmlWriter writer = XmlWriter.Create(tw, settings))
-                {
-                        dataContractPers.Serializer.WriteObject(writer,note);
-                }
-            }
         }
 
         #endregion

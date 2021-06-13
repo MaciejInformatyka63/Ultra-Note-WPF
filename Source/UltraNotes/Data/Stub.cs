@@ -41,5 +41,9 @@ namespace Data
             return notes;
         }
 
+        public void SauvegardeNote(Note note)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

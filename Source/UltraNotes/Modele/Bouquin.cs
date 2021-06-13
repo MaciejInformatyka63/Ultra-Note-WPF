@@ -13,7 +13,10 @@ namespace Modele
         #region Persistance
 
         public IPersistanceBouquin Persistance { get; set; }
-
+        /// <summary>
+        /// Méthode qui charge une liste de Notes depuis plusieurs fichiers vers un Bouquin
+        /// </summary>
+        /// <returns></returns>
         public void ChargeDonnees()
         {
             var données = Persistance.ChargeDonnees();
@@ -22,7 +25,18 @@ namespace Modele
                 this.AjouterUneNote(n);
             }
         }
-
+        /// <summary>
+        /// Méthode qui sauvegarde une seule note
+        /// </summary>
+        /// <param name="note"></param>
+        public void SauvegardeNote(Note note)
+        {
+            Persistance.SauvegardeNote(note);
+        }
+        /// <summary>
+        /// Méthode qui sauvegarde chaque objet Note d'une liste dans un fichier différent
+        /// </summary>
+        /// <param name="chemin"></param>
         public void SauvegardeDonnees()
         {
             Persistance.SauvegardeDonnees(BouquinDeNotes);
