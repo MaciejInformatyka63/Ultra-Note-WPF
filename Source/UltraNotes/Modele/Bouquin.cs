@@ -19,7 +19,7 @@ namespace Modele
             var données = Persistance.ChargeDonnees();
             foreach(var n in données)
             {
-                BouquinDeNotes.Add(n);
+                this.AjouterUneNote(n);
             }
         }
 

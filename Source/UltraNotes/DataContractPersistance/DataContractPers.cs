@@ -7,10 +7,19 @@ using Modele;
 
 namespace DataContractPersistance
 {
+    /// <summary>
+    /// Cette classe contient des méthodes pour lire et écrire des données dans des fichiers éxistants ou créer par ces mêmes méthodes
+    /// </summary>
     public class DataContractPers : IPersistanceBouquin
     {
+        /// <summary>
+        /// Propriété qui représente le chemin du répertoire qui contient les fichiers/notes
+        /// </summary>
         public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
-
+        /// <summary>
+        /// Propriété qui définit le type de l'élément que l'on veut persister,
+        /// les settings permettent de donner un "ID" au proriétés du type de l'élément spécifié précedemment
+        /// </summary>
         public DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(Note),
                                                                         new DataContractSerializerSettings() 
                                                                         { 
@@ -23,7 +32,7 @@ namespace DataContractPersistance
 
             // on teste si le dossier existe, sinon on le crée
             if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
-
+            // on récupère dans une variable chaque fichier contenu dans le répertoire correspondant à FilePath
             foreach (var ficNote in Directory.EnumerateFiles(FilePath))
             {
                 if(!File.Exists(ficNote))
@@ -31,8 +40,10 @@ namespace DataContractPersistance
                     throw new FileNotFoundException("le fichier n'éxiste pas");
                 }
                 Note note;
+                // on ouvre le fichier dans un flux..
                 using (Stream s = File.OpenRead(ficNote))
                 {
+                    //..puis on déserialise et interprète l'objet déserialisé comme une Note
                     note = Serializer.ReadObject(s) as Note;
                     notes.Add(note);
                 }
@@ -45,14 +56,16 @@ namespace DataContractPersistance
         {
             // on teste si le dossier existe, sinon on le crée
             if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
-
+            // paramètres qui indiquent que le fichier devra être indenté
             var settings = new XmlWriterSettings() { Indent = true };
             foreach(Note n in notes)
             {
+                // on crée un fichier à l'emplacement spécifié par le chemin donné..
                 using(TextWriter tw = File.CreateText(Path.Combine(FilePath, n.Nom)))
                 {
                     using(XmlWriter writer = XmlWriter.Create(tw,settings))
                     {
+                        //..puis on écrit une des instances de Note de la collection passée en paramêtre dans ce fichier
                         Serializer.WriteObject(writer, n);
                     }
                 }

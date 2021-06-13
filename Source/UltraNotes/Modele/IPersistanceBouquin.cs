@@ -7,12 +7,12 @@ namespace Modele
     public interface IPersistanceBouquin
     {
         /// <summary>
-        /// Méthode qui charge une liste de Notes et les renvoie dans un Bouquin
+        /// Méthode qui charge une liste de Notes depuis plusieurs fichiers vers un Bouquin
         /// </summary>
         /// <returns></returns>
         IEnumerable<Note> ChargeDonnees();
         /// <summary>
-        /// méthode qui sauvegarde une liste de Notes dans un fichier
+        /// Méthode qui sauvegarde chaque objet Note d'une liste dans un fichier différent
         /// </summary>
         /// <param name="chemin"></param>
         void SauvegardeDonnees(IEnumerable<Note> notes);
