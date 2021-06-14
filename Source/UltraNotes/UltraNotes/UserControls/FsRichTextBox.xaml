@@ -144,12 +144,6 @@
                     Cursor="Hand" Click="OnAlignementBoutonClick">
                 <Image Source="../icons/texteditor/alignementjustifie.png" Margin="3,3"/>
             </ToggleButton>
-            <!-- Insérer une case à cocher -->
-            <Button x:Name="ButtonCheckBox" Background="{x:Null}" BorderBrush="{x:Null}" Height="27"
-                    Cursor="Hand" ToolTip="Case à cocher"
-                    Template="{StaticResource FlatButtonControlTemplate}">
-                <Image Source="../icons/texteditor/checkbox1.png" Margin="3,3"/>
-            </Button>
             <!-- Insérer une puce normale -->
             <ToggleButton x:Name="BulletsButton" Command="EditingCommands.ToggleBullets"
                     CommandTarget="{Binding ElementName=TextBox}"
