@@ -28,6 +28,7 @@ namespace UltraNotes
 
         #region Propriétés
 
+        public Modele.Parametres Param { get; set; } = new Modele.Parametres(new DataContractPers());
         /// <summary>
         /// On déclare un Manager commun à toutes les fenêtres, UserControls inclus
         /// </summary>
@@ -47,9 +48,8 @@ namespace UltraNotes
 
         public App()
         {
+            Param.ChargerParametres();
             LeManager.Bouquin.ChargeDonnees();
-            //LeManager.Bouquin.Persistance = new DataContractPersistance.DataContractPers();
-            LeManager.Bouquin.SauvegardeDonnees();
         }
 
         #endregion

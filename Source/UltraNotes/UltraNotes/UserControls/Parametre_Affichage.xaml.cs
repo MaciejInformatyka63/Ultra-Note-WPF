@@ -25,6 +25,8 @@ namespace UltraNotes.UserControls
         // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
         // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
         public Manager MonManager => (App.Current as App).LeManager;
+        // idem pour Parametres:
+        public Modele.Parametres Param => (App.Current as App).Param;
 
         #endregion
 
@@ -34,7 +36,7 @@ namespace UltraNotes.UserControls
         {
             InitializeComponent();
             BackgroundColorCombo.DataContext = MonManager.Bouquin;
-            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+            Debug.WriteLine(Param.ThemeApplication);
         }
 
         #endregion
@@ -48,10 +50,10 @@ namespace UltraNotes.UserControls
         {
             if (BackgroundColorCombo.SelectedItem == null) return;
             //mise à jour de la propriété ThemeApplication
-            MonManager.Bouquin.ThemeApplication = MonManager.Bouquin.ThemeApplicationCouleurs[BackgroundColorCombo.SelectedItem.ToString()];
+            Param.ThemeApplication = Param.ThemeApplicationCouleurs[BackgroundColorCombo.SelectedItem.ToString()];
             //mise à jour de la propriété ImageMainWindow
-            MonManager.Bouquin.ImageMainWindow = MonManager.Bouquin.BanqueImagesMainWindow[BackgroundColorCombo.SelectedItem.ToString()];
-            Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+            Param.ImageMainWindow = Param.BanqueImagesMainWindow[BackgroundColorCombo.SelectedItem.ToString()];
+            Debug.WriteLine(Param.ThemeApplication);
         }
 
         private void OnContrastComboSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -60,15 +62,15 @@ namespace UltraNotes.UserControls
             //mise à jour des propriétés ImageMainWindow et ThemeApplication
             if (ContrastCombo.SelectedItem == oui)
             {
-                MonManager.Bouquin.ImageMainWindow = "../Assets/mountainsContrast.jpg";
-                MonManager.Bouquin.ThemeApplication = "#252C2E";
-                Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+                Param.ImageMainWindow = "../Assets/mountainsContrast.jpg";
+                Param.ThemeApplication = "#252C2E";
+                Debug.WriteLine(Param.ThemeApplication);
             }
             if (ContrastCombo.SelectedItem == non)
             {
-                MonManager.Bouquin.ImageMainWindow = "../Assets/mountains.jpg";
-                MonManager.Bouquin.ThemeApplication = "#64BED8";
-                Debug.WriteLine(MonManager.Bouquin.ThemeApplication);
+                Param.ImageMainWindow = "../Assets/mountains.jpg";
+                Param.ThemeApplication = "#64BED8";
+                Debug.WriteLine(Param.ThemeApplication);
             }
         }
 

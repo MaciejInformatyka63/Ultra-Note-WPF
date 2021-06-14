@@ -94,7 +94,7 @@ namespace Modele
         /// Constructeur de note qui prend seulement le paramètre "texte"
         /// </summary>
         /// <param name="texte"></param>
-        public Note(string nom,string texte) : this(nom,texte,null,Bouquin.DossierEPF) { }
+        public Note(string nom,string texte) : this(nom, texte, null, Parametres.DossierEPF) { }
 
         #endregion
 

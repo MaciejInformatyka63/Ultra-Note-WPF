@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Modele
 {
-    public class Bouquin : IEnumerable, INotifyPropertyChanged
+    public class Bouquin : IEnumerable
     {
 
         #region Persistance
@@ -44,25 +44,8 @@ namespace Modele
 
         #endregion
 
-        #region Membres INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
-
-        #region Champs
-
-        private string p_themeApplication = "#64BED8";
-        private string p_imageMainWindow = "../Assets/mountains.jpg";
-
-        #endregion
-
         #region Propriétés
 
-        /// <summary>
-        /// Propriété qui est chargée d'envoyer des notifications à la vue pour notifier le changement d'une propriété
-        /// </summary>
-        void OnPropertyChanged(string nomPropriete) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomPropriete));
         /// <summary>
         /// Propriété sur une collection de notes en lecture seule
         /// </summary>
@@ -71,68 +54,6 @@ namespace Modele
         /// Propriété calculée qui rends le nombre d'élements de la collection bouquinDeNotes
         /// </summary>
         public int NombreDeNotes => BouquinDeNotes.Count;
-        /// <summary>
-        /// Propriété qui définit si le mode contrasté de l'application est activé
-        /// </summary>
-        public Boolean ModeContraste { get; private set; } = false;
-        /// <summary>
-        /// Propriété qui précise la couleurs du theme de l'application choisie par l'utilisateur, au format hexadécimal
-        /// </summary>
-        public string ThemeApplication
-        {
-            get { return p_themeApplication; }
-            set
-            {
-                p_themeApplication = value;
-                OnPropertyChanged("ThemeApplication");
-            }
-        }
-        /// <summary>
-        /// Propriété qui précise l'image de la page principale
-        /// </summary>
-        public string ImageMainWindow
-        {
-            get { return p_imageMainWindow; }
-            set
-            {
-                p_imageMainWindow = value;
-                OnPropertyChanged("ImageMainWindow");
-            }
-        }
-        /// <summary>
-        /// Propriété qui précise les couleurs du theme de l'application
-        /// </summary>
-        public Dictionary<string, string> ThemeApplicationCouleurs { get; set; } = new Dictionary<string, string>()
-        {
-            {"Défaut", "#64BED8" },
-            {"Vert", "#59F0A2" },
-            {"Orange", "#E6A05A" },
-            {"Bleu profond", "#3A9981" },
-            {"Bleu nuit", "#428B99" },
-            {"Violet", "#845399" },
-            {"Violet profond", "#995489" },
-            {"Marron", "#995F3D" },
-            {"Contraste", "#252C2E" }
-        };
-        /// <summary>
-        /// Propriété qui précise les images de la page principale
-        /// </summary>
-        public Dictionary<string, string> BanqueImagesMainWindow { get; set; } = new Dictionary<string, string>()
-        {
-            {"Défaut", "../Assets/mountains.jpg" },
-            {"Vert", "../Assets/mountainsGreen.jpg" },
-            {"Orange", "../Assets/mountainsOrange.jpg" },
-            {"Bleu profond", "../Assets/mountainsDeepBlue.jpg" },
-            {"Bleu nuit", "../Assets/mountainsNightBlue.jpg" },
-            {"Violet", "../Assets/mountainsPurple.jpg" },
-            {"Violet profond", "../Assets/mountainsDeepPurple.jpg" },
-            {"Marron", "../Assets/mountainsBrown.jpg" },
-            {"Contraste", "../Assets/mountainsContrast.jpg" }
-        };
-        /// <summary>
-        /// Propriété qui précise le dossier d'enregistrement par défaut d'une note
-        /// </summary>
-        public static string DossierEPF { get; private set; } = "Documents";
 
         #endregion
 
@@ -161,7 +82,7 @@ namespace Modele
             if (note != null && !BouquinDeNotes.Contains(note))
             {
                 // on vérifie que le chemin n'est pas null;
-                note.Chemin = note.Chemin ?? DossierEPF;
+                note.Chemin = note.Chemin ?? Parametres.DossierEPF;
                 // puis on l'ajoute à la collection;
                 BouquinDeNotes.Add(note);
                 // puis on indique qu'il n'y a pas eu d'erreurs;
@@ -231,7 +152,7 @@ namespace Modele
             get
             {
                 // cet indexeur n'est pas obligatoire mais il permet une meilleur lisibilité du code
-                if (index < BouquinDeNotes.Count) return BouquinDeNotes[index];
+                if (index < BouquinDeNotes.Count && index >= 0) return BouquinDeNotes[index];
                 // si l'index est supérieur au nombre d'éléments de Bouquin, on ne retourne rien;
                 else return null;
                 

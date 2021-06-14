@@ -38,7 +38,9 @@ namespace UltraNotes.Vue
         // on déclare une propriété de type Manager qui pointe vers le même espace mémoire que l'instance de Manager
         // dans App.xaml.cs. Ceci permet d'avoir accès à notre instance de Manager partout;
         public Manager MonManager => (App.Current as App).LeManager;
-        // idem pour note sélecitonnée qui définie la note courante;
+        // idem pour les parametres
+        public Modele.Parametres Param => (App.Current as App).Param;
+        // et pour note sélecitonnée qui définie la note courante;
         public int NoteSelectionnee
         {
             get => (App.Current as App).NoteSelectionne;
@@ -64,7 +66,7 @@ namespace UltraNotes.Vue
             EditBox.TextBox.Focus();
 
             // on défini également le DataContext de la grille de fond;
-            GrilleDeFond.DataContext = MonManager.Bouquin;
+            GrilleDeFond.DataContext = Param;
             // et la note courante sélectionnée;
             NoteSelectionnee = 0;
         }
@@ -128,6 +130,8 @@ namespace UltraNotes.Vue
             MonManager.Bouquin.SauvegardeNote(saveDoc as Note);
             // puis on reviens sur l'éléments sélectionné;
             listBoxNotes.SelectedItem = saveDoc;
+            // on enregistre les paramètres
+            Param.SauverParametres();
         }
 
         private void EnregistrerToutesLesNote_Click(object sender, RoutedEventArgs e)
@@ -175,92 +179,10 @@ namespace UltraNotes.Vue
         private void listBoxNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // on défini la note courante sélectionnée;
-            NoteSelectionnee = listBoxNotes.SelectedIndex;
-            // on met à jour le type de note;
-            TypeDocCombo.SelectedItem = MonManager.Bouquin[NoteSelectionnee].Type.ToString();
+            if (NoteSelectionnee >= MonManager.Bouquin.NombreDeNotes) NoteSelectionnee -= 1;
+            NoteSelectionnee = (listBoxNotes.SelectedIndex == -1) ? NoteSelectionnee : listBoxNotes.SelectedIndex;
+            if (listBoxNotes.SelectedIndex == -1) NoteSelectionnee = 0;
         }
-
-        #endregion
-
-        #region Ressources commentées
-
-        /// <summary>
-        /// Méthode qui permet d'appliquer un effet de gras sur une portion de texte
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void effetGrasClick(object sender, RoutedEventArgs e)
-        {
-            BindingExpression be = textbox.GetBindingExpression(TextBox.FontWeightProperty);
-            be.UpdateSource();
-        }*/
-
-
-        /* VOICI UNE MANIERE DE SERIALISER AVEC FILESTREAM
-        private void SaveRTBContent(object sender, RoutedEventArgs e)
-        {
-            // Send an arbitrary URL and file name string specifying
-            // the location to save the XAML in.
-            SaveXamlPackage("C:\\test.xaml");
-        }
-
-        void LoadRTBContent(Object sender, RoutedEventArgs args)
-        {
-            // Send URL string specifying what file to retrieve XAML
-            // from to load into the RichTextBox.
-            LoadXamlPackage("C:\\test.xaml");
-        }
-
-        // Sauvegarde du XAML contenu dans le RichTextBox à l'intérieur d'un fichier _fileName
-        void SaveXamlPackage(string _fileName)
-        {
-            TextRange range;
-            FileStream fStream;
-            range = new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd);
-            fStream = new FileStream(_fileName, FileMode.Create);
-            range.Save(fStream, DataFormats.XamlPackage);
-            fStream.Close();
-        }
-
-        // Chargement du XAML dans la RichTextBox (RTB) en spécifiant un fichier _fileName
-        void LoadXamlPackage(string _fileName)
-        {
-            TextRange range;
-            FileStream fStream;
-            if (File.Exists(_fileName))
-            {
-                range = new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd);
-                fStream = new FileStream(_fileName, FileMode.OpenOrCreate);
-                range.Load(fStream, DataFormats.XamlPackage);
-                fStream.Close();
-            }
-        }
-        */
-
-        /* VOICI UNE MANIERE DE SERIALISER AVEC MEMORYSTREAM (cependant privilégier FileStream pour les RichTextBox)
-        private MemoryStream src = null;
-
-        private void btnSave_Click(Object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (src != null)
-            {
-                src.Close();
-            }
-            src = new MemoryStream();
-            new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd).Save(
-             src, System.Windows.DataFormats.Rtf);
-        }
-
-        private void btnLoad_Click(Object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (src != null)
-            {
-                src.Seek(0, SeekOrigin.Begin);
-                new TextRange(RichTextBox.Document.ContentStart, RichTextBox.Document.ContentEnd).Load(
-                src, System.Windows.DataFormats.Rtf);
-            }
-        }
-        */
 
         #endregion
     }

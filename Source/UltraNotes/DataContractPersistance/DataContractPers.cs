@@ -25,6 +25,15 @@ namespace DataContractPersistance
                                                                         { 
                                                                             PreserveObjectReferences = true 
                                                                         });
+        /// <summary>
+        /// Propriété qui définit le type de l'élément que l'on veut persister,
+        /// les settings permettent de donner un "ID" au proriétés du type de l'élément spécifié précedemment
+        /// </summary>
+        public DataContractSerializer SerializerParam { get; set; } = new DataContractSerializer(typeof(Parametres),
+                                                                        new DataContractSerializerSettings()
+                                                                        {
+                                                                            PreserveObjectReferences = true
+                                                                        });
 
         public IEnumerable<Note> ChargeDonnees()
         {   
@@ -39,13 +48,16 @@ namespace DataContractPersistance
                 {
                     throw new FileNotFoundException("le fichier n'éxiste pas");
                 }
-                Note note;
-                // on ouvre le fichier dans un flux..
-                using (Stream s = File.OpenRead(ficNote))
+                if (!ficNote.Equals(Path.Combine(FilePath, "parametres.xml")))
                 {
-                    //..puis on déserialise et interprète l'objet déserialisé comme une Note
-                    note = Serializer.ReadObject(s) as Note;
-                    notes.Add(note);
+                    Note note;
+                    // on ouvre le fichier dans un flux..
+                    using (Stream s = File.OpenRead(ficNote))
+                    {
+                        //..puis on déserialise et interprète l'objet déserialisé comme une Note
+                        note = Serializer.ReadObject(s) as Note;
+                        notes.Add(note);
+                    }
                 }
             }
             
@@ -60,7 +72,7 @@ namespace DataContractPersistance
             var settings = new XmlWriterSettings() { Indent = true };
 
             // on crée un fichier à l'emplacement spécifié par le chemin donné..
-            using(TextWriter tw = File.CreateText(Path.Combine(FilePath, note.Chemin)))
+            using(TextWriter tw = File.CreateText(Path.Combine(FilePath, note.Nom)))
             {
                 using(XmlWriter writer = XmlWriter.Create(tw,settings))
                 {
@@ -79,5 +91,46 @@ namespace DataContractPersistance
             }
         }
 
+        public Parametres ChargerParametres()
+        {
+            // on crée l'objet parametre qu'on va renvoyer
+            Parametres param;
+
+            // on teste si le dossier existe, sinon on le crée
+            if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
+
+            // on charge les paramètres
+            if (!File.Exists(Path.Combine(FilePath, "parametres.xml")))
+            {
+                throw new FileNotFoundException("Le fichier n'éxiste pas");
+            }
+            // on ouvre le fichier dans un flux..
+            using (Stream s = File.OpenRead(Path.Combine(FilePath, "parametres.xml")))
+            {
+                //..puis on déserialise et interprète l'objet déserialisé comme un Parametres
+                param = SerializerParam.ReadObject(s) as Parametres;
+            }
+
+            // on revoie l'objet param;
+            return param;
+        }
+
+        public void SauverParametres(Parametres param)
+        {
+            // on teste si le dossier existe, sinon on le crée
+            if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
+            // paramètres qui indiquent que le fichier devra être indenté
+            var settings = new XmlWriterSettings() { Indent = true };
+
+            // on crée un fichier à l'emplacement spécifié par le chemin donné..
+            using (TextWriter tw = File.CreateText(Path.Combine(FilePath, "parametres.xml")))
+            {
+                using (XmlWriter writer = XmlWriter.Create(tw, settings))
+                {
+                    //..puis on écrit une des instances de Note de la collection passée en paramêtre dans ce fichier
+                    SerializerParam.WriteObject(writer, param);
+                }
+            }
+        }
     }
 }

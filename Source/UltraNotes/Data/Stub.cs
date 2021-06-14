@@ -45,5 +45,16 @@ namespace Data
         {
             throw new NotImplementedException();
         }
+
+        public Parametres ChargerParametres()
+        {
+            Parametres parametres = new Parametres();
+            return parametres;
+        }
+
+        public void SauverParametres(Parametres param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace Modele
         /// </summary>
         /// <param name="chemin"></param>
         void SauvegardeDonnees(IEnumerable<Note> notes);
+        public Parametres ChargerParametres();
+        public void SauverParametres(Parametres param);
 
     }
 }

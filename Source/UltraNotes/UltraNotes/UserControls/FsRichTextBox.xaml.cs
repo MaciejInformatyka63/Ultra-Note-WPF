@@ -284,9 +284,6 @@ namespace UltraNotes.UserControls
         /// </summary>
         private void Initialize()
         {
-            // style utilisateur
-            StyleCombo.ItemsSource = null;
-            StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
             // police d'écriture
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
             // taille de police
