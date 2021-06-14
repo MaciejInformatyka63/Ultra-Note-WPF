@@ -99,16 +99,27 @@ namespace DataContractPersistance
             // on teste si le dossier existe, sinon on le crée
             if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
 
-            // on charge les paramètres
+            // on teste si le fichier existe, sinon on le crée
             if (!File.Exists(Path.Combine(FilePath, "parametres.xml")))
             {
-                throw new FileNotFoundException("Le fichier n'éxiste pas");
+                param = new Parametres();
             }
-            // on ouvre le fichier dans un flux..
-            using (Stream s = File.OpenRead(Path.Combine(FilePath, "parametres.xml")))
+            else
             {
-                //..puis on déserialise et interprète l'objet déserialisé comme un Parametres
-                param = SerializerParam.ReadObject(s) as Parametres;
+                // on ouvre le fichier dans un flux..
+                using (Stream s = File.OpenRead(Path.Combine(FilePath, "parametres.xml")))
+                {
+                    //..puis on déserialise et interprète l'objet déserialisé comme un Parametres
+                    try
+                    {
+                        param = SerializerParam.ReadObject(s) as Parametres;
+                    }
+                    catch (XmlException e)
+                    {
+                        return new Parametres();
+                    }
+                    
+                }
             }
 
             // on revoie l'objet param;
@@ -117,13 +128,18 @@ namespace DataContractPersistance
 
         public void SauverParametres(Parametres param)
         {
+            // on définie le chemin vers le fichier des paramètres
+            string ParamPath = Path.Combine(FilePath, "parametres.xml");
+
             // on teste si le dossier existe, sinon on le crée
             if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
+            // pareil pour le fichier parametres
+            if (!File.Exists(ParamPath)) File.Create(ParamPath);
             // paramètres qui indiquent que le fichier devra être indenté
             var settings = new XmlWriterSettings() { Indent = true };
 
             // on crée un fichier à l'emplacement spécifié par le chemin donné..
-            using (TextWriter tw = File.CreateText(Path.Combine(FilePath, "parametres.xml")))
+            using (TextWriter tw = File.CreateText(ParamPath))
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, settings))
                 {

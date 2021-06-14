@@ -35,7 +35,7 @@ namespace UltraNotes.UserControls
         public Parametre_Affichage()
         {
             InitializeComponent();
-            BackgroundColorCombo.DataContext = MonManager.Bouquin;
+            BackgroundColorCombo.DataContext = Param;
             Debug.WriteLine(Param.ThemeApplication);
         }
 

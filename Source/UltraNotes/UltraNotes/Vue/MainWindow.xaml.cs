@@ -143,13 +143,15 @@ namespace UltraNotes.Vue
             foreach (Note note in MonManager.Bouquin.BouquinDeNotes) MonManager.Bouquin.SauvegardeDonnees();
             // puis on reviens sur l'éléments sélectionné;
             listBoxNotes.SelectedItem = saveDoc;
+            // on enregistre les paramètres
+            Param.SauverParametres();
         }
         /// <summary>
         /// Méthode qui est appelée quand la valeur du type du document change
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TypeDocCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /*private void TypeDocCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // si la selection est nulle, on sort
             if (TypeDocCombo.SelectedItem == null) return;
@@ -170,7 +172,7 @@ namespace UltraNotes.Vue
                     MonManager.Bouquin[NoteSelectionnee].Type = TypeDocument.Pour_plus_tard;
                     break;
             }
-        }
+        }*/
         /// <summary>
         /// Méthode appelée quand l'utilisateur touche aux éléments de la liste
         /// </summary>

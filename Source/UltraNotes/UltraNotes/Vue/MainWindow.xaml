@@ -105,13 +105,13 @@
                 </TextBox>
                 <!--<Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Image Source="../icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
-                </Button>-->
+                </Button>
                 <ComboBox x:Name="TypeDocCombo" Grid.Column="1" BorderBrush="{x:Null}" Height="22" SelectionChanged="TypeDocCombo_SelectionChanged">
                     <ComboBoxItem Content="Personnel" IsSelected="True" />
                     <ComboBoxItem Content="Important" />
                     <ComboBoxItem Content="Profesionnel" />
                     <ComboBoxItem Content="Pour plus tard" />
-                </ComboBox>
+                </ComboBox>-->
                 <Button x:Name="SupprimerFichier" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right" Click="SupprimerFichier_Click">
                     <Image Source="../icons/texteditorcolor/supprimer1.png" Margin="0,5,0,5"/>
                 </Button>
@@ -121,11 +121,6 @@
                             <Image Source="../icons/application/enregistrer.png" Margin="0,5,0,5"/>
                         </MenuItem.Header>
                         <MenuItem Header="Enregistrer" Cursor="Hand" Click="EnregistrerNote_Click">
-                            <MenuItem.Icon>
-                                <Image Source="../icons/application/enregistrer.png"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Enregistrer sous..." Cursor="Hand">
                             <MenuItem.Icon>
                                 <Image Source="../icons/application/enregistrer.png"/>
                             </MenuItem.Icon>
