@@ -31,9 +31,7 @@ namespace UltraNotes
         /// <summary>
         /// On déclare un Manager commun à toutes les fenêtres, UserControls inclus
         /// </summary>
-        //public Manager LeManager { get; private set; } = new Manager(chargeur.ChargeurBouquin(""));
         public Manager LeManager { get; private set; } = new Manager(new Bouquin(new DataContractPers()));
-        //public Manager LeManager { get; private set; } = new Manager(new Bouquin(new Data.Stub()));
         /// <summary>
         /// Note actuellement sélectionnée dans l'éditeur de texte
         /// </summary>

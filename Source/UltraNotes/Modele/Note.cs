@@ -29,7 +29,7 @@ namespace Modele
         /// <summary>
         /// Liste des styles utilisateurs
         /// </summary>
-        public IList<Style> StylesUtilisateur { get; } = new List<Style>();
+        public IList<Style> StylesUtilisateur { get; set; } = new List<Style>();
         /// <summary>
         /// Propriété Nom qui représente le nom de la Note (son titre)
         /// </summary>

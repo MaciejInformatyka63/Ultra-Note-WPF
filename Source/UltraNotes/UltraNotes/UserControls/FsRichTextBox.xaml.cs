@@ -178,6 +178,9 @@ namespace UltraNotes.UserControls
             // On quitte si la selection est nulle
             if (StyleCombo.SelectedItem == null) return;
 
+            // on réinitialise
+            StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
+
             // sinon on change le style du texte sélectionné
             Modele.Style style = (StyleCombo.SelectedItem as Modele.Style);
             var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
@@ -250,12 +253,24 @@ namespace UltraNotes.UserControls
             FenetreStyle fenetreStyle = new FenetreStyle();
             fenetreStyle.Show();
         }
-
+        /// <summary>
+        /// Evènement qui se déclanche quand l'utilisateur clique dans la RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // Set style combo
+            StyleCombo.ItemsSource = null;
+            StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
+            StyleCombo.SelectedItem = null;
+        }
         /// <summary>
         ///  Invoked when the user changes text in this user control.
         /// </summary>
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            ActualiserBarreOutils();
             // Set the TextChanged flag
             m_TextHasChanged = true;
         }
@@ -270,7 +285,8 @@ namespace UltraNotes.UserControls
         private void Initialize()
         {
             // style utilisateur
-        //    StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
+            StyleCombo.ItemsSource = null;
+            StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;
             // police d'écriture
             FontFamilyCombo.ItemsSource = Fonts.SystemFontFamilies;
             // taille de police
@@ -312,6 +328,35 @@ namespace UltraNotes.UserControls
 
             // Select the clicked button
             clickedButton.IsChecked = true;
+        }
+        /// <summary>
+
+        /// Sets the toolbar.
+
+        /// </summary>
+
+        private void ActualiserBarreOutils()
+        {
+            // Set font family combo
+            var textRange = new TextRange(TextBox.Selection.Start, TextBox.Selection.End);
+            var fontFamily = textRange.GetPropertyValue(TextElement.FontFamilyProperty);
+            FontFamilyCombo.SelectedItem = fontFamily;
+            // Set font size combo
+            var fontSize = textRange.GetPropertyValue(TextElement.FontSizeProperty);
+            FontSizeCombo.Text = fontSize.ToString();
+            // Set font color combo
+            var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
+            //FontColorCombo.SelectedColor = Color.FromRgb();
+            //FontColorCombo.SelectedColor.ToString() = fontColor.ToString();
+            // Set Font buttons
+            BoldButton.IsChecked = textRange?.GetPropertyValue(TextElement.FontWeightProperty).Equals(FontWeights.Bold);
+            ItalicButton.IsChecked = textRange?.GetPropertyValue(TextElement.FontStyleProperty).Equals(FontStyles.Italic);
+            //UnderlineButton.IsChecked = textRange?.GetPropertyValue(Inline.TextDecorationsProperty).Equals(TextDecorations.Underline);
+            // Set Alignment buttons
+            LeftButton.IsChecked = textRange?.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Left);
+            CenterButton.IsChecked = textRange?.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Center);
+            RightButton.IsChecked = textRange?.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Right);
+            JustifyButton.IsChecked = textRange?.GetPropertyValue(FlowDocument.TextAlignmentProperty).Equals(TextAlignment.Justify);
         }
 
         #endregion

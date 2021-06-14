@@ -140,7 +140,33 @@ namespace UltraNotes.Vue
             // puis on reviens sur l'éléments sélectionné;
             listBoxNotes.SelectedItem = saveDoc;
         }
+        /// <summary>
+        /// Méthode qui est appelée quand la valeur du type du document change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TypeDocCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // si la selection est nulle, on sort
+            if (TypeDocCombo.SelectedItem == null) return;
 
+            // sinon on défini le type correspondant...
+            switch (TypeDocCombo.SelectedItem)
+            {
+                case "Personnel":
+                    MonManager.Bouquin[NoteSelectionnee].Type = TypeDocument.Personnel;
+                    break;
+                case "Important":
+                    MonManager.Bouquin[NoteSelectionnee].Type = TypeDocument.Important;
+                    break;
+                case "Profesionnel":
+                    MonManager.Bouquin[NoteSelectionnee].Type = TypeDocument.Profesionnel;
+                    break;
+                case "Pour plus tard":
+                    MonManager.Bouquin[NoteSelectionnee].Type = TypeDocument.Pour_plus_tard;
+                    break;
+            }
+        }
         /// <summary>
         /// Méthode appelée quand l'utilisateur touche aux éléments de la liste
         /// </summary>
@@ -150,6 +176,8 @@ namespace UltraNotes.Vue
         {
             // on défini la note courante sélectionnée;
             NoteSelectionnee = listBoxNotes.SelectedIndex;
+            // on met à jour le type de note;
+            TypeDocCombo.SelectedItem = MonManager.Bouquin[NoteSelectionnee].Type.ToString();
         }
 
         #endregion

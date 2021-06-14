@@ -202,6 +202,7 @@
                      AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True" AllowDrop="True" FontSize="14" Padding="4,8,4,10"
                      IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
                      Tag="{Binding ElementName=RichTextBox,Path=Tag,Mode=TwoWay}"
-                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Visible"/>
+                     TextChanged="OnTextChanged" VerticalScrollBarVisibility="Visible"
+                     PreviewMouseLeftButtonUp="TextBox_PreviewMouseLeftButtonUp" />
     </DockPanel>
 </UserControl>

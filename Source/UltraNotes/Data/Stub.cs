@@ -29,13 +29,13 @@ namespace Data
 
         public void SauvegardeDonnees(IEnumerable<Note> notes)
         {
-            throw new NotImplementedException();
+            
         }
 
         public List<Note> ChargeNotes()
         {
             List<Note> notes = new List<Note>();
-            notes.Add(new Note("Mon super document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Un méga super document avec plein de super mots !!</Paragraph></FlowDocument>"));
+            notes.Add(new Note("Mon super document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Un méga super document avec plein de super mots !!</Paragraph></FlowDocument>") { StylesUtilisateur = new List<Style>() { new Style("Mon style par defaut")} }) ;
             notes.Add(new Note("Nouveau document", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Bienvenue dans UltraNotes !</Paragraph></FlowDocument>"));
             notes.Add(new Note("Cours de maths n°1", "<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"> <Paragraph>Les suites : les suites doivent se suivre, sinon ce ne sont pas des suites. Incroyable !</Paragraph></FlowDocument>"));
             return notes;

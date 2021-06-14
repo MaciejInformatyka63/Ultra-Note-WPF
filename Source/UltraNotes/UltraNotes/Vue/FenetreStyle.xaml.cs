@@ -64,7 +64,7 @@ namespace UltraNotes.Vue
         private void CreerUnStyle_Click(object sender, RoutedEventArgs e)
         {
             // le nom du style
-            p_NomStyle = NomStyle.Text ?? "Style utilisateur";
+            p_NomStyle = (NomStyle.Text.Equals("")) ? "Style utilisateur" : NomStyle.Text;
             // mise en forme
             p_IsGras = BoldButton.IsChecked ?? false;
             p_IsItalique = ItalicButton.IsChecked ?? false;
@@ -83,7 +83,7 @@ namespace UltraNotes.Vue
 
             // on ajoute les styles au document actuel
             Modele.Style style = new Modele.Style(p_NomStyle, p_TaillePolice, p_Police, p_ALignement, p_CouleurPolice, p_IsGras, p_IsItalique, p_IsSouligne);
-            MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur.Add(style);
+            MonManager.Bouquin[NoteSelectionnee].DefinirStyle(style);
 
             // on ferme la fenêtre
             Close();

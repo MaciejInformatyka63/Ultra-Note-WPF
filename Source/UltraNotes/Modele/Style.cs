@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Modele
 {
-    public class Style : INotifyPropertyChanged
+    public class Style : INotifyPropertyChanged, IEquatable<Style>
     {
         #region Champs privés
 
@@ -100,6 +100,38 @@ namespace Modele
         {
             //return $"Style de police {PoliceEcriture} de taille {TailleDePolice} aligné à {AlignementTexte}";
             return $"{Nom}";
+        }
+        /// <summary>
+        /// Méthode de comparaison des valeurs de l'objet courant avec un autre style
+        /// </summary>
+        /// <param name="otherStyle"></param>
+        /// <returns></returns>
+        public bool Equals(Style otherStyle)
+        {
+            // on compare ces propriétés avec l'objet courant
+            if (!Nom.Equals(otherStyle.Nom)) return false;
+            if (!TailleDePolice.Equals(otherStyle.TailleDePolice)) return false;
+            if (!PoliceEcriture.Equals(otherStyle.PoliceEcriture)) return false;
+            if (!AlignementTexte.Equals(otherStyle.AlignementTexte)) return false;
+            if (!CouleurTexte.Equals(otherStyle.CouleurTexte)) return false;
+            if (!IsGras.Equals(otherStyle.Nom)) return false;
+            if (!IsSouligne.Equals(otherStyle.IsSouligne)) return false;
+            if (!IsItalique.Equals(otherStyle.IsItalique)) return false;
+            return true;
+        }
+        /// <summary>
+        /// Méthode de comparaison des valeurs de l'objet courant avec un autre objets
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public override bool Equals(object other)
+        {
+            // si l'objet n'est pas un Style
+            if (!(other is Style)) return false;
+
+            // sinon on caste l'objet en Style et on compare ces propriétés avec l'objet courant
+            Style otherStyle = other as Style;
+            return this.Equals(otherStyle);
         }
 
         #endregion
