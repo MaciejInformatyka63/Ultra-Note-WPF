@@ -56,6 +56,8 @@ namespace DataContractPersistance
                     {
                         //..puis on déserialise et interprète l'objet déserialisé comme une Note
                         note = Serializer.ReadObject(s) as Note;
+                        if (note.StylesUtilisateur != null) note.StylesUtilisateur = new List<Style>(note.StylesUtilisateur);
+                        else note.StylesUtilisateur = new List<Style>();
                         notes.Add(note);
                     }
                 }
@@ -113,6 +115,7 @@ namespace DataContractPersistance
                     try
                     {
                         param = SerializerParam.ReadObject(s) as Parametres;
+                        if (param is null) return new Parametres();
                     }
                     catch (XmlException e)
                     {

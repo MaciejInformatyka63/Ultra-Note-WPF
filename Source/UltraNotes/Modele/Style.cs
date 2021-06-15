@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Modele
 {
+    [DataContract]
     public class Style : INotifyPropertyChanged, IEquatable<Style>
     {
         #region Champs privés
@@ -22,6 +24,7 @@ namespace Modele
         /// </summary>
         void OnPropertyChanged(string nomPropriete) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomPropriete));
 
+        [DataMember]
         public string Nom
         {
             get
@@ -35,12 +38,19 @@ namespace Modele
             }
         }
 
+        [DataMember]
         public double TailleDePolice { get; set; } = 14D;
+        [DataMember]
         public string PoliceEcriture { get; set; } = "Consolas";
+        [DataMember]
         public Alignement AlignementTexte { get; set; } = Alignement.Gauche;
+        [DataMember]
         public string CouleurTexte { get; set; } = "Black";
+        [DataMember]
         public Boolean IsGras { get; set; } = false;
+        [DataMember]
         public Boolean IsItalique { get; set; } = false;
+        [DataMember]
         public Boolean IsSouligne { get; set; } = false;
 
         #endregion
