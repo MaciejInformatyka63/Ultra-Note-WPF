@@ -115,6 +115,7 @@ namespace UltraNotes.Vue
         private void SupprimerFichier_Click(object sender, RoutedEventArgs e)
         {
             // on supprime le fichier;
+            File.Delete(System.IO.Path.Combine(Modele.Parametres.DossierEPF, (listBoxNotes.SelectedItem as Note).Nom));
             MonManager.SupprimerUneNote(listBoxNotes.SelectedItem as Note);
             // puis on sélectionne la dernière note du bouquin;
             int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;

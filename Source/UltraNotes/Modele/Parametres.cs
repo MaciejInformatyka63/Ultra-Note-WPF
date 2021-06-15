@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -119,7 +120,7 @@ namespace Modele
         /// <summary>
         /// Propriété qui précise le dossier d'enregistrement par défaut d'une note
         /// </summary>
-        public static string DossierEPF { get; private set; } = "Documents";
+        public static string DossierEPF { get; private set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
     }
 
     #endregion
