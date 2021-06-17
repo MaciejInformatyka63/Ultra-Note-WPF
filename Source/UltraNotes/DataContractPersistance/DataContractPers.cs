@@ -86,10 +86,22 @@ namespace DataContractPersistance
 
         public void SauvegardeDonnees(IEnumerable<Note> notes)
         {
+            // on teste si le dossier existe, sinon on le crée
+            if (!Directory.Exists(FilePath)) Directory.CreateDirectory(FilePath);
+            // paramètres qui indiquent que le fichier devra être indenté
+            var settings = new XmlWriterSettings() { Indent = true };
             // on sauvegarde chaque notes
-            foreach(Note n in notes)
+            foreach (Note n in notes)
             {
-                SauvegardeNote(n);
+                // on crée un fichier à l'emplacement spécifié par le chemin donné..
+                using (TextWriter tw = File.CreateText(Path.Combine(FilePath, n.Nom)))
+                {
+                    using (XmlWriter writer = XmlWriter.Create(tw, settings))
+                    {
+                        //..puis on écrit une des instances de Note de la collection passée en paramêtre dans ce fichier
+                        Serializer.WriteObject(writer, n);
+                    }
+                }
             }
         }
 
