@@ -100,6 +100,7 @@ namespace Modele
             {"Violet", "#845399" },
             {"Violet profond", "#995489" },
             {"Marron", "#995F3D" },
+            {"Rouge", "#e30053" },
             {"Contraste", "#252C2E" }
         };
         /// <summary>
@@ -115,7 +116,8 @@ namespace Modele
             {"Violet", "../Assets/mountainsPurple.jpg" },
             {"Violet profond", "../Assets/mountainsDeepPurple.jpg" },
             {"Marron", "../Assets/mountainsBrown.jpg" },
-            {"Contraste", "../Assets/mountainsContrast.jpg" }
+            {"Contraste", "../Assets/mountainsContrast.jpg" },
+            {"Rouge", "" }
         };
         /// <summary>
         /// Propriété qui précise le dossier d'enregistrement par défaut d'une note

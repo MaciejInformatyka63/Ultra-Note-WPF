@@ -46,7 +46,7 @@
                             <Grid Margin="10 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="0" Source="../icons/application/file1.png" Margin="5,5"/>
                                 <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="Créer une note.." Margin="10"/>
@@ -93,6 +93,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -103,6 +104,7 @@
                          FontFamily="Microsoft YaHei" FontWeight="Normal" FontStyle="Normal" FontSize="16" ToolTip="Spécifiez le titre de votre document ici" AllowDrop="False">
                     
                 </TextBox>
+                <TextBlock Text="{Binding DateDerniereModif}" DataContext="{Binding Path=SelectedItem, ElementName=listBoxNotes}" Grid.Column="1" />
                 <!--<Button x:Name="ChargerFichier" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="34" Padding="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Image Source="../icons/texteditorcolor/charger.png" Margin="0,5,0,5"/>
                 </Button>

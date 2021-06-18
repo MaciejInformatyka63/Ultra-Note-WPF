@@ -8,6 +8,7 @@ namespace TestsFonctionnels
     {
         static void Main(string[] args)
         {
+            /*
             //Test sur Bouquin
             Console.WriteLine("-----     -----     -----     TestBouquin     -----     -----     -----");
             Console.WriteLine();
@@ -26,7 +27,8 @@ namespace TestsFonctionnels
             Console.WriteLine("-----     -----     -----     TestEnum     -----     -----     -----");
             Console.WriteLine();
             //TestEnum.TestEnumTypeDocument();
-
+            */
+            TestBouquin.AfficherListe(new Bouquin(new Stub()));
         }
     }
 }

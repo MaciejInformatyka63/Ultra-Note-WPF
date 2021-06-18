@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.Serialization;
 
 namespace Modele
@@ -17,7 +18,8 @@ namespace Modele
         private string p_Nom;
         // variable de la propriété DocumentXaml;
         private string p_DocumentXaml;
-
+        [DataMember]
+        public DateTime DateCreation { get; set; }
         #endregion
 
         #region Propriétés
@@ -59,6 +61,8 @@ namespace Modele
                 OnPropertyChanged("DocumentXaml");
             }
         }
+
+        public int DateDerniereModif => DateTime.Now.Subtract(DateCreation).Seconds;
         /// <summary>
         /// Propriété Chemin qui représente un chemin vers le fichier (ou il est enregistré)
         /// </summary>
@@ -95,7 +99,7 @@ namespace Modele
         /// Constructeur de note qui prend seulement le paramètre "texte"
         /// </summary>
         /// <param name="texte"></param>
-        public Note(string nom,string texte) : this(nom, texte, null, Parametres.DossierEPF) { }
+        public Note(string nom,string texte) : this(nom, texte, null, Path.Combine(Parametres.DossierEPF, nom)) { }
 
         #endregion
 

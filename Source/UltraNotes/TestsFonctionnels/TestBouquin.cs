@@ -48,5 +48,19 @@ namespace TestsFonctionnels
             Console.WriteLine(bouquin[index]);
             Console.WriteLine();
         }
+
+        public static void AfficherListe(Bouquin bouquin)
+        {
+            Note note = new Note("Le petit asticot de Jean Blonblon", "Un voyage extraordinaire chez les inuites !");
+            Note note1 = new Note("","");
+            bouquin.AjouterUneNote(note);
+            int reponse = bouquin.AjouterUneListeDeNotes(new Note[]
+            {
+                note1,
+                note
+            });
+            Console.WriteLine(reponse);
+        }
     }
+
 }

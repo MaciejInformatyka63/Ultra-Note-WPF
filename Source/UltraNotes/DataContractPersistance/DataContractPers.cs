@@ -74,7 +74,7 @@ namespace DataContractPersistance
             var settings = new XmlWriterSettings() { Indent = true };
 
             // on crée un fichier à l'emplacement spécifié par le chemin donné..
-            using(TextWriter tw = File.CreateText(Path.Combine(FilePath, note.Nom)))
+            using(TextWriter tw = File.CreateText(note.Nom))
             {
                 using(XmlWriter writer = XmlWriter.Create(tw,settings))
                 {
@@ -94,7 +94,7 @@ namespace DataContractPersistance
             foreach (Note n in notes)
             {
                 // on crée un fichier à l'emplacement spécifié par le chemin donné..
-                using (TextWriter tw = File.CreateText(Path.Combine(FilePath, n.Nom)))
+                using (TextWriter tw = File.CreateText(n.Chemin))
                 {
                     using (XmlWriter writer = XmlWriter.Create(tw, settings))
                     {

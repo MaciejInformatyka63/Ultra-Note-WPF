@@ -100,7 +100,10 @@ namespace UltraNotes.Vue
             int nb_occurences = MonManager.Bouquin.BouquinDeNotes.Where(n => n.Nom.Contains(titre_doc)).Count();
             titre_doc = (nb_occurences == 0) ? titre_doc : $"{titre_doc} #{nb_occurences}";
             // le contenu de la note est un fichier XML représentant un FlowDocument vide;
-            Note nouvelle_note = new Note(titre_doc, XamlWriter.Save(new FlowDocument()));
+            Note nouvelle_note = new Note(titre_doc, XamlWriter.Save(new FlowDocument()))
+            {
+                DateCreation = DateTime.Now
+            };
             // on l'ajoute au bouquin;
             MonManager.AjouterUneNote(nouvelle_note);
             // puis on la sélectionne automatiquement;
@@ -115,7 +118,8 @@ namespace UltraNotes.Vue
         private void SupprimerFichier_Click(object sender, RoutedEventArgs e)
         {
             // on supprime le fichier;
-            File.Delete(System.IO.Path.Combine(Modele.Parametres.DossierEPF, (listBoxNotes.SelectedItem as Note).Nom));
+            if (listBoxNotes.SelectedItem != null)
+                File.Delete(System.IO.Path.Combine(Modele.Parametres.DossierEPF, (listBoxNotes.SelectedItem as Note).Nom));
             MonManager.SupprimerUneNote(listBoxNotes.SelectedItem as Note);
             // puis on sélectionne la dernière note du bouquin;
             int dernier_element = (MonManager.NombreDeNotes <= 0) ? 0 : MonManager.NombreDeNotes - 1;

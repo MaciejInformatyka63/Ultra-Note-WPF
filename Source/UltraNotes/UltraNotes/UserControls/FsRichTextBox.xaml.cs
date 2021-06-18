@@ -343,9 +343,6 @@ namespace UltraNotes.UserControls
             FontSizeCombo.Text = fontSize.ToString();
             // Set font color combo
             var fontColor = textRange.GetPropertyValue(TextElement.ForegroundProperty);
-            //FontColorCombo.SelectedColor = Color.FromRgb();
-            //FontColorCombo.SelectedColor.ToString() = fontColor.ToString();
-            // Set Font buttons
             BoldButton.IsChecked = textRange?.GetPropertyValue(TextElement.FontWeightProperty).Equals(FontWeights.Bold);
             ItalicButton.IsChecked = textRange?.GetPropertyValue(TextElement.FontStyleProperty).Equals(FontStyles.Italic);
             //UnderlineButton.IsChecked = textRange?.GetPropertyValue(Inline.TextDecorationsProperty).Equals(TextDecorations.Underline);

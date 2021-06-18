@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Text;
 
 namespace Modele
@@ -82,7 +83,7 @@ namespace Modele
             if (note != null && !BouquinDeNotes.Contains(note))
             {
                 // on vérifie que le chemin n'est pas null;
-                note.Chemin = note.Chemin ?? Parametres.DossierEPF;
+                note.Chemin = note.Chemin ?? Path.Combine(Parametres.DossierEPF, note.Nom);
                 // puis on l'ajoute à la collection;
                 BouquinDeNotes.Add(note);
                 // puis on indique qu'il n'y a pas eu d'erreurs;
@@ -116,7 +117,7 @@ namespace Modele
                 // si une note existe déja, elle sera ignorée;
                 temoin = AjouterUneNote(elm);
                 // si temoin = true, un fichier à été ignoré;
-                if (temoin) code_err = 2; else gravite_err = false;
+                if (!temoin) code_err = 2; else gravite_err = false;
             }
             // si gravite_err est passé à true, alors cela signifie que toutes les opérations ont été refusées, alors on passe code_err
             // à 1 (erreur critique);
