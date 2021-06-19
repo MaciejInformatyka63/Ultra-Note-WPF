@@ -61,8 +61,36 @@ namespace Modele
                 OnPropertyChanged("DocumentXaml");
             }
         }
-
-        public int DateDerniereModif => DateTime.Now.Subtract(DateCreation).Seconds;
+        /// <summary>
+        /// Retourne le nombre de seconds, minutes, d'heures, de mois, de jours ou d'années qu'un document n'as pas été modifié
+        /// </summary>
+        public int DateDerniereModif
+        {
+            get
+            {
+                if (DateTime.Now.Year != DateCreation.Year) return DateTime.Now.Year - DateCreation.Year;
+                if (DateTime.Now.Day != DateCreation.Day) return DateTime.Now.Subtract(DateCreation).Days;
+                if (DateTime.Now.Month != DateCreation.Month) return DateTime.Now.Month - DateCreation.Month;
+                if (DateTime.Now.Hour != DateCreation.Hour) return DateTime.Now.Subtract(DateCreation).Hours;
+                if (DateTime.Now.Minute != DateCreation.Minute) return DateTime.Now.Subtract(DateCreation).Minutes;
+                return DateTime.Now.Subtract(DateCreation).Seconds;
+            }
+        }
+        /// <summary>
+        /// propriété calculée pour formatter sous forme de chaine de caractères la date de dernière modification
+        /// </summary>
+        public string DateDerniereModifFormat
+        {
+            get
+            {
+                if (DateTime.Now.Year != DateCreation.Year) return $"Modifié il y a {DateDerniereModif} an(s)";
+                if (DateTime.Now.Day != DateCreation.Day) return $"Modifié il y a {DateDerniereModif} jour(s)";
+                if (DateTime.Now.Month != DateCreation.Month) return $"Modifié il y a {DateDerniereModif} mois";
+                if (DateTime.Now.Hour != DateCreation.Hour) return $"Modifié il y a {DateDerniereModif} heure(s)";
+                if (DateTime.Now.Minute != DateCreation.Minute) return $"Modifié il y a {DateDerniereModif} minute(s)";
+                return $"Modifié il y a {DateDerniereModif} seconde(s)";
+            }
+        }
         /// <summary>
         /// Propriété Chemin qui représente un chemin vers le fichier (ou il est enregistré)
         /// </summary>

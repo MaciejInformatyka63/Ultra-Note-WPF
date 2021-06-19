@@ -54,7 +54,7 @@ namespace DataContractPersistance
                     // on ouvre le fichier dans un flux..
                     using (Stream s = File.OpenRead(ficNote))
                     {
-                        //..puis on déserialise et interprète l'objet déserialisé comme une Note
+                        //..puis on déserialise et interprète l'objet déserialisé comme une Note avant de l'ajouter au bouquin
                         note = Serializer.ReadObject(s) as Note;
                         if (note.StylesUtilisateur != null) note.StylesUtilisateur = new List<Style>(note.StylesUtilisateur);
                         else note.StylesUtilisateur = new List<Style>();
@@ -74,7 +74,7 @@ namespace DataContractPersistance
             var settings = new XmlWriterSettings() { Indent = true };
 
             // on crée un fichier à l'emplacement spécifié par le chemin donné..
-            using(TextWriter tw = File.CreateText(note.Nom))
+            using(TextWriter tw = File.CreateText(note.Chemin))
             {
                 using(XmlWriter writer = XmlWriter.Create(tw,settings))
                 {
