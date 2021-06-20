@@ -58,12 +58,18 @@ namespace UltraNotes.Vue
         {
             InitializeComponent();
 
+            // si la FsRichTextBox ne contient aucun élément, alors on en crée un;
+            if (MonManager.NombreDeNotes == 0) new Note("Ma nouvelle note", XamlWriter.Save(new FlowDocument()))
+            {
+                DateCreation = DateTime.Now
+            };
+            // et on donne automatiquement le focus à la RichTextBox;
+            EditBox.TextBox.Focus();
+
             // on définie le DataContext;
             listBoxNotes.DataContext = MonManager;
             // on se place automatiquement sur le premier élément de la liste;
             listBoxNotes.SelectedItem = MonManager.Bouquin[0];
-            // et on donne automatiquement le focus à la RichTextBox;
-            EditBox.TextBox.Focus();
 
             // on défini également le DataContext de la grille de fond;
             GrilleDeFond.DataContext = Param;
@@ -91,7 +97,7 @@ namespace UltraNotes.Vue
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CreerNote_Click(object sender, RoutedEventArgs e)
+        public void CreerNote_Click(object sender, RoutedEventArgs e)
         {
             // on instancie une nouvelle note;
             // le titre est "Ma nouvelle note" suivi de "#x", x étant le nombre de notes
@@ -128,6 +134,8 @@ namespace UltraNotes.Vue
 
         private void EnregistrerNote_Click(object sender, RoutedEventArgs e)
         {
+            // si la note est nulle, on fais rien;
+            if (listBoxNotes.SelectedItem == null) return;
             // on provoque une mise à jour de la propriété Document de la FsRichTextBox
             var saveDoc = listBoxNotes.SelectedItem;
             listBoxNotes.SelectedItem = null;
@@ -135,12 +143,12 @@ namespace UltraNotes.Vue
             MonManager.Bouquin.SauvegardeNote(saveDoc as Note);
             // puis on reviens sur l'éléments sélectionné;
             listBoxNotes.SelectedItem = saveDoc;
-            // on enregistre les paramètres
-            Param.SauverParametres();
         }
 
         private void EnregistrerToutesLesNote_Click(object sender, RoutedEventArgs e)
         {
+            // si la note est nulle, on fais rien;
+            if (listBoxNotes.SelectedItem == null) return;
             // on provoque une mise à jour de la propriété Document de la FsRichTextBox
             var saveDoc = listBoxNotes.SelectedItem;
             listBoxNotes.SelectedItem = null;
@@ -148,8 +156,6 @@ namespace UltraNotes.Vue
             foreach (Note note in MonManager.Bouquin.BouquinDeNotes) MonManager.Bouquin.SauvegardeDonnees();
             // puis on reviens sur l'éléments sélectionné;
             listBoxNotes.SelectedItem = saveDoc;
-            // on enregistre les paramètres
-            Param.SauverParametres();
         }
         /// <summary>
         /// Méthode qui est appelée quand la valeur du type du document change

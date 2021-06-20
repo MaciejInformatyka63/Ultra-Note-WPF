@@ -64,16 +64,27 @@ namespace Modele
         /// <summary>
         /// Retourne le nombre de seconds, minutes, d'heures, de mois, de jours ou d'années qu'un document n'as pas été modifié
         /// </summary>
-        public int DateDerniereModif
+        /*public int DateDerniereModif
         {
             get
             {
-                if (DateTime.Now.Year != DateCreation.Year) return DateTime.Now.Year - DateCreation.Year;
-                if (DateTime.Now.Day != DateCreation.Day) return DateTime.Now.Subtract(DateCreation).Days;
-                if (DateTime.Now.Month != DateCreation.Month) return DateTime.Now.Month - DateCreation.Month;
-                if (DateTime.Now.Hour != DateCreation.Hour) return DateTime.Now.Subtract(DateCreation).Hours;
-                if (DateTime.Now.Minute != DateCreation.Minute) return DateTime.Now.Subtract(DateCreation).Minutes;
-                return DateTime.Now.Subtract(DateCreation).Seconds;
+                DateTime dateNow = DateTime.Now;
+                if (dateNow.Year != DateCreation.Year) return dateNow.Year - DateCreation.Year + 1;
+                else if (dateNow.Month != DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return dateNow.Month - DateCreation.Month + 1;
+                else if (dateNow.Day != DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return dateNow.Subtract(DateCreation).Days + 1;
+                else if (dateNow.Hour != DateCreation.Hour
+                    && dateNow.Day == DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return dateNow.Subtract(DateCreation).Hours + 1;
+                else if (dateNow.Minute != DateCreation.Minute
+                    && dateNow.Hour == DateCreation.Hour
+                    && dateNow.Day == DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return dateNow.Subtract(DateCreation).Minutes + 1;
+                return dateNow.Subtract(DateCreation).Seconds;
             }
         }
         /// <summary>
@@ -83,14 +94,25 @@ namespace Modele
         {
             get
             {
-                if (DateTime.Now.Year != DateCreation.Year) return $"Modifié il y a {DateDerniereModif} an(s)";
-                if (DateTime.Now.Day != DateCreation.Day) return $"Modifié il y a {DateDerniereModif} jour(s)";
-                if (DateTime.Now.Month != DateCreation.Month) return $"Modifié il y a {DateDerniereModif} mois";
-                if (DateTime.Now.Hour != DateCreation.Hour) return $"Modifié il y a {DateDerniereModif} heure(s)";
-                if (DateTime.Now.Minute != DateCreation.Minute) return $"Modifié il y a {DateDerniereModif} minute(s)";
+                DateTime dateNow = DateTime.Now;
+                if (dateNow.Year != DateCreation.Year) return $"Modifié il y a {DateDerniereModif} an(s)";
+                else if (dateNow.Month != DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return $"Modifié il y a {DateDerniereModif} mois";
+                else if (dateNow.Day != DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return $"Modifié il y a {DateDerniereModif} jour(s)";
+                else if (dateNow.Hour != DateCreation.Hour
+                    && dateNow.Day == DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return $"Modifié il y a {DateDerniereModif} heure(s)";
+                else if (dateNow.Minute != DateCreation.Minute
+                    && dateNow.Hour == DateCreation.Hour
+                    && dateNow.Day == DateCreation.Day
+                    && dateNow.Month == DateCreation.Month
+                    && dateNow.Year == DateCreation.Year) return $"Modifié il y a {DateDerniereModif} minute(s)";
                 return $"Modifié il y a {DateDerniereModif} seconde(s)";
             }
-        }
+        }*/
         /// <summary>
         /// Propriété Chemin qui représente un chemin vers le fichier (ou il est enregistré)
         /// </summary>

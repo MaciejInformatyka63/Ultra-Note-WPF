@@ -260,6 +260,9 @@ namespace UltraNotes.UserControls
         /// <param name="e"></param>
         private void TextBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            ActualiserBarreOutils();
+            // si aucune note n'existe
+            if (MonManager.Bouquin[NoteSelectionnee] == null) return; 
             // Set style combo
             StyleCombo.ItemsSource = null;
             StyleCombo.ItemsSource = MonManager.Bouquin[NoteSelectionnee].StylesUtilisateur;

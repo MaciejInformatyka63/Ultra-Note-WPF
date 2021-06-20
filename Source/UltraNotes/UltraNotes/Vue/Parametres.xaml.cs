@@ -61,6 +61,7 @@ namespace UltraNotes
 
         private void Confirmer_Click(object sender, RoutedEventArgs e)
         {
+            Param.SauverParametres();
             Close();
         }
 
