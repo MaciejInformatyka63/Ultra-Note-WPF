@@ -23,6 +23,7 @@ namespace Modele
         void SauvegardeDonnees(IEnumerable<Note> notes);
         public Parametres ChargerParametres();
         public void SauverParametres(Parametres param);
+        public void Nettoyer();
 
     }
 }

@@ -56,5 +56,10 @@ namespace Data
         {
             throw new NotImplementedException();
         }
+
+        public void Nettoyer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

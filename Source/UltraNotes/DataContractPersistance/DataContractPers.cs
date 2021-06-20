@@ -158,5 +158,22 @@ namespace DataContractPersistance
                 }
             }
         }
+
+        public void Nettoyer()
+        {
+            try
+            {
+                foreach (var fic in Directory.GetFiles(FilePath))
+                {
+                    File.Delete(fic);
+                }
+                Directory.Delete(FilePath);
+            }
+            catch (System.IO.DirectoryNotFoundException e)
+            {
+                return;
+            }
+            
+        }
     }
 }

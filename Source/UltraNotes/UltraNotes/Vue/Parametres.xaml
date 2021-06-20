@@ -47,8 +47,10 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Confirmer" Grid.Column="2" Margin="15,15,20,15" Padding="5" Click="Confirmer_Click"/>
+                <Button Content="Confirmer" Grid.Column="2" Margin="0,15,20,15" Padding="5" Click="Confirmer_Click"/>
+                <Button Content="Annuler" Grid.Column="3" Margin="0,15,20,15" Padding="5" Click="Annuler_Click"/>
             </Grid>
         </Grid>
         <ContentControl x:Name="contentControl_Parametres" DockPanel.Dock="Left" Visibility="Visible">

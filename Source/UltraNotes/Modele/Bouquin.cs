@@ -43,6 +43,11 @@ namespace Modele
             Persistance.SauvegardeDonnees(BouquinDeNotes);
         }
 
+        public void Nettoyer()
+        {
+            Persistance.Nettoyer();
+        }
+
         #endregion
 
         #region Propriétés

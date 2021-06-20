@@ -65,6 +65,11 @@ namespace UltraNotes
             Close();
         }
 
+        private void Annuler_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
         #endregion
     }
 }
